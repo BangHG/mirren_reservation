@@ -1,0 +1,71 @@
+.btnTop {
+  display: none;
+  position: fixed;
+  width: 88px;
+  height: 88px;
+  $offset: 20px;
+  bottom: $offset;
+  right: $offset;
+  z-index: 100;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url(../images/btnTop.webp);
+  opacity: 0.8;
+  // border: 1px solid red;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 69%;
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%) rotate(45deg);
+    left: 50%;
+    top: 50%;
+    transform-origin: 50% 50%;
+
+    border: 1.5px solid #fff;
+    filter: blur(0.5px);
+    $color: #fff;
+
+    box-shadow: //
+      0 0 19px rgba($color, 1),
+      //
+      0 0 10px rgba($color, 0.8),
+      //
+      inset 0 0 13px rgba($color, 0.6);
+    opacity: 0;
+    transition: 300ms all;
+  }
+  &:hover {
+    opacity: 1;
+    &:before {
+      opacity: 0.8;
+      transform: translate(-50%, -50%) rotate(45deg + 15deg);
+    }
+  }
+  &.fix {
+    position: absolute;
+    bottom: calc(100% + $offset);
+  }
+}
+
+.common-footer {
+  // overflow: visible;
+  &,
+  * {
+    font-weight: 300;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  &__bottom {
+    gap: 24px;
+    &__copyright {
+      margin-left: 0;
+    }
+  }
+  .logo__inchi {
+    background: url(../images/logo-inchi.png) no-repeat;
+    width: 100px;
+    height: 36px;
+  }
+}

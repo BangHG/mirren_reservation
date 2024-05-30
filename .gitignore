@@ -1,0 +1,10 @@
+﻿.자료
+.vscode
+*.bak.*
+bak
+template
+node_modules
+*.lnk
+*.mp3
+*.mp4
+*.wav

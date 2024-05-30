@@ -1,0 +1,23 @@
+@import 'mixin/_breakpoints';
+@import 'mixin/_btnImg';
+@import 'mixin/_bgfix';
+@import 'mixin/_100vh';
+@import 'mixin/_notDrag';
+
+@mixin spr($x, $y, $width: false, $height: false) {
+  background-position: $x $y;
+  @if $width {
+    width: $width;
+  }
+  @if $height {
+    height: $height;
+  }
+}
+
+@mixin sprCft($x: 0, $y: 0, $width: 0, $height: 0, $left: 0, $top: 0) {
+  background-position: $x $y;
+  width: $width;
+  height: $height;
+  left: $left;
+  top: $top;
+}

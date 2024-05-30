@@ -1,0 +1,123 @@
+//  블라인드
+.blind {
+  backdrop-filter: blur(4px);
+  display: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 300;
+  text-align: left;
+  &--btnClosed {
+    display: none;
+    z-index: 500;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    position: fixed;
+    background: {
+      //기본 닫기 이미지
+      image: url("data:image/svg+xml,%0A%3Csvg width='31' height='31' viewBox='0 0 31 31' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M27.5858 30.4142C28.3668 31.1953 29.6332 31.1953 30.4142 30.4142C31.1953 29.6332 31.1953 28.3668 30.4142 27.5858L18.6642 15.8358L19 15.5L18.6642 15.1642L30.4142 3.41422C31.1953 2.63317 31.1953 1.36684 30.4142 0.585788C29.6332 -0.195261 28.3668 -0.195261 27.5858 0.585788L15.8358 12.3358L15.5 12L15.1642 12.3358L3.41421 0.585786C2.63316 -0.195262 1.36683 -0.195262 0.585786 0.585786C-0.195262 1.36684 -0.195262 2.63317 0.585786 3.41421L12.3358 15.1642L12 15.5L12.3358 15.8358L0.585786 27.5858C-0.195262 28.3668 -0.195262 29.6332 0.585786 30.4142C1.36684 31.1953 2.63317 31.1953 3.41421 30.4142L15.1642 18.6642L15.5 19L15.8358 18.6642L27.5858 30.4142ZM15.8358 18.6642L18.6642 15.8358L18.3284 15.5L18.6642 15.1642L15.8358 12.3358L15.5 12.6716L15.1642 12.3358L12.3358 15.1642L12.6716 15.5L12.3358 15.8358L15.1642 18.6642L15.5 18.3284L15.8358 18.6642Z' fill='white'/%3E%3C/svg%3E%0A");
+      repeat: no-repeat;
+      position: 50% 50%;
+      size: percentage(31/80);
+      // bgsize/width
+    }
+    // @include lg {
+    opacity: 0.8;
+    &:focus,
+    &:hover {
+      opacity: 1;
+    }
+    // }
+    // @include lg-max {
+    // }
+  }
+}
+
+.popup {
+  display: none;
+  z-index: 400;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  * {
+    letter-spacing: -0.05em;
+    word-break: keep-all;
+  }
+  &__scroll {
+    max-height: calc(100vh - 100px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    padding-right: 0;
+    overflow-anchor: none;
+    overscroll-behavior: contain;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 3px;
+      background-color: rgba(#fff, 0.3);
+    }
+    &::-webkit-scrollbar-button {
+      width: 0;
+      height: 0;
+    }
+  }
+  &__wrap {
+    position: relative;
+    // height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    // padding: 0 66px; //닫기버튼용 여백
+  }
+}
+
+.popup--video {
+  display: flex !important;
+  opacity: 0;
+  z-index: -2;
+  transition: 500ms opacity;
+  transition-delay: 100ms;
+  @include lg-max {
+    transform: none !important;
+  }
+  &.open {
+    z-index: 400;
+    opacity: 1;
+  }
+
+  @at-root .you_tube {
+    background-color: #000; //
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 0;
+    padding-bottom: 56.25%;
+    z-index: 25;
+    iframe,
+    object,
+    embed {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      // margin-top: 70px;
+    }
+  }
+}

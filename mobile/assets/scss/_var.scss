@@ -1,0 +1,28 @@
+﻿// $rootUrl: '/games/mirren/reservation';
+$rootUrl: '../../..';
+
+// ## 컬러##
+// 기본 폰트 색상
+$body-color: #666;
+//메인컬러
+$color-1: #a82654;
+//서브컬러
+$color-2: #22bbc1;
+
+// BODY 전환효과 사용여부
+$body-transition: true;
+
+$media: true;
+// 미디어 쿼리 사이즈
+$mediaResponsiveSize: 1024px;
+// 시안 사이즈
+$mediaPSD: 1080px;
+
+//기본컨테이너 사이즈
+$container: 1280px;
+$gutter: 20px; //기본 여백
+
+// ## FONT 관리 ##  → _font-face.scss
+$font-family-basic: 'ChosunNm', 'Noto Sans KR', sans-serif;
+$font-family-main: $font-family-basic;
+$font-family-sub: $font-family-basic;

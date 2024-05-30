@@ -1,0 +1,511 @@
+﻿$stigmataHeight: 1157px;
+
+$stigmataList: (
+  //index name color
+  11,
+  //신코우
+  12,
+  //사라
+  13,
+  //그레이
+  14,
+  //호무라
+  15,
+  //디아
+  21,
+  //나나브
+  22,
+  //캐롤린
+  23,
+  //도로시
+  24,
+  //에어린
+  25,
+  //시슬리
+  31,
+  //야요이
+  32,
+  //아넥스
+  33,
+  //코스모스
+  34,
+  //마키
+  35,
+  //샌디
+  41,
+  //나피
+  42,
+  //스파클
+  43,
+  //페넬로페
+  44,
+  //쿠로신
+  45,
+  //메르티
+  51,
+  //플로라
+  52,
+  //크리슈나
+  53,
+  //필리시아
+  54,
+  //로잘리
+  55,
+  //애슐
+  61,
+  //제랄디아
+  62,
+  //대니
+);
+$stigmataColor: (
+  1 #389e60,
+  //천사
+  2 #3f7aff,
+  //인간
+  3 #ffbb4f,
+  //반수
+  4 #8b82ff,
+  //악마
+  5 #4fb654,
+  //엘프
+  6 #f554ff //드래곤
+);
+
+.section-stigmata {
+  height: $stigmataHeight;
+  z-index: 2;
+  background-color: #555;
+  $bot: 103px;
+
+  mask: 
+   //
+    url(../images/stigmata/mask.svg) no-repeat,
+    //TODO: 수정할 시에 mask 사이즈 조정필요
+    url(../images/stigmata/mask-bot.svg) no-repeat;
+  mask-size: //
+   //
+    2560px ($stigmataHeight - $bot),
+    //
+    2560px $bot;
+  mask-position: //
+   //
+    50% 0,
+    //
+    50% 100%;
+  margin-bottom: -$bot;
+  position: relative;
+  background-color: #000;
+
+  .sub-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 295px;
+    z-index: 5;
+    font-size: 24px;
+    line-height: 1.3;
+    color: #fff;
+    text-align: center;
+    word-break: keep-all;
+    img {
+      margin-left: -3.5px;
+    }
+    p {
+      // display: block;
+      margin-top: 0.2em;
+    }
+  }
+
+  .tab {
+    z-index: 5;
+    position: absolute;
+    left: 50%;
+    top: 280px;
+    width: 600px;
+    margin-left: 273px;
+    text-align: center;
+    // border: 1px solid red; //FIXME:;
+    &-list {
+      font-size: 0;
+      display: flex;
+      justify-content: center;
+      gap: 1px;
+      .tab-link {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        $w: 54px;
+        width: $w;
+        height: 100px;
+        @for $i from 1 through 6 {
+          &[data-hash='tabContent#{$i}'] {
+            background-position-x: ($i - 1) * -$w;
+          }
+        }
+        &:before,
+        &:after {
+          content: '';
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: 300ms opacity;
+          background-image: url(../images/stigmata/tab.webp);
+          background-position: inherit;
+        }
+        &:before {
+          opacity: 1;
+          background-position-y: 0;
+        }
+        &:after {
+          opacity: 0;
+          background-position-y: 100%;
+        }
+        &:hover:not(.active) {
+          &:after {
+            opacity: 1;
+            filter: invert(0.3);
+          }
+        }
+        &.active {
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    &-content {
+      display: block;
+      position: absolute;
+      top: 172px;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      opacity: 0;
+      // S: 애니메이션
+      &.active {
+        z-index: 1;
+        opacity: 1;
+        // .stigmata-group {
+        //   transform: translateY(0);
+        //   opacity: 1;
+        //   // transform: translateY(100%);
+        // }
+        .thumb-btn {
+          opacity: 1;
+          margin-top: 0;
+        }
+      }
+      // .stigmata-group {
+      //   opacity: 0;
+      //   transform: translateY(10%);
+      //   transition: 700ms all;
+      // }
+      .thumb-btn {
+        opacity: 0;
+        margin-top: 20px;
+        transition: 700ms all;
+        $delay: 100ms;
+        &:nth-child(1) {
+          transition-delay: $delay * 1;
+        }
+        &:nth-child(2) {
+          transition-delay: $delay * 2;
+        }
+        &:nth-child(3) {
+          transition-delay: $delay * 3;
+        }
+        &:nth-child(4) {
+          transition-delay: $delay * 4;
+        }
+        &:nth-child(5) {
+          transition-delay: $delay * 5;
+        }
+      }
+      // E: 애니메이션
+      $i: 2;
+      $thumW: 143px;
+      $gap: 40px;
+      .stigmata-group {
+        margin: 0 auto;
+        position: relative;
+        height: $thumW * 2;
+        // border: 1px solid yellow;
+        width: $thumW * $i + $gap * ($i - 1); //520px;
+      }
+      .thumb-btn {
+        transform-origin: 50% 50%;
+        transform: translateX(-50%) rotate(-45deg);
+        // width: $thumW;
+        // height: $thumW;
+        position: absolute;
+        left: 50%;
+        &:nth-child(1),
+        &:nth-child(4) {
+          margin-left: -123px;
+        }
+        &:nth-child(2),
+        &:nth-child(5) {
+          margin-left: 123px;
+        }
+        &:nth-child(3) {
+          top: 130px;
+        }
+        &:nth-child(4),
+        &:nth-child(5) {
+          top: 130px * 2;
+        }
+
+        // &:before,
+        // &:after {
+        //   background-repeat: no-repeat;
+        //   position: absolute;
+        //   top: 0;
+        //   left: 0;
+        //   content: '';
+        //   display: block;
+        //   transition: 300ms all;
+        //   width: 100%;
+        //   height: 100%;
+        //   background-size: contain;
+        // }
+      }
+    }
+  }
+}
+
+@each $tribe, $color in $stigmataColor {
+  #tabContent#{$tribe} {
+    .spin {
+      box-shadow: 0 0 19px rgba($color, 1), 0 0 10px rgba($color, 0.8), inset 0 0 13px rgba($color, 0.6);
+    }
+  }
+}
+@each $index in $stigmataList {
+  #stigmata--#{$index} {
+    //경량화작업 추후에
+    // background: rgba(white, 0.5); //TODO;
+    &:before {
+      // background-position-y: ((($i - 1) * (-145px * 2)) - 145px);
+      // background-image: url(#{$rootUrl}/common/images/stigmata/thumb/#{$index}f.webp);
+    }
+    &:after {
+      // background-position-y: ($i - 1) * -145px * 2;
+      background-image: url(#{$rootUrl}/common/images/stigmata/thumb/#{$index}.webp);
+    }
+  }
+}
+
+//성흔
+.stigmata {
+  height: $stigmataHeight;
+  width: 100%;
+  color: #fff;
+  word-break: keep-all;
+  @at-root {
+    //애니메이션
+    .stigmata {
+      &.initAni {
+        .name,
+        .cv,
+        .desc {
+          transition: 600ms all;
+          opacity: 1;
+        }
+
+        .bg {
+          transform: scale(1);
+        }
+        .cv {
+          transition-delay: 100ms;
+        }
+        .desc {
+          transition-delay: 200ms;
+        }
+        .ch {
+          opacity: 1;
+          transition: 1000ms all;
+        }
+        .spec {
+          opacity: 1;
+          transition-delay: 300ms;
+          transition: 600ms all;
+        }
+      }
+      &:not(.initAni).stigmata {
+        .bg {
+          transform: scale(1.05);
+        }
+        .ch {
+          opacity: 0;
+          transform: translateX(-10%);
+        }
+        .spec {
+          opacity: 0;
+          transform: translateX(-30%);
+        }
+        .name,
+        .cv,
+        .desc {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+      }
+    }
+  }
+  .title-bx {
+    top: 445px;
+  }
+  .bg {
+    transition: 2000ms transform;
+    background-position: 50% 50%;
+    background-size: 2560px auto;
+    background-repeat: no-repeat;
+    // width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    width: 2560px;
+    left: 50%;
+    margin-left: (2560px / -2);
+  }
+  .ch {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 1920px;
+    height: 100%;
+    right: 50%;
+    margin-right: -640px;
+    bottom: 0;
+  }
+  .spec {
+    background-repeat: no-repeat;
+    position: absolute;
+    font-size: 0;
+    // width: 523px;
+    // height: 93px;
+    bottom: 242px;
+    margin-right: 200px;
+    right: 50%;
+    @include noDrag;
+    img {
+      max-width: max-content;
+    }
+  }
+
+  @each $i in $stigmataList {
+    &--#{$i} {
+      .bg {
+        background-image: url(../images/stigmata/#{$i}/bg.webp);
+      }
+      .ch {
+        background-image: url(../images/stigmata/#{$i}/ch.webp);
+      }
+      // 이미지로
+      // .spec {
+      // background-image: url(../images/stigmata/#{$i}/spec.webp);
+      // }
+    }
+  }
+}
+
+//네모네모
+.section-stigmata {
+  .cft-wrap {
+    width: 803px;
+    height: 382px;
+    position: absolute;
+    z-index: 2;
+    top: 590px;
+    left: 50%;
+    // margin-left: 100px;
+    margin-left: 130px; //버튼이랑 겹침..
+    @keyframes cftRotate {
+      0%,
+      100% {
+        transform: rotate(0);
+        opacity: 1;
+      }
+      50%,
+      70% {
+        opacity: 1;
+      }
+      30%,
+      60%,
+      90% {
+        opacity: 0.7;
+      }
+      50% {
+        transform: rotate(360deg);
+      }
+    }
+
+    i {
+      background-image: url(../images/stigmata/cft.webp);
+      background-repeat: no-repeat;
+      display: block;
+      position: absolute;
+      // border: 1px solid #fff;
+      animation: 3s cftRotate infinite alternate;
+      // @for $i from 1 through 11 {
+      //   &:nth-child(#{$i}) {
+      //     animation-delay: random(10) * -50 + ms;
+      //   }
+      // }
+
+      &:nth-child(3n + 1) {
+        animation-delay: -500ms;
+        animation-duration: 5s;
+      }
+      &:nth-child(3n) {
+        animation-duration: 4s;
+        animation-delay: -300ms;
+      }
+
+      &:nth-child(1) {
+        @include sprCft(-5px, -5px, 22px, 21px, 9px, 354px);
+      }
+
+      &:nth-child(2) {
+        @include sprCft(-5px, -36px, 21px, 22px, 790px, 8px);
+      }
+
+      &:nth-child(3) {
+        @include sprCft(-5px, -68px, 21px, 22px, 488px, 254px);
+      }
+
+      &:nth-child(4) {
+        @include sprCft(-5px, -100px, 26px, 26px, 629px, 79px);
+      }
+
+      &:nth-child(5) {
+        @include sprCft(-5px, -136px, 27px, 26px, 619px, 234px);
+      }
+
+      &:nth-child(6) {
+        @include sprCft(-5px, -172px, 24px, 24px, 473px, 165px);
+      }
+
+      &:nth-child(7) {
+        @include sprCft(-5px, -206px, 28px, 28px, 358px, 309px);
+      }
+
+      &:nth-child(8) {
+        @include sprCft(-5px, -244px, 27px, 26px, 415px, 238px);
+      }
+
+      &:nth-child(9) {
+        @include sprCft(-5px, -280px, 25px, 25px, 257px, 288px);
+      }
+
+      &:nth-child(10) {
+        @include sprCft(-5px, -315px, 26px, 26px, 46px, 363px);
+      }
+
+      &:nth-child(11) {
+        @include sprCft(-5px, -351px, 28px, 28px, 220px, 298px);
+      }
+    }
+  }
+}

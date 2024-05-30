@@ -1,0 +1,96 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  background: yellow;
+  // scroll-behavior: smooth;
+  // overflow-x: hidden;
+}
+
+body {
+  //프레임
+  min-width: 280px;
+  width: 100%;
+  margin: 0 auto;
+
+  //전환효과
+  @if $body-transition == true {
+    @at-root html {
+      background-color: #000;
+      // FIXME:
+    }
+    transition: opacity 300ms !important;
+    opacity: 0;
+    &[data-loading='done'] {
+      opacity: 1;
+    }
+  }
+  &:after {
+    clear: both;
+    display: block;
+    content: '';
+  }
+
+  // 드래그 방지
+  // * {
+  //   -webkit-user-select: none;
+  //   -moz-user-select: none;
+  //   -ms-user-select: none;
+  //   user-select: none;
+  //   -webkit-user-drag: none;
+  //   user-drag: none;
+  // }
+}
+
+.container {
+  // max-width: $container + $gutter * 2;
+  // padding: 0 $gutter;
+  width: 100%;
+  margin: 0 auto;
+}
+
+//투명한 스크롤
+
+// html {
+//   // width: 100vw;
+//   // overflow-x: hidden;
+//   // overflow-y: overlay !important;
+//   @at-root {
+//     // html {
+//     //   overflow-y: auto;
+//     //   background: transparent;
+//     // }
+//     &::-webkit-scrollbar {
+//       width: 7px;
+//       height: 7px;
+//     }
+
+//     &::-webkit-scrollbar-thumb {
+//       outline: none;
+//       border-radius: 10px;
+//       border: 2px solid transparent;
+//       box-shadow: inset 6px 6px 0 rgba($color-2, 0.5);
+//       background-color: $color-2;
+//       min-height: 3em;
+//     }
+
+//     &::-webkit-scrollbar-thumb:hover {
+//       border: 2px solid transparent;
+//       box-shadow: inset 6px 6px 0 rgba($color-2, 0.8);
+//       background-color: $color-2;
+//     }
+
+//     &::-webkit-scrollbar-track {
+//       box-shadow: none;
+//       background-color: transparent;
+//     }
+//   }
+//   body {
+//     width: 100vw;
+//     overflow-x: hidden;
+//     overflow-y: overlay !important;
+//   }
+// }

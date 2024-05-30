@@ -1,0 +1,324 @@
+﻿$witchHeight: 1146px;
+.section-witch {
+  z-index: 3;
+  // mask: url(../images/witch/section-mask.svg) no-repeat;
+  $top: 58px;
+  $bot: 32px;
+
+  // mask: //
+  //   url(../images/witch/mask-top.svg) no-repeat,
+  //   //
+  //   url(../images/witch/mask.svg) no-repeat,
+  //   //
+  //   url(../images/witch/mask-bot.svg) no-repeat;
+  // mask-size: //
+  //   2560px $top,
+  //   //
+  //   2560px ($witchHeight - $top - $bot),
+  //   //
+  //   2560px $bot;
+  // mask-position: //
+  //   50% 1px,
+  //   //
+  //   50% $top,
+  //   //
+  //   50% 100%;
+  // @at-root html {
+  //   background: yellow;
+  // }
+  mask: url(../images/witch/mask-one.svg) no-repeat;
+  margin-top: -$top;
+  margin-bottom: -$bot;
+  position: relative;
+}
+
+// 썸네일
+.witch-tab {
+  // background: rgba(red, 0.5);
+  $thumW: 143px;
+  z-index: 2;
+  position: absolute;
+  transform: rotate(45deg);
+  transform-origin: 0% 100%;
+  left: 50%;
+  margin-left: -850px;
+  top: 190px;
+  display: flex;
+  gap: 40px;
+  width: $thumW * 3 + 40px * 2;
+  flex-wrap: wrap;
+  flex-direction: revert-layer;
+
+  .thumb-btn {
+    &:nth-child(4) {
+      margin-left: 85px;
+      margin-left: ceil($thumW/2); //85px;
+    }
+  }
+}
+
+//마녀리스트
+$witchList: (
+  // 썸네일이미지 순서, 폴더명, active 색상
+  //
+  //1. 리츠
+  2 ritsu #009c8b,
+  //2. 쿠로로
+  3 kuroro #fb8347,
+  //3. 쿠로카미 츠쿠요
+  4 kurokami #e9436e,
+  //4. 안지
+  1 angie #575fff,
+  //5. 미아
+  5 mia #fdb969
+);
+
+//마녀
+.witch {
+  height: $witchHeight;
+  width: 100%;
+  color: #fff;
+  word-break: keep-all;
+  @at-root {
+    //애니메이션
+    $initAnit: '.initAni';
+    .witch {
+      &#{$initAnit} {
+        .bg {
+          transform: scale(1);
+          &:before,
+          &:after {
+            opacity: 1;
+          }
+        }
+        .prx {
+          opacity: 1;
+        }
+        .name,
+        .cv,
+        .desc {
+          transition: 600ms all;
+          opacity: 1;
+        }
+        .cv {
+          transition-delay: 100ms;
+        }
+        .desc {
+          transition-delay: 200ms;
+        }
+        .ch {
+          opacity: 1;
+          transition: 1000ms all;
+        }
+        .spec {
+          opacity: 1;
+          transition-delay: 300ms;
+          transition: 600ms all;
+        }
+      }
+      &:not(#{$initAnit}).witch {
+        .bg {
+          transform: scale(1.05);
+        }
+        .bg:before {
+          //삼각형
+          opacity: 0;
+          transform: translateX(-20%);
+        }
+        .bg:after {
+          //꾸밈요소
+          opacity: 0;
+          transform: translateX(-50%);
+        }
+        .ch {
+          opacity: 0;
+          transform: translateX(10%);
+        }
+        .spec {
+          transition-delay: 200ms;
+          opacity: 0;
+          transform: translateX(50%);
+        }
+        .name,
+        .cv,
+        .desc {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+      }
+    }
+  }
+  .title-bx {
+    top: 360px;
+  }
+  .bg {
+    transition: 2000ms transform;
+    background-position: 50% 50%;
+    background-size: 2560px auto;
+    background-repeat: no-repeat;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    width: 2560px;
+    left: 50%;
+    margin-left: (2560px / -2);
+
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      transition: 500ms all;
+    }
+    &:after {
+      transition-delay: 400ms;
+      //꾸밈요소
+      width: 494px;
+      height: 92px;
+      background: url(../images/witch/common-obj.webp) no-repeat;
+      top: 240px;
+      left: 526px;
+      display: block;
+    }
+
+    &:before {
+      transition-delay: 200ms;
+      //삼각형
+      width: 1466px;
+      height: 100%;
+      background-position: 0 0;
+      left: 0;
+      bottom: 0;
+    }
+  }
+  .prx {
+    transition: 500ms all;
+    transition-delay: 200ms;
+    opacity: 0;
+    display: block;
+    position: absolute;
+    // border: 1px solid rgba(yellow, 0.5);
+    left: 392px;
+    top: 116px;
+    background-repeat: no-repeat;
+    width: 1259px;
+    height: 308px;
+    background-position:
+    //1
+      596px 0,
+      //2
+      0 0,
+      //3
+      611px 154px;
+    animation: prxPosition 8s alternate infinite cubic-bezier(0.4, 0, 0.32, 0.59);
+    transform-origin: 80% 20%;
+    @keyframes prxPosition {
+      // 일렁일렁하면서 포지션 변경도 발생하게
+      0%,
+      100% {
+        transform: skewY(0);
+        opacity: 1;
+      }
+      30%,
+      80% {
+        opacity: 0.8;
+      }
+
+      $bigX: 50px;
+      $X: 20px;
+      50% {
+        opacity: 1;
+        transform: skewY(5deg);
+        background-position:
+        //1
+          (596px + $bigX) (0 + $bigX),
+          //2
+          0 0,
+          //3
+          (611px + $X) (154px + $X);
+      }
+      // 100% {
+      // }
+    }
+  }
+  .ch {
+    position: absolute;
+    background-repeat: no-repeat;
+    // width: 600px;
+    // height: 100%;
+    left: 50%;
+    margin-left: 188px;
+    // bottom: -200px;
+    width: 466px;
+    height: 924px;
+    bottom: 0;
+  }
+  .spec {
+    background-repeat: no-repeat;
+    position: absolute;
+    font-size: 0;
+    width: 603px;
+    height: 93px;
+    bottom: 242px;
+    margin-left: 120px;
+    left: 50%;
+    &:before {
+      // border: 1px solid #fff;
+      //gif 자리
+      content: '';
+      width: 100px;
+      aspect-ratio: 1;
+      position: absolute;
+      background-size: 100px;
+      left: 10px;
+      bottom: 7px;
+    }
+  }
+  @each $i, $name, $color in $witchList {
+    &--#{$name} {
+      .bg {
+        background-image: url(../images/witch/bg_#{$name}.webp);
+        &:before {
+          background-image: url(../images/witch/bg-left_#{$name}.webp);
+        }
+        // TODO: 작업중
+        .prx {
+          // &:nth-child(1) {
+          background-image: url(../images/witch/prx_1_#{$name}.webp),
+            // }
+            // &:nth-child(2) {
+            // background-image:
+            url(../images/witch/prx_2_#{$name}.webp),
+            // }
+            // &:nth-child(3) {
+            // background-image:
+            url(../images/witch/prx_3_#{$name}.webp);
+          // }
+        }
+      }
+      .ch {
+        background-image: url(../images/witch/ch_#{$name}.webp);
+      }
+      .spec {
+        background-image: url(../images/witch/spec_#{$name}.webp);
+        &:before {
+          background-image: url(#{$rootUrl}/common/images/witch/dot_#{$name}.gif);
+        }
+      }
+    }
+    @at-root .thumb-btn {
+      &--#{$name} {
+        .spin {
+          box-shadow: //
+            0 0 19px rgba($color, 1),
+            //
+            0 0 10px rgba($color, 0.8),
+            //
+            inset 0 0 13px rgba($color, 0.6);
+        }
+        &:after {
+          background-image: url(#{$rootUrl}/common/images/witch/thumb/#{$name}.webp);
+        }
+      }
+    }
+  }
+}

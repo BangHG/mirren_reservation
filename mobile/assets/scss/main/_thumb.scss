@@ -1,0 +1,69 @@
+﻿.thumb-btn {
+  .spin {
+    position: absolute;
+    z-index: 5;
+    aspect-ratio: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(10deg);
+    opacity: 0;
+    transition: opacity 300ms, transform 500ms;
+    transform-origin: 50% 50%;
+    width: 100%;
+    border: vw(1.5) solid #fff;
+    filter: blur(0.5px);
+  }
+
+  $thumW: 168;
+  transform-origin: 50% 50%;
+  transform: rotate(-45deg);
+  width: vw($thumW);
+  height: vw($thumW);
+  // background: red;
+  background: #000 url(#{$rootUrl}/common/images/thumb-frame.webp) no-repeat;
+  background-size: contain;
+  transition: 300ms background;
+  @at-root .section-stigmata & {
+    transition: 300ms background, 500ms margin-top, 500ms opacity;
+  }
+  &:before,
+  &:after {
+    width: vw($thumW - 10);
+    height: vw($thumW - 10);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    display: block;
+    transition: 300ms opacity;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &:before {
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(#000, 0) 70%, rgba(#000, 0.3) 100%);
+  }
+
+  //TODO: 그림자넣기
+  &:after {
+    opacity: 0.6;
+  }
+  &:hover:not(.active),
+  &.active {
+    &:after {
+      opacity: 1;
+    }
+  }
+  &.active {
+    background-color: #fff;
+    &:before {
+      opacity: 0;
+    }
+    .spin {
+      transform: translate(-50%, -50%) rotate(15deg);
+      opacity: 1;
+    }
+  }
+}

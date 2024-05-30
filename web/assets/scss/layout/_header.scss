@@ -1,0 +1,210 @@
+$header-height: 70px;
+$transition-timing: 300ms;
+
+.header {
+  position: fixed;
+  // position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: transparent;
+  width: 100%;
+  padding: 0 16px; //gap,..
+  max-width: 1920px;
+  min-width: 1280px;
+  margin: 0 auto;
+  &:hover {
+    .header__container {
+      background-color: rgba(#000, 0.95);
+    }
+  }
+  &__container {
+    position: relative;
+    top: 14px;
+    transition: background-color 300ms;
+    width: 100%;
+    height: $header-height;
+    background-color: rgba(#000, 0.7);
+    display: flex;
+    // align-items: center;
+    // justify-content: center;
+    justify-content: flex-start;
+    position: relative;
+  }
+  .logo {
+    flex: 0 0 auto;
+    width: 95px;
+    position: relative;
+    margin-left: 11px;
+    margin-top: 4px;
+    height: $header-height;
+    .logo-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 95px;
+      height: 77px;
+      background: url(../images/inc/logo.png) no-repeat;
+      background-size: contain;
+    }
+  }
+
+  .nav {
+    margin-left: 50px;
+    word-break: keep-all;
+    flex: 1 1 auto;
+    &__bg {
+      display: none;
+      // background-color: rgba(#fff, 0.95);
+      background-color: rgba(#000, 0.7);
+      position: absolute;
+      top: $header-height;
+      // border-top: 1px solid #dedede;
+      width: 100%;
+      left: 0;
+      right: 0;
+    }
+    &-list {
+      &--depth1 {
+        margin: 0 auto;
+        // max-width: 800px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        // justify-content: space-between;
+      }
+      &--depth2 {
+        display: none;
+        // display: block;
+        // padding: 40px 0;
+        padding: 15px 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        text-align: center;
+      }
+    }
+    &-item {
+      .link {
+        cursor: pointer;
+      }
+      &--depth1 {
+        &:hover {
+          > .link:after {
+            opacity: 1;
+            width: 100%;
+          }
+        }
+        position: relative;
+        // padding: 0 54px;
+        > .link {
+          padding: 0 50px;
+          color: #fff;
+          align-items: center;
+          display: flex;
+          height: $header-height;
+          font-size: 20px;
+          font-weight: 500;
+          position: relative;
+          &:after {
+            // content: '';
+            content: '';
+            opacity: 0;
+            transition: 300ms all;
+            display: block;
+            width: 100%;
+            position: absolute;
+            // border-bottom: 4px solid $main-color;
+            // border-bottom: 3px solid $sub-color;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+          }
+        }
+      }
+      &--depth2 {
+        // margin-top: 1.5em;
+        // margin-top: 1.2em;
+        &:nth-child(1) {
+          // margin-top: 0;
+        }
+        .link {
+          // font-family: $font-family;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.3em 0;
+          color: rgba(#fff, 0.8);
+          font-size: 18px;
+          font-weight: 300;
+          transition: none;
+
+          text-shadow: 0 0 0 rgba(#4e6bff, 0);
+          // mix-blend-mode: color-dodge;
+          transition: all 300ms;
+          &:hover,
+          &.active {
+            text-shadow: 0 0 0.5em rgba(lighten(#4e6bff, 10%), 1);
+            color: rgba(#fff, 1);
+            font-weight: 500;
+            // text-decoration: underline;
+          }
+        }
+      }
+    }
+    .i_outlink {
+      display: block;
+      width: 12px;
+      height: 12px;
+      margin-left: 6px;
+      // background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cg%3E%3Cpath fill='white' fill-opacity='0.8' d='M369.78,512H85.33c-22.79,0-44.22-8.88-60.34-24.99S0,449.46,0,426.67V142.22c0-22.79,8.88-44.22,24.99-60.34,16.12-16.12,37.55-24.99,60.34-24.99h113.78c15.71,0,28.44,12.73,28.44,28.44s-12.73,28.44-28.44,28.44h-113.78c-7.6,0-14.74,2.96-20.11,8.33-5.37,5.37-8.33,12.51-8.33,20.11v284.44c0,7.6,2.96,14.74,8.33,20.11,5.37,5.37,12.51,8.33,20.11,8.33h284.44c7.6,0,14.74-2.96,20.11-8.33,5.37-5.37,8.33-12.51,8.33-20.11v-113.78c0-15.71,12.74-28.44,28.45-28.44s28.45,12.73,28.45,28.44v113.78c0,22.79-8.88,44.22-24.99,60.34-16.12,16.12-37.55,24.99-60.34,24.99h0ZM199.11,341.33c-7.28,0-14.56-2.78-20.11-8.33-11.11-11.11-11.11-29.12,0-40.23L414.88,56.89h-101.99c-15.71,0-28.44-12.73-28.44-28.44S297.18,0,312.89,0h170.67c3.93,0,7.68.8,11.09,2.24,3.18,1.35,6.17,3.29,8.78,5.85t0,0s.04.04.06.06c0,0,.01.01.02.02.01.01.03.03.04.04,0,0,.02.02.03.03.01.01.02.02.03.03.02.02.04.04.06.06.02.02.04.04.06.06.01,0,.02.02.03.03.01,0,.02.02.03.03.02.01.03.03.04.04,0,0,.01.01.02.02.02.02.04.04.06.06,0,0,0,0,0,0,2.55,2.62,4.5,5.6,5.85,8.78,1.44,3.41,2.24,7.15,2.24,11.09v170.67c0,15.71-12.74,28.44-28.45,28.44s-28.44-12.73-28.44-28.44v-101.99l-235.89,235.89c-5.55,5.55-12.83,8.33-20.11,8.33h0Z'/%3E%3C/g%3E%3C/svg%3E") no-repeat;
+      background: url(../images/inc/i_out-link.svg) no-repeat;
+      background-size: 12px;
+    }
+  }
+
+  &__util {
+    padding-right: 40px;
+    flex: 0 0 auto;
+    align-self: center;
+    margin-left: auto;
+    .sns-list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+    }
+    .sns-link {
+      display: block;
+      width: 32px;
+      aspect-ratio: 1;
+      background-size: 32px;
+      background-repeat: no-repeat;
+      opacity: 0.8;
+      transition: 300ms all;
+      &:hover {
+        opacity: 1;
+      }
+      &--x {
+        background-image: url(../images/inc/sns_x.png);
+      }
+      &--lounge {
+        background-image: url(../images/inc/sns_lounge.png);
+      }
+      &--youtube {
+        background-image: url(../images/inc/sns_youtube.png);
+      }
+    }
+  }
+
+  .dropdown {
+    &__btn.active,
+    &__drawer {
+      background-color: #000;
+    }
+  }
+}

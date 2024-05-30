@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- #include file="/games/mirren/reservation/web/inc/head.html" -->
+    <script>
+      $rootUrl = '/games/mirren/reservation';
+    </script>
+
+    <link rel="stylesheet" href="assets/css/reservation.min.css" />
+  </head>
+
+  <body class="main-page">
+    <!-- #include file="/games/mirren/reservation/web/inc/header.html" -->
+
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <div class="resolution-wrap">
+          <main class="main" id="contents">
+            <section class="section section-tournament">
+              <h1 style="margin-bottom: 2em">성흔 첫인상 이상형 월드컵 </h1>
+
+              <div class="container">
+                <div class="section-tournament__wrap">
+                  <div id="tournament" class="tournament">
+                    <!-- 이상형월드컵 ajax -->
+                  </div>
+
+                  <div class="tournament__cover" style="background: url(assets/images/main/bg.webp) no-repeat 50% 50%; background-size: cover">
+                    <button onclick="$('.tournament__cover').fadeOut()">이상형 월드컵 시작</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </main>
+
+          <!-- #include file="/games/mirren/reservation/web/inc/footer.html" -->
+        </div>
+      </div>
+    </div>
+
+    <button type="button" title="최상단으로" class="btnTop"></button>
+    <!-- #include file="/games/mirren/reservation/web/inc/popup-common.html" -->
+
+    <script src="/games/mirren/reservation/web/assets/js/reservation.js"></script>
+    <script src="/games/mirren/reservation/common/js/tournament.js"></script>
+    <!-- <script src="/games/mirren/reservation/web/assets/js/animate.min.js"></script> -->
+  </body>
+</html>

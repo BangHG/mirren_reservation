@@ -1,0 +1,201 @@
+﻿$witchHeight: vw(2494); //1146px;
+.section-witch {
+  z-index: 3;
+  // mask: url(../images/witch/section-mask.svg) no-repeat;
+  $top: vw(45);
+  $bot: vw(13);
+  mask: url(../images/witch/mask.svg) no-repeat;
+  mask-size: 100vw $witchHeight;
+  margin-top: -$top;
+  margin-bottom: -$bot;
+  position: relative;
+  .section-title {
+    top: vw(125);
+  }
+}
+
+// 썸네일
+.swiper-thumb {
+  width: 100%;
+  z-index: 2;
+  position: absolute;
+  top: vw(480);
+  $thumW: vw(168);
+  .swiper-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: vw(12);
+  }
+  .swiper-slide {
+    width: $thumW !important;
+    height: $thumW !important;
+    top: vw(-30);
+    &:nth-child(2n) {
+      margin-top: vw(140);
+    }
+  }
+}
+
+//마녀리스트
+$witchList: (
+  // 썸네일이미지 순서, 폴더명, active 색상
+  //
+  //1. 리츠
+  2 ritsu #009c8b,
+  //2. 쿠로로
+  3 kuroro #fb8347,
+  //3. 쿠로카미 츠쿠요
+  4 kurokami #e9436e,
+  //4. 안지
+  1 angie #575fff,
+  //5. 미아
+  5 mia #fdb969
+);
+
+//마녀
+.witch {
+  height: $witchHeight;
+  width: 100%;
+  color: #fff;
+  word-break: keep-all;
+  @at-root {
+    //애니메이션
+    $initAnit: '.initAni';
+    .witch {
+      &#{$initAnit} {
+        .bg {
+          transform: scale(1);
+        }
+        .name,
+        .cv,
+        .desc {
+          transition: 600ms all;
+          opacity: 1;
+        }
+        .cv {
+          transition-delay: 100ms;
+        }
+        .desc {
+          transition-delay: 200ms;
+        }
+        .ch {
+          opacity: 1;
+          transition: 1000ms all;
+        }
+        .spec {
+          opacity: 1;
+          transition: 600ms all;
+          transition-delay: 300ms;
+        }
+      }
+      &:not(#{$initAnit}).witch {
+        .bg {
+          transform: scale(1.05);
+        }
+
+        .ch {
+          opacity: 0;
+          transform: translateX(10%);
+        }
+        .spec {
+          transition-delay: 200ms;
+          opacity: 0;
+          transform: translateX(50%);
+        }
+        .name,
+        .cv,
+        .desc {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+      }
+    }
+  }
+  .title-bx {
+    top: vw(850);
+    .desc {
+      width: 100%;
+      position: absolute;
+      text-align: center;
+      top: vw(870);
+      width: calc(100% - vw(54 * 2));
+    }
+    .cv {
+      position: absolute;
+      top: vw(433);
+    }
+  }
+  .bg {
+    transition: 2000ms transform;
+    background-position: 50% 50%;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    left: 0;
+  }
+  .ch {
+    position: absolute;
+    background-repeat: no-repeat;
+    left: vw(511);
+    width: vw(672);
+    height: vw(1632);
+    bottom: vw(44);
+    background-size: contain;
+  }
+  .spec {
+    background-repeat: no-repeat;
+    position: absolute;
+    font-size: 0;
+    width: vw(1077);
+    aspect-ratio: (1066/175);
+    background-size: contain;
+    top: vw(1500);
+    left: 0;
+    &:before {
+      content: '';
+      width: vw(180);
+      aspect-ratio: 1;
+      position: absolute;
+      background-size: contain;
+      left: vw(40);
+      bottom: vw(20);
+    }
+  }
+  @each $i, $name, $color in $witchList {
+    &--#{$name} {
+      .bg {
+        background-image: url(../images/witch/bg_#{$name}.webp);
+        &:before {
+          background-image: url(../images/witch/bg-left_#{$name}.webp);
+        }
+      }
+      .ch {
+        background-image: url(../images/witch/ch_#{$name}.webp);
+      }
+      .spec {
+        background-image: url(../images/witch/spec_#{$name}.webp);
+        &:before {
+          background-image: url(#{$rootUrl}/common/images/witch/dot_#{$name}.gif);
+        }
+      }
+    }
+    @at-root .section-witch .thumb-btn {
+      &--#{$name} {
+        .spin {
+          box-shadow: //
+            0 0 vw(19) rgba($color, 1),
+            //
+            0 0 vw(10) rgba($color, 0.8),
+            //
+            inset 0 0 vw(13) rgba($color, 0.6);
+        }
+        &:after {
+          background-image: url(#{$rootUrl}/common/images/witch/thumb/#{$name}.webp);
+        }
+      }
+    }
+  }
+}

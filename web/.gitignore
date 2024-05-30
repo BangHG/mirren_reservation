@@ -1,0 +1,6 @@
+﻿.자료
+.vscode
+*.bak.*
+bak
+template
+node_modules

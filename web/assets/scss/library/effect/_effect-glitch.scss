@@ -1,0 +1,66 @@
+﻿// html 구조 : div.glitch>span.glitch__text[data-text="텍스트"]{텍스트}
+
+.glitch {
+  color: #fff;
+  position: relative;
+  line-height: 1;
+  display: inline-block;
+  font-weight: 500;
+  font-family: $font-family-main;
+  //
+  &__text {
+    position: relative;
+    z-index: 3;
+  }
+
+  &:before,
+  &:after {
+    content: attr(data-text);
+    mix-blend-mode: hard-light;
+    position: absolute;
+    letter-spacing: inherit;
+    top: 0;
+    font: inherit;
+    animation: glitch 2s infinite linear alternate-reverse;
+  }
+  &:before {
+    z-index: 1;
+    left: -3px;
+    color: $glitch-before;
+  }
+  &:after {
+    animation-delay: 50ms;
+    z-index: 2;
+    right: -3px;
+    color: $glitch-after;
+  }
+}
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  5% {
+    transform: translateX(-2px);
+    transform: translateX(-0.03em);
+  }
+  5.01% {
+    transform: translateX(0px);
+  }
+  7.99% {
+    transform: translateX(0px);
+  }
+  8% {
+    transform: translateX(-2px);
+    transform: translateX(-0.03em);
+  }
+  8.01% {
+    transform: translateX(0px);
+  }
+  9.99% {
+    transform: translateX(0px);
+  }
+  10%,
+  100% {
+    transform: translate(0);
+  }
+}

@@ -1,0 +1,6 @@
+﻿//IOS 사파리에서 css 상 100vh로 설정한 요소가 브라우저 주소창의 노출여부에 따라 다르게 표현되는 에러 fix.
+// javascript로 innerHeight 값을 구해 root 가상클래스로 사용
+@mixin vh100 {
+  height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+}

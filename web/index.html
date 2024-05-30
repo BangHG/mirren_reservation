@@ -1,0 +1,411 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- #include file="/games/mirren/reservation/web/inc/head.html" -->
+    <script>
+      $rootUrl = '/games/mirren/reservation';
+    </script>
+  </head>
+
+  <body class="main-page">
+    <audio controls id="cv_audio" class="sr-only">
+      <source src="/games/mirren/reservation/common/audio/ritsu_ja.wav" type="audio/wav" />
+    </audio>
+    <!-- #include file="/games/mirren/reservation/web/inc/header.html" -->
+
+    <section class="loading">
+      <div class="container">
+        <div class="loading__logo">
+          <span class="circle circle--outer"></span>
+          <span class="circle circle--inner"></span>
+          <span class="logo"></span>
+        </div>
+        <div class="loading__badge">
+          <span class="badge badge--1"></span>
+          <span class="badge badge--2"></span>
+          <span class="badge badge--3"></span>
+          <span class="badge badge--4"></span>
+          <span class="badge badge--5"></span>
+        </div>
+      </div>
+    </section>
+
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <div class="resolution-wrap">
+          <main class="main" id="contents">
+            <section class="section section-main">
+              <div class="bg">
+                <video loop muted playsinline poster="/games/mirren/reservation/web/assets/images/main/bg.webp">
+                  <source src="/games/mirren/reservation/web/assets/images/main/bg.mp4" type="video/mp4" />
+                  <!-- <source src="/games/mirren/reservation/web/assets/images/main/bg.webm" type="video/webm" /> -->
+                </video>
+                <span class="bg__petal">
+                  <!-- S: 240514 수정 -->
+                  <i class="p p-1"><i></i></i> <i class="p p-2"><i></i></i> <i class="p p-3"><i></i></i> <i class="p p-4"><i></i></i> <i class="p p-5"><i></i></i> <i class="p p-6"><i></i></i> <i class="p p-7"><i></i></i> <i class="p p-8"><i></i></i>
+                  <!-- E: 240514 수정 -->
+                </span>
+              </div>
+
+              <div class="bi"></div>
+
+              <button class="scrollDown" type="button">
+                <span class="sr-only"> scroll down </span>
+              </button>
+            </section>
+
+            <section class="section section-witch" id="section-witch">
+              <div class="i_star_wrap"> <i class="i_star"></i> <i class="i_star"></i> <i class="i_star i_star--w"></i> <i class="i_star"></i> </div>
+              <h2 class="section-title">
+                <span class="section-title__img" data-aos="fade-up" data-aos-duration="1000"></span>
+                <span class="sr-only">마녀</span>
+              </h2>
+
+              <div class="swiper">
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide witch witch--ritsu">
+                      <div class="bg"> <i class="prx"></i> </div>
+                      <div class="ch"> </div>
+                      <div class="spec"> <p>생일: 11/19</p> <p>키: 163cm</p> <p>체중: 47kg</p> <p>좋아하는것: 맛있는 음식 </p> <p>싫어하는것: 방향 찾기</p> </div>
+                      <div class="title-bx">
+                        <p class="name">리츠</p>
+                        <dl class="cv">
+                          <dt>CV</dt>
+                          <dd>
+                            <img src="/games/mirren/reservation/common/audio/ritsu_ja.png" alt="유카나" />
+                            <button class="cv-btn" data-audio="ritsu_ja"></button>
+                          </dd>
+                        </dl>
+                        <p class="desc"> 활발하고 호기심이 강하다. <br />매우 예리한 직관과 후각을 가지고 있는 것이 특징이다.<br />겉으로는 털털해보이지만 실수를 하게되면 <br />의기소침해지니 수시로 격려를 해주어야 한다. </p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide witch witch--kuroro">
+                      <div class="bg"> <i class="prx"></i> </div>
+                      <div class="ch"> </div>
+                      <div class="spec"> <p>생일: 5/5</p> <p>키: 137cm</p> <p>체중: 35kg</p> <p>좋아하는것: 달달한 것 </p> <p>싫어하는것: 술</p> </div>
+                      <div class="title-bx">
+                        <p class="name">쿠로로</p>
+                        <dl class="cv">
+                          <dt>CV</dt>
+                          <dd>
+                            <img src="/games/mirren/reservation/common/audio/kuroro_ja.png" alt="나가나와 마리아" />
+                            <button class="cv-btn" data-audio="kuroro_ja"></button>
+                          </dd>
+                        </dl>
+                        <p class="desc">
+                          수수께끼 같은 정체를 가지고 있는<br />
+                          영리하면서도 허당미를 가득 가지고 있는 <br />귀염둥이 마녀. <br />복슬복슬한 여우 꼬리가 특징이다.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide witch witch--kurokami">
+                      <div class="bg"> <i class="prx"></i> </div>
+                      <div class="ch"> </div>
+                      <div class="spec"> <p>생일: 6/29</p> <p>키: 167cm</p> <p>체중: 50kg</p> <p>좋아하는것: 털이 복슬복슬한 것 </p> <p>싫어하는것: 청소하기</p> </div>
+                      <div class="title-bx">
+                        <p class="name">쿠로카미 츠쿠요</p>
+                        <dl class="cv">
+                          <dt>CV</dt>
+                          <dd>
+                            <img src="/games/mirren/reservation/common/audio/kurokami_ja.png" alt="세토 아사미" />
+                            <button class="cv-btn" data-audio="kurokami_ja"></button>
+                          </dd>
+                        </dl>
+                        <p class="desc">
+                          상원 쿠로카미 가문의 후계자.<br />
+                          늘 자신에게 엄격하고 모든 마녀들의 <br />본보기가 되는 믿음직한 선배같다.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide witch witch--angie">
+                      <div class="bg"> <i class="prx"></i> </div>
+                      <div class="ch"> </div>
+                      <div class="spec"> <p>생일: 12/25</p> <p>키: 159cm</p> <p>체중: 44kg</p> <p>좋아하는것: 책 </p> <p>싫어하는것: 대화</p> </div>
+                      <div class="title-bx">
+                        <p class="name">안지</p>
+                        <dl class="cv">
+                          <dt>CV</dt>
+                          <dd>
+                            <img src="/games/mirren/reservation/common/audio/angie_ja.png" alt="노토 마미코" />
+                            <button class="cv-btn" data-audio="angie_ja"></button>
+                          </dd>
+                        </dl>
+                        <p class="desc">
+                          감정을 잘 드러내지 않는 우등생.<br />
+                          차분하고 진중하며 말수가 적다. <br />계획하는 것을 좋아하고 실행 능력이 뛰어난<br />
+                          전형적인 J 스타일. 예리한 통찰력을 가져 <br />종종 다른 마녀들이 조언을 구하기도 한다.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide witch witch--mia">
+                      <div class="bg"> <i class="prx"></i> </div>
+                      <div class="ch"> </div>
+                      <div class="spec"> <p>생일: 4/17</p> <p>키: 165cm</p> <p>체중: 53kg</p> <p>좋아하는것: 우정, 돈 </p> <p>싫어하는것: 외로움</p> </div>
+                      <div class="title-bx">
+                        <p class="name">미아</p>
+                        <dl class="cv">
+                          <dt>CV</dt>
+                          <dd>
+                            <img src="/games/mirren/reservation/common/audio/mia_ja.png" alt="이구치 유카" />
+                            <button class="cv-btn" data-audio="mia_ja"></button>
+                          </dd>
+                        </dl>
+                        <p class="desc">
+                          활발하고 명랑하며 다른 사람의 부탁을 <br />잘 거절하지 못하는 성격을 가지고 있다.<br />
+                          행동할 때도 가능한 한 모든 사람의 감정을 고려하지만 <br />가끔 시꺼먼 속을 드러낼 때도 있다.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- S: thumb -->
+              <!-- S: 240517 수정 -->
+              <div class="witch-tab">
+                <button class="thumb-btn thumb-btn--ritsu active" data-witch="ritsu" title=" 리츠">
+                  <span class="spin"></span>
+                </button>
+                <button class="thumb-btn thumb-btn--kuroro" data-witch="kuroro" title="쿠로로">
+                  <span class="spin"></span>
+                </button>
+                <button class="thumb-btn thumb-btn--kurokami" data-witch="kurokami" title="쿠로카미 츠쿠요">
+                  <span class="spin"></span>
+                </button>
+                <button class="thumb-btn thumb-btn--angie" data-witch="angie" title=" 안지">
+                  <span class="spin"></span>
+                </button>
+                <button class="thumb-btn thumb-btn--mia" data-witch="mia" title="미아">
+                  <span class="spin"></span>
+                </button>
+              </div>
+              <!-- E: 240517 수정 -->
+              <!-- E: thumb -->
+            </section>
+
+            <section class="section section-stigmata" id="section-stigmata">
+              <div class="i_star_wrap"> <i class="i_star"></i> <i class="i_star"></i> <i class="i_star"></i> </div>
+
+              <i class="cft-wrap"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></i>
+
+              <h2 class="section-title">
+                <span class="section-title__img" data-aos="fade-up" data-aos-duration="1000"></span>
+                <span class="sr-only">성흔 </span>
+              </h2>
+
+              <div class="sub-title">
+                <img src="/games/mirren/reservation/web/assets/images/stigmata/sub-title.webp" alt="마녀 리리아가 만든 시스템 " data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" />
+                <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150"
+                  >마녀는 각 3명의 성흔을 소환할 수 있다.
+                  <!--  240520 수정 --></p
+                >
+              </div>
+
+              <!-- S: 성흔 탭 -->
+              <div class="tab" id="stigmata-tab">
+                <ul class="tab-list" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                  <li><a data-hash="tabContent1" data-moveTo="11" class="tab-link active"> 천사 </a></li>
+                  <li><a data-hash="tabContent5" data-moveTo="51" class="tab-link"> 엘프 </a></li>
+                  <li><a data-hash="tabContent2" data-moveTo="21" class="tab-link"> 인간 </a></li>
+                  <li><a data-hash="tabContent3" data-moveTo="31" class="tab-link"> 반수 </a></li>
+                  <li><a data-hash="tabContent4" data-moveTo="41" class="tab-link"> 악마 </a></li>
+                  <li><a data-hash="tabContent6" data-moveTo="61" class="tab-link"> 드래곤 </a></li>
+                </ul>
+
+                <div class="tab-content active" id="tabContent1">
+                  <div class="stigmata-group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"> <!-- json --> </div>
+                </div>
+                <div class="tab-content" id="tabContent2">
+                  <div class="stigmata-group"> <!-- json --> </div>
+                </div>
+                <div class="tab-content" id="tabContent3">
+                  <div class="stigmata-group"> <!-- json --> </div>
+                </div>
+                <div class="tab-content" id="tabContent4">
+                  <div class="stigmata-group"> <!-- json --> </div>
+                </div>
+                <div class="tab-content" id="tabContent5">
+                  <div class="stigmata-group"> <!-- json --> </div>
+                </div>
+                <div class="tab-content" id="tabContent6">
+                  <div class="stigmata-group"> <!-- json --> </div>
+                </div>
+              </div>
+              <!-- E: 성흔 탭 -->
+
+              <div class="swiper">
+                <div class="swiper-container">
+                  <div class="swiper-wrapper" id="stigmataList">
+                    <!-- json -->
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="sectionsWrapper">
+              <section class="section section-universe" id="section-universe">
+                <i class="bg bg--clock"></i>
+                <i class="bg bg--feather-1"></i>
+                <i class="bg bg--feather-2"></i>
+
+                <h2 class="section-title">
+                  <span class="section-title__img" data-aos="fade-up" data-aos-duration="1000"></span>
+                  <span class="sr-only">세계관 </span>
+                </h2>
+
+                <div class="txt-bx">
+                  <p class="txt"><span class="sr-only">신 ‘제시스’가 강력한 힘을 얻기 위해 창조한 세계 ‘뮈렌’</span></p>
+                  <p class="txt"><span class="sr-only">뮈렌은 수 많은 종족과 문명이 탄생해가지만, 끊임없는 문명의 변화와 함께 대혼란이 찾아온다…</span></p>
+                  <p class="txt"><span class="sr-only">12만 년이나 지속된 대혼란은 마녀 ‘리리아’의 등장으로 평화를 맞이하게 된다.</span></p>
+                  <p class="txt"><span class="sr-only">리리아의 보살핌 속에서 천년동안 욕망도 분쟁도 없는 평화로운 시대가 계속되지만,</span></p>
+                  <p class="txt"><span class="sr-only">어느날 갑자기 리리아가 사라지게 된다…!</span></p>
+                </div>
+
+                <div class="img-bx img-bx--l"> </div>
+                <div class="img-bx img-bx--r"> <span class="line line--1"></span><span class="line line--2"></span><span class="line line--3"></span><span class="line line--4"></span><span class="line line--5"></span> <span class="hand hand--1"></span><span class="hand hand--2"></span> </div>
+              </section>
+
+              <section class="section section-world" id="section-world">
+                <div class="i_star_wrap"> <i class="i_star"></i> <i class="i_star"></i> <i class="i_star i_star--w"></i> <i class="i_star i_star--w"></i> <i class="i_star i_star--w"></i> <i class="i_star i_star--w"></i> </div>
+
+                <h2 class="section-title">
+                  <span class="section-title__img" data-aos="fade-up" data-aos-duration="1000"></span>
+                  <span class="sr-only">대륙 </span>
+                </h2>
+
+                <div class="swiper-container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-offset="400">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide world-item world-item--1">
+                      <p class="name"><span class="sr-only">시리온</span></p>
+                      <p class="desc">
+                        뮈렌의 메인 대륙으로 문명의 탄생지이자 <br />
+                        다양한 종족이 모여 사는 곳이다.
+                      </p>
+                      <div class="map"> </div>
+                    </div>
+                    <div class="swiper-slide world-item world-item--2">
+                      <p class="name"><span class="sr-only"> 알프 </span></p>
+                      <p class="desc">
+                        엘프의 대륙. 과거, 전쟁에서 패한 엘프들이 이주하여 정착한 대륙이다.<br />
+                        알프는 아열대 기후로 비가 많이 오고 따뜻한 것이 특징이다.
+                      </p>
+                      <div class="map"> </div>
+                    </div>
+                    <div class="swiper-slide world-item world-item--3">
+                      <p class="name"><span class="sr-only"> 엘그론 </span></p>
+                      <p class="desc">
+                        시리온 대륙이 두개로 나눠지면서 생긴 대륙이다. <br />
+                        천연광물이 풍부하고 반수인들이 주로 살고 있는 곳이다.
+                      </p>
+                      <div class="map"> </div>
+                    </div>
+                    <div class="swiper-slide world-item world-item--4">
+                      <p class="name"><span class="sr-only"> 시누 </span></p>
+                      <p class="desc">
+                        시리온 대륙의 남서쪽에 위치한 작은 섬들로 이루어진 곳이다. <br />
+                        덥고 습하고 비가 자주 내리며 인간 종족 중 노헤르인이 이주하여 사는 곳이다.
+                      </p>
+                      <div class="map"> </div>
+                    </div>
+                    <div class="swiper-slide world-item world-item--5">
+                      <p class="name"><span class="sr-only"> 폰티 </span></p>
+                      <p class="desc">
+                        동방의 해가 뜨는 땅. 힐베야 제국에서 유배된 종족이 세운 나라로<br />
+                        리리아의 고향이기도 하다.
+                      </p>
+                      <div class="map"> </div>
+                    </div>
+                  </div>
+                  <div class="swiper-button swiper-button--prev"></div>
+                  <div class="swiper-button swiper-button--next"></div>
+                </div>
+              </section>
+
+              <section class="section section-media" id="section-media">
+                <div class="i_star_wrap"> <i class="i_star"></i> <i class="i_star"></i> </div>
+                <div class="bg-clock_wrap">
+                  <i class="bg-clock bg-clock--inner"></i>
+                  <i class="bg-clock bg-clock--outer"></i>
+                </div>
+
+                <h2 class="section-title">
+                  <span class="section-title__img" data-aos="fade-up" data-aos-duration="1000"></span>
+                  <span class="sr-only">미디어 </span>
+                </h2>
+
+                <div class="tab" id="media-tab" data-aos="fade-up" data-aos-duration="1000">
+                  <ul class="tab-list">
+                    <li><a data-hash="media--1" class="tab-link active"> 영상 </a></li>
+                    <li><a data-hash="media--2" class="tab-link"> 일러스트 </a></li>
+                  </ul>
+
+                  <div class="tab-content active" id="media--1" style="display: block">
+                    <div class="mediaSwiper mediaSwiper--video">
+                      <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide media-item">
+                            <div class="img-bx"><img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_1.webp" alt="" /></div>
+                            <!-- S: 240514 수정 -->
+                            <button data-content="https://www.youtube.com/embed/sdXeCi0uDaE?autoplay=1&loop=1&playlist=sdXeCi0uDaE" class="play-btn popup-link--video"></button>
+                            <!-- E: 240514 수정 -->
+                          </div>
+                        </div>
+                        <div class="swiper-button swiper-button--prev"></div>
+                        <div class="swiper-button swiper-button--next"></div>
+                        <div class="swiper-pagination"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-content" id="media--2">
+                    <div class="mediaSwiper mediaSwiper--picture">
+                      <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide media-item">
+                            <div class="img-bx">
+                              <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_2.webp" alt="" />
+                            </div>
+                          </div>
+                          <div class="swiper-slide media-item">
+                            <div class="img-bx">
+                              <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_3.webp" alt="" />
+                            </div>
+                          </div>
+                          <div class="swiper-slide media-item">
+                            <div class="img-bx">
+                              <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_4.webp" alt="" />
+                            </div>
+                          </div>
+                          <div class="swiper-slide media-item">
+                            <div class="img-bx">
+                              <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_5.webp" alt="" />
+                            </div>
+                          </div>
+                          <div class="swiper-slide media-item">
+                            <div class="img-bx">
+                              <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_6.webp" alt="" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-button swiper-button--prev"></div>
+                        <div class="swiper-button swiper-button--next"></div>
+                        <div class="swiper-pagination"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </section>
+          </main>
+
+          <!-- #include file="/games/mirren/reservation/web/inc/footer.html" -->
+        </div>
+      </div>
+    </div>
+
+    <button type="button" title="최상단으로" class="btnTop"></button>
+    <!-- #include file="/games/mirren/reservation/web/inc/popup-common.html" -->
+
+    <script src="/games/mirren/reservation/web/assets/js/common.min.js"></script>
+    <script src="/games/mirren/reservation/web/assets/js/animate.min.js"></script>
+  </body>
+</html>

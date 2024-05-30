@@ -1,0 +1,125 @@
+﻿//
+.section-universe {
+  z-index: 2;
+  background: url(../images/universe/bg.webp) no-repeat 50% 100%;
+  background-size: cover;
+  height: vw(2478);
+  padding-top: vw(505); //320px;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+  .section-title {
+    top: vw(180);
+  }
+  .txt-bx {
+    z-index: 2;
+    position: relative;
+    .txt {
+      // img {
+      //   width: vw(827);
+      //   margin: 0 auto;
+      // }
+      // margin-top: vw(80);
+      // &:nth-child(1) {
+      //   margin-top: 0;
+      // }
+    }
+    .txt {
+      background: url(../images/universe/txt.webp) no-repeat;
+      // margin-top: 30px;
+      background-size: vw(827);
+      width: vw(827);
+      margin: 0 auto;
+      &:nth-child(1) {
+        height: vw(260);
+        background-position-y: 0;
+      }
+      &:nth-child(2) {
+        height: vw(240);
+        background-position-y: vw(-260);
+      }
+      &:nth-child(3) {
+        height: vw(245);
+        background-position-y: vw(-500);
+      }
+      &:nth-child(4) {
+        height: vw(84);
+        background-position-y: vw(-745);
+      }
+    }
+  }
+
+  //배경요소 ( 시계, 깃털)
+  .bg {
+    position: absolute;
+    background-size: contain;
+    background-size: contain;
+    background-position: 0 0;
+    &--clock {
+      width: vw(300);
+      height: vw(427);
+      background-image: url(../images/universe/clock.webp);
+      left: 0;
+      top: 0;
+    }
+    &--feather-1 {
+      width: vw(252);
+      height: vw(99);
+      left: vw(72);
+      top: vw(93);
+      background-image: url(../images/universe/feather1.webp);
+    }
+    &--feather-2 {
+      width: vw(78);
+      height: vw(28);
+      background-image: url(../images/universe/feather2.webp);
+      right: vw(146);
+      top: vw(188);
+    }
+  }
+}
+
+.section-universe {
+  .img-bx--l,
+  .img-bx--r {
+    position: absolute;
+    top: vw(1195);
+    width: 100%;
+    height: vw(1102);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: contain;
+  }
+  // 좌측 이미지 (제시스)
+  .img-bx--l {
+    background-image: url(../images/universe/img-l.webp);
+  }
+  // 우측 이미지 (리리아)
+  .img-bx--r {
+    overflow: visible;
+    background-image: url(../images/universe/img-r.webp);
+    .hand {
+      position: absolute;
+      z-index: -1;
+      background-repeat: no-repeat;
+      background-size: contain;
+      $left: 350px;
+      &--1 {
+        background-image: url(../images/universe/hand1.webp);
+        width: vw(459);
+        height: vw(442);
+        transform-origin: 100% 100%;
+        left: vw(440);
+        top: vw(113);
+      }
+      &--2 {
+        background-image: url(../images/universe/hand2.webp);
+        width: vw(359);
+        height: vw(325);
+        transform-origin: 100% 0;
+        left: vw(163);
+        top: vw(911);
+      }
+    }
+  }
+}

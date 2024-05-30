@@ -1,0 +1,35 @@
+﻿@function remove-unit($value) {
+  @return ($value / ($value * 0 + 1));
+}
+
+@function em($val, $std: 16) {
+  @return ($val/$std) * 1em;
+}
+
+//2023-08-16 : css 기본함수에 rem()을 지원하는 업데이트 이후 css-rem으로 함수명 변경
+@function css-rem($val, $std: 16) {
+  @return ($val/$std) * 1rem;
+}
+
+$mediaPSD-function: remove-unit($mediaPSD);
+// @function vw($val, $std: $mediaPSD-function) {
+//   @return ($val / ($std / 100)) * 1vw;
+// }
+
+@function truncate-decimal($number, $digits: 3) {
+  $multiplier: pow(10, $digits);
+  @return round($number * $multiplier) / $multiplier;
+}
+
+@function vw($val, $std: $mediaPSD-function) {
+  $result: ($val / ($std / 100)) * 1vw;
+  @return truncate-decimal($result, 3);
+  // @return $result;
+}
+
+//61.6kb -> 60.1kb
+
+// a:before {
+//   content: $mediaResponsiveSize-function;
+//   font-size: vw(500);
+// }

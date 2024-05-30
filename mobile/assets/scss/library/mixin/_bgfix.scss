@@ -1,0 +1,31 @@
+﻿// - IOS에서 배경고정효과 [background-attachment: fixed] 는 지원하지 않음.
+//  가로세로 1:2.44 (갤럭시플립 기준) 비율 이상의 배경 이미지가 필요하고 가상요소로 배경에 띄우는 작업필요.
+@mixin bgfix($src, $src-m) {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  @include lg {
+    background-image: url($src);
+    background-attachment: fixed;
+  }
+  @include lg-max {
+    background-image: url($src-m);
+    &:before {
+      //ios fallback
+      z-index: -1;
+      content: '';
+      @include vh100;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: inherit;
+      background-size: cover;
+    }
+  }
+}

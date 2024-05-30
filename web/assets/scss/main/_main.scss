@@ -1,0 +1,275 @@
+﻿.section-main {
+  // z-index: 100;
+  overflow: hidden;
+  position: relative;
+  overflow-x: hidden;
+  // height: 1080px;
+  // aspect-ratio: (1920/1080);
+  // min-height: 100vh;
+  height: 1080px;
+  display: block;
+  width: 100%;
+  // &:before {
+  //   content: '';
+  //   width: 100%;
+  //   min-width: 2560px;
+  //   height: 100%;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   background: inherit;
+  // }
+  .bg {
+    top: 0;
+    left: 50%;
+    margin-left: (2560px/-2);
+    position: absolute;
+    width: 2560px;
+    height: 1080px; //100%;
+    // width: 100%;
+    background: url(../images/main/bg.webp) no-repeat 50% 50%;
+    // background: url(../images/main/bak/bg.webp) no-repeat 50% -70px;
+    background-size: cover; //2560px auto;
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 1; //FIXME:
+    }
+  }
+
+  .bi {
+    z-index: 6;
+    background: url(../images/main/bi.webp) no-repeat 50% 50%;
+    width: 312px;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 42px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .scrollDown {
+    $w: 125px;
+    width: $w;
+    height: 86px;
+    background: url(../images/main/scrolldown.webp) no-repeat;
+    position: absolute;
+    // top: 50%;
+    left: 50%;
+    margin-left: ceil($w/-2);
+    // transform: translate(-50%, -50%);
+
+    z-index: 2;
+    transition: 500ms opacity;
+    // z-index: 2;
+    // top: 50%;
+    // margin-top: 320px;
+    bottom: 180px;
+  }
+
+  .bg__petal {
+    position: absolute;
+    top: -70px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .p {
+      transform: translateY(-100%);
+      position: absolute;
+      // top: 0;
+      // left: 0;
+      z-index: 5;
+      animation: petalDrop infinite ease-in;
+      // animation-duration: 10s !important;
+
+      i {
+        // border: 1px solid yellow;
+        color: #fff;
+        display: block;
+        background: url(../images/main/petal.webp) no-repeat;
+        animation: petal infinite alternate linear;
+        // animation: inherit;
+        // animation-name: petal;
+        position: relative;
+        transform-origin: 50% 100%;
+      }
+    }
+    @keyframes petalDrop {
+      0% {
+        transform: translateY(-100%);
+        top: 0;
+      }
+      100% {
+        top: 100%;
+        transform: translateY(100%);
+      }
+    }
+    @keyframes petal {
+      from {
+        transform: translateX(20%) rotate(-20deg);
+      }
+      to {
+        transform: skewY(7deg) translateX(-20%) rotate(20deg);
+      }
+    }
+    // @keyframes petal {
+    //   from {
+    //     transform: skewY(-7deg) translateX(0) rotate(0);
+    //   }
+    //   to {
+    //     transform: skewY(7deg) translateX(-10%) rotate(10deg);
+    //   }
+    // }
+
+    @for $i from 1 through 8 {
+      // .p-#{$i} {
+      //   animation-delay: random(10) * -5 + s;
+      //   animation-duration: random(8) * 5 + 10s;
+      // i {
+      //   animation-duration: random(5) * 100ms + 2s;
+      //   animation-delay: random(10) * -50 + ms;
+      // }
+      // }
+    }
+
+    @at-root {
+      .section-main .bg__petal .p-1 {
+        animation-delay: -45s;
+        animation-duration: 25s;
+      }
+
+      .section-main .bg__petal .p-2 {
+        animation-delay: -50s;
+        animation-duration: 27s;
+      }
+
+      .section-main .bg__petal .p-3 {
+        animation-delay: -25s;
+        animation-duration: 29s;
+      }
+
+      .section-main .bg__petal .p-4 {
+        animation-delay: -5s;
+        animation-duration: 27s;
+      }
+
+      .section-main .bg__petal .p-5 {
+        animation-delay: -35s;
+        animation-duration: 35s;
+      }
+
+      .section-main .bg__petal .p-6 {
+        animation-delay: -25s;
+        animation-duration: 30s;
+      }
+
+      .section-main .bg__petal .p-7 {
+        animation-delay: -40s;
+        animation-duration: 33s;
+      }
+
+      .section-main .bg__petal .p-8 {
+        animation-delay: -50s;
+        animation-duration: 31s;
+      }
+      .section-main .bg__petal .p-1 i {
+        animation-delay: -450ms;
+        animation-duration: 2500ms;
+      }
+      .section-main .bg__petal .p-2 i {
+        animation-delay: -200ms;
+        animation-duration: 2500ms;
+      }
+      .section-main .bg__petal .p-3 i {
+        animation-delay: -400ms;
+        animation-duration: 2400ms;
+      }
+      .section-main .bg__petal .p-4 i {
+        animation-delay: -50ms;
+        animation-duration: 2400ms;
+      }
+      .section-main .bg__petal .p-5 i {
+        animation-delay: -200ms;
+        animation-duration: 2300ms;
+      }
+      .section-main .bg__petal .p-6 i {
+        animation-delay: -250ms;
+        animation-duration: 2500ms;
+      }
+      .section-main .bg__petal .p-7 i {
+        animation-delay: -500ms;
+        animation-duration: 2400ms;
+      }
+      .section-main .bg__petal .p-8 i {
+        animation-delay: -150ms;
+        animation-duration: 2200ms;
+      }
+    }
+
+    .p-1 {
+      left: 260px;
+      top: 539px;
+      i {
+        @include spr(-5px, -5px, 282px, 260px);
+      }
+    }
+
+    .p-2 {
+      left: 1063px;
+      top: 815px;
+      i {
+        @include spr(-5px, -275px, 189px, 112px);
+      }
+    }
+
+    .p-3 {
+      left: 2138px;
+      top: 650px;
+      i {
+        @include spr(-5px, -397px, 101px, 70px);
+      }
+    }
+
+    .p-4 {
+      left: 1399px;
+      top: 156px;
+      i {
+        @include spr(-5px, -477px, 65px, 59px);
+      }
+    }
+
+    .p-5 {
+      left: 1595px;
+      top: 784px;
+      i {
+        @include spr(-5px, -546px, 81px, 57px);
+      }
+    }
+
+    .p-6 {
+      left: 1490px;
+      top: 814px;
+      i {
+        @include spr(-5px, -613px, 69px, 47px);
+      }
+    }
+
+    .p-7 {
+      left: 2087px;
+      top: 379px;
+      i {
+        @include spr(-5px, -670px, 28px, 26px);
+      }
+    }
+
+    .p-8 {
+      left: 1522px;
+      top: 168px;
+      i {
+        @include spr(-5px, -706px, 16px, 12px);
+      }
+    }
+  }
+}

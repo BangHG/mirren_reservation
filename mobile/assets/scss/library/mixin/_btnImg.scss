@@ -1,0 +1,18 @@
+﻿// 마우스오버 버튼
+@mixin btnImg($w, $h, $file) {
+  position: absolute;
+  left: 50%;
+  margin-left: ($w / -2);
+  width: $w;
+  height: ($h / 2);
+  background-image: url($file);
+  background-position-y: 0;
+  background-repeat: no-repeat;
+  transition: none;
+  @include lg {
+    &:hover,
+    &:focus {
+      background-position-y: 100%;
+    }
+  }
+}
