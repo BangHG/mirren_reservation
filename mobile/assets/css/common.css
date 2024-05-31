@@ -1736,8 +1736,8 @@ body {
 }
 
 .section-stigmata .i_star:nth-child(1) {
-  left: 76.667vw;
-  top: 151.111vw;
+  left: 6.667vw;
+  top: 111.111vw;
   -webkit-animation-duration: 6.18s;
           animation-duration: 6.18s;
   width: 7.778vw;
@@ -2268,7 +2268,7 @@ body {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  top: 38.611vw;
+  top: 32.963vw;
   z-index: 5;
   font-size: 3.704vw;
   line-height: 1.3;
@@ -2289,7 +2289,7 @@ body {
 .section-stigmata .tab {
   z-index: 5;
   position: relative;
-  top: 52.315vw;
+  top: 47.963vw;
   text-align: center;
 }
 .section-stigmata .tab-list {
@@ -2359,7 +2359,7 @@ body {
 .section-stigmata .tab-content {
   display: block;
   position: absolute;
-  top: 28.056vw;
+  top: 26.204vw;
   left: 0;
   right: 0;
   z-index: -1;
@@ -2403,10 +2403,20 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 10.556vw;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  gap: 1.111vw;
+}
+#tabContent6 .stigmata-group {
+  gap: 10.556vw;
+}
+#tabContent6 .stigmata-group .thumb-btn {
+  margin: 0 !important;
+}
+
+.section-stigmata .tab-content .stigmata-group .thumb-btn:nth-child(2n) {
+  margin-top: 12.963vw;
 }
 
 #tabContent1 .spin {
@@ -2607,7 +2617,7 @@ body {
 }
 
 .stigmata .title-bx {
-  top: 122.222vw;
+  top: 129.63vw;
 }
 .stigmata .title-bx .cv {
   margin-top: 7.13vw;
@@ -2633,7 +2643,7 @@ body {
 }
 .stigmata .spec {
   position: absolute;
-  top: 162.963vw;
+  top: 169.259vw;
   left: 0;
   display: block;
   font-size: 0;
@@ -2644,166 +2654,166 @@ body {
   height: 17.222vw;
 }
 .stigmata--11 .bg {
-  background-image: url(../images/stigmata/11/bg.webp);
+  background-image: url(../images/stigmata/11_bg.webp);
 }
 .stigmata--11 .spec {
-  background-image: url(../images/stigmata/11/spec.webp);
+  background-image: url(../images/stigmata/11_spec.webp);
 }
 .stigmata--12 .bg {
-  background-image: url(../images/stigmata/12/bg.webp);
+  background-image: url(../images/stigmata/12_bg.webp);
 }
 .stigmata--12 .spec {
-  background-image: url(../images/stigmata/12/spec.webp);
+  background-image: url(../images/stigmata/12_spec.webp);
 }
 .stigmata--13 .bg {
-  background-image: url(../images/stigmata/13/bg.webp);
+  background-image: url(../images/stigmata/13_bg.webp);
 }
 .stigmata--13 .spec {
-  background-image: url(../images/stigmata/13/spec.webp);
+  background-image: url(../images/stigmata/13_spec.webp);
 }
 .stigmata--14 .bg {
-  background-image: url(../images/stigmata/14/bg.webp);
+  background-image: url(../images/stigmata/14_bg.webp);
 }
 .stigmata--14 .spec {
-  background-image: url(../images/stigmata/14/spec.webp);
+  background-image: url(../images/stigmata/14_spec.webp);
 }
 .stigmata--15 .bg {
-  background-image: url(../images/stigmata/15/bg.webp);
+  background-image: url(../images/stigmata/15_bg.webp);
 }
 .stigmata--15 .spec {
-  background-image: url(../images/stigmata/15/spec.webp);
+  background-image: url(../images/stigmata/15_spec.webp);
 }
 .stigmata--21 .bg {
-  background-image: url(../images/stigmata/21/bg.webp);
+  background-image: url(../images/stigmata/21_bg.webp);
 }
 .stigmata--21 .spec {
-  background-image: url(../images/stigmata/21/spec.webp);
+  background-image: url(../images/stigmata/21_spec.webp);
 }
 .stigmata--22 .bg {
-  background-image: url(../images/stigmata/22/bg.webp);
+  background-image: url(../images/stigmata/22_bg.webp);
 }
 .stigmata--22 .spec {
-  background-image: url(../images/stigmata/22/spec.webp);
+  background-image: url(../images/stigmata/22_spec.webp);
 }
 .stigmata--23 .bg {
-  background-image: url(../images/stigmata/23/bg.webp);
+  background-image: url(../images/stigmata/23_bg.webp);
 }
 .stigmata--23 .spec {
-  background-image: url(../images/stigmata/23/spec.webp);
+  background-image: url(../images/stigmata/23_spec.webp);
 }
 .stigmata--24 .bg {
-  background-image: url(../images/stigmata/24/bg.webp);
+  background-image: url(../images/stigmata/24_bg.webp);
 }
 .stigmata--24 .spec {
-  background-image: url(../images/stigmata/24/spec.webp);
+  background-image: url(../images/stigmata/24_spec.webp);
 }
 .stigmata--25 .bg {
-  background-image: url(../images/stigmata/25/bg.webp);
+  background-image: url(../images/stigmata/25_bg.webp);
 }
 .stigmata--25 .spec {
-  background-image: url(../images/stigmata/25/spec.webp);
+  background-image: url(../images/stigmata/25_spec.webp);
 }
 .stigmata--31 .bg {
-  background-image: url(../images/stigmata/31/bg.webp);
+  background-image: url(../images/stigmata/31_bg.webp);
 }
 .stigmata--31 .spec {
-  background-image: url(../images/stigmata/31/spec.webp);
+  background-image: url(../images/stigmata/31_spec.webp);
 }
 .stigmata--32 .bg {
-  background-image: url(../images/stigmata/32/bg.webp);
+  background-image: url(../images/stigmata/32_bg.webp);
 }
 .stigmata--32 .spec {
-  background-image: url(../images/stigmata/32/spec.webp);
+  background-image: url(../images/stigmata/32_spec.webp);
 }
 .stigmata--33 .bg {
-  background-image: url(../images/stigmata/33/bg.webp);
+  background-image: url(../images/stigmata/33_bg.webp);
 }
 .stigmata--33 .spec {
-  background-image: url(../images/stigmata/33/spec.webp);
+  background-image: url(../images/stigmata/33_spec.webp);
 }
 .stigmata--34 .bg {
-  background-image: url(../images/stigmata/34/bg.webp);
+  background-image: url(../images/stigmata/34_bg.webp);
 }
 .stigmata--34 .spec {
-  background-image: url(../images/stigmata/34/spec.webp);
+  background-image: url(../images/stigmata/34_spec.webp);
 }
 .stigmata--35 .bg {
-  background-image: url(../images/stigmata/35/bg.webp);
+  background-image: url(../images/stigmata/35_bg.webp);
 }
 .stigmata--35 .spec {
-  background-image: url(../images/stigmata/35/spec.webp);
+  background-image: url(../images/stigmata/35_spec.webp);
 }
 .stigmata--41 .bg {
-  background-image: url(../images/stigmata/41/bg.webp);
+  background-image: url(../images/stigmata/41_bg.webp);
 }
 .stigmata--41 .spec {
-  background-image: url(../images/stigmata/41/spec.webp);
+  background-image: url(../images/stigmata/41_spec.webp);
 }
 .stigmata--42 .bg {
-  background-image: url(../images/stigmata/42/bg.webp);
+  background-image: url(../images/stigmata/42_bg.webp);
 }
 .stigmata--42 .spec {
-  background-image: url(../images/stigmata/42/spec.webp);
+  background-image: url(../images/stigmata/42_spec.webp);
 }
 .stigmata--43 .bg {
-  background-image: url(../images/stigmata/43/bg.webp);
+  background-image: url(../images/stigmata/43_bg.webp);
 }
 .stigmata--43 .spec {
-  background-image: url(../images/stigmata/43/spec.webp);
+  background-image: url(../images/stigmata/43_spec.webp);
 }
 .stigmata--44 .bg {
-  background-image: url(../images/stigmata/44/bg.webp);
+  background-image: url(../images/stigmata/44_bg.webp);
 }
 .stigmata--44 .spec {
-  background-image: url(../images/stigmata/44/spec.webp);
+  background-image: url(../images/stigmata/44_spec.webp);
 }
 .stigmata--45 .bg {
-  background-image: url(../images/stigmata/45/bg.webp);
+  background-image: url(../images/stigmata/45_bg.webp);
 }
 .stigmata--45 .spec {
-  background-image: url(../images/stigmata/45/spec.webp);
+  background-image: url(../images/stigmata/45_spec.webp);
 }
 .stigmata--51 .bg {
-  background-image: url(../images/stigmata/51/bg.webp);
+  background-image: url(../images/stigmata/51_bg.webp);
 }
 .stigmata--51 .spec {
-  background-image: url(../images/stigmata/51/spec.webp);
+  background-image: url(../images/stigmata/51_spec.webp);
 }
 .stigmata--52 .bg {
-  background-image: url(../images/stigmata/52/bg.webp);
+  background-image: url(../images/stigmata/52_bg.webp);
 }
 .stigmata--52 .spec {
-  background-image: url(../images/stigmata/52/spec.webp);
+  background-image: url(../images/stigmata/52_spec.webp);
 }
 .stigmata--53 .bg {
-  background-image: url(../images/stigmata/53/bg.webp);
+  background-image: url(../images/stigmata/53_bg.webp);
 }
 .stigmata--53 .spec {
-  background-image: url(../images/stigmata/53/spec.webp);
+  background-image: url(../images/stigmata/53_spec.webp);
 }
 .stigmata--54 .bg {
-  background-image: url(../images/stigmata/54/bg.webp);
+  background-image: url(../images/stigmata/54_bg.webp);
 }
 .stigmata--54 .spec {
-  background-image: url(../images/stigmata/54/spec.webp);
+  background-image: url(../images/stigmata/54_spec.webp);
 }
 .stigmata--55 .bg {
-  background-image: url(../images/stigmata/55/bg.webp);
+  background-image: url(../images/stigmata/55_bg.webp);
 }
 .stigmata--55 .spec {
-  background-image: url(../images/stigmata/55/spec.webp);
+  background-image: url(../images/stigmata/55_spec.webp);
 }
 .stigmata--61 .bg {
-  background-image: url(../images/stigmata/61/bg.webp);
+  background-image: url(../images/stigmata/61_bg.webp);
 }
 .stigmata--61 .spec {
-  background-image: url(../images/stigmata/61/spec.webp);
+  background-image: url(../images/stigmata/61_spec.webp);
 }
 .stigmata--62 .bg {
-  background-image: url(../images/stigmata/62/bg.webp);
+  background-image: url(../images/stigmata/62_bg.webp);
 }
 .stigmata--62 .spec {
-  background-image: url(../images/stigmata/62/spec.webp);
+  background-image: url(../images/stigmata/62_spec.webp);
 }
 
 .section-stigmata .cft-wrap {

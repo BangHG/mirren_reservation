@@ -153,6 +153,6 @@ function GsapLoadingAnimation() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  GsapLoadingAnimation(); //로딩하기
-  // GsapLoadingNo(); //로딩안하기 FIXME:
+  // GsapLoadingAnimation(); //로딩하기
+  GsapLoadingNo(); //로딩안하기 FIXME:
 });

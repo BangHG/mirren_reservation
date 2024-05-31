@@ -99,7 +99,7 @@ $stigmataColor: (
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
-    top: vw(417);
+    top: vw(356);
     z-index: 5;
     font-size: vw(40);
     line-height: 1.3;
@@ -124,7 +124,7 @@ $stigmataColor: (
     position: relative;
     // position: absolute;
     // left: 50%;
-    top: vw(565);
+    top: vw(518);
     // width: 600px;
     // margin-left: 273px;
     text-align: center;
@@ -183,7 +183,7 @@ $stigmataColor: (
     &-content {
       display: block;
       position: absolute;
-      top: vw(303);
+      top: vw(283);
       left: 0;
       right: 0;
       z-index: -1;
@@ -234,8 +234,20 @@ $stigmataColor: (
         margin: 0 auto;
         position: relative;
         display: flex;
-        gap: vw(114);
+        // gap: vw(114);
         justify-content: center;
+        gap: vw(12);
+        @at-root #tabContent6 .stigmata-group {
+          gap: vw(114);
+          .thumb-btn {
+            margin: 0 !important;
+          }
+        }
+        .thumb-btn {
+          &:nth-child(2n) {
+            margin-top: vw(140);
+          }
+        }
       }
     }
   }
@@ -316,7 +328,8 @@ $stigmataColor: (
     }
   }
   .title-bx {
-    top: vw(1320);
+    // top: vw(1320 - 22);
+    top: vw(1400);
     .cv {
       margin-top: vw(77);
     }
@@ -340,7 +353,8 @@ $stigmataColor: (
   }
   .spec {
     position: absolute;
-    top: vw(1760);
+    // top: vw(1760);
+    top: vw(1828);
     left: 0;
     display: block;
     font-size: 0;
@@ -354,10 +368,10 @@ $stigmataColor: (
   @each $i in $stigmataList {
     &--#{$i} {
       .bg {
-        background-image: url(../images/stigmata/#{$i}/bg.webp);
+        background-image: url(../images/stigmata/#{$i}_bg.webp);
       }
       .spec {
-        background-image: url(../images/stigmata/#{$i}/spec.webp);
+        background-image: url(../images/stigmata/#{$i}_spec.webp);
       }
     }
   }

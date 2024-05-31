@@ -263,7 +263,7 @@ $.ajax({
   $.each(data.list, function (index, angel) {
     stigmataItem += `<div class="swiper-slide stigmata stigmata--` + angel.id + `">`;
     stigmataItem += `<div class="bg"></div> <div class="ch"> </div>`;
-    stigmataItem += `<div class="spec"> <img loading="lazy" src="${$rootUrl}/web/assets/images/stigmata/` + angel.id + `/spec.webp"> <p class="sr-only"> ` + angel.spec + `</p> </div>`;
+    stigmataItem += `<div class="spec"> <img loading="lazy" src="${$rootUrl}/web/assets/images/stigmata/` + angel.id + `_spec.webp"> <p class="sr-only"> ` + angel.spec + `</p> </div>`;
     stigmataItem += `<div class="title-bx">`;
     stigmataItem += `<p class="name"> ` + angel.name + ` </p>`;
     stigmataItem += `<dl class="cv"><dt>CV</dt>`;

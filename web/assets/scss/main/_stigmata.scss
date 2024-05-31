@@ -397,10 +397,10 @@ $stigmataColor: (
   @each $i in $stigmataList {
     &--#{$i} {
       .bg {
-        background-image: url(../images/stigmata/#{$i}/bg.webp);
+        background-image: url(../images/stigmata/#{$i}_bg.webp);
       }
       .ch {
-        background-image: url(../images/stigmata/#{$i}/ch.webp);
+        background-image: url(../images/stigmata/#{$i}_ch.webp);
       }
       // 이미지로
       // .spec {

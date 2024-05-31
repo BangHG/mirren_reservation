@@ -181,8 +181,10 @@ $blinkSecond: 5s;
 .section-stigmata {
   .i_star {
     &:nth-child(1) {
-      left: vw(828);
-      top: vw(1632);
+      // left: vw(828);
+      // top: vw(1632);
+      left: 6.667vw;
+      top: 111.111vw;
       @include ratioBlink(84);
     }
   }
