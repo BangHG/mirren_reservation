@@ -57,7 +57,7 @@
     }
   }
   &.active {
-    background-color: #fff;
+    // background-color: #fff; //왜 하얘져야하지
     &:before {
       opacity: 0;
     }

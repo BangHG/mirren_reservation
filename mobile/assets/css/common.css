@@ -1957,9 +1957,6 @@ body {
 .thumb-btn:hover:not(.active):after, .thumb-btn.active:after {
   opacity: 1;
 }
-.thumb-btn.active {
-  background-color: #fff;
-}
 .thumb-btn.active:before {
   opacity: 0;
 }
@@ -2412,11 +2409,14 @@ body {
   gap: 10.556vw;
 }
 #tabContent6 .stigmata-group .thumb-btn {
-  margin: 0 !important;
+  top: 0 !important;
 }
 
+.section-stigmata .tab-content .stigmata-group .thumb-btn {
+  position: relative;
+}
 .section-stigmata .tab-content .stigmata-group .thumb-btn:nth-child(2n) {
-  margin-top: 12.963vw;
+  top: 12.963vw;
 }
 
 #tabContent1 .spin {

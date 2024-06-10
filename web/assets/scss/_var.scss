@@ -11,7 +11,7 @@ $color-2: #22bbc1;
 // BODY 전환효과 사용여부
 $body-transition: true;
 
-$media: true;
+$media: false;
 // 미디어 쿼리 사이즈
 $mediaResponsiveSize: 1024px;
 // 시안 사이즈
@@ -24,4 +24,4 @@ $gutter: 20px; //기본 여백
 // ## FONT 관리 ##  → _font-face.scss
 $font-family-basic: 'ChosunNm', 'Noto Sans KR', sans-serif;
 $font-family-main: $font-family-basic;
-$font-family-sub: $font-family-basic;
+$font-family-sub: 'Pretendard', $font-family-basic;

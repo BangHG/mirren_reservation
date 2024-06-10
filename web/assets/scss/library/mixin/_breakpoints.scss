@@ -1,17 +1,17 @@
 ﻿@mixin lg-max {
   //mobile
   @media all and (max-width: ($mediaResponsiveSize )) {
-    // @if ($media == true) {
-    @content;
-    // }
+    @if ($media == true) {
+      @content;
+    }
   }
 }
 
 @mixin lg {
   // web
-  @media all and (min-width: $mediaResponsiveSize +  0.02px) {
-    @content;
-  }
+  // @media all and (min-width: $mediaResponsiveSize +  0.02px) {
+  @content;
+  // }
 }
 
 @mixin xl {

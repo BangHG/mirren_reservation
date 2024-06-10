@@ -1,18 +1,37 @@
 ﻿// 마우스오버 버튼
 @mixin btnImg($w, $h, $file) {
-  position: absolute;
-  left: 50%;
-  margin-left: ($w / -2);
+  position: relative;
   width: $w;
   height: ($h / 2);
-  background-image: url($file);
-  background-position-y: 0;
-  background-repeat: no-repeat;
   transition: none;
-  @include lg {
-    &:hover,
-    &:focus {
-      background-position-y: 100%;
+  &:before,
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url($file);
+    background-repeat: no-repeat;
+    // transition: 300ms opacity linear;
+  }
+  &:before {
+    background-position-y: 0;
+    opacity: 1;
+    // transition-delay: 100ms;
+  }
+  &:after {
+    background-position-y: -$h/2;
+    opacity: 0;
+  }
+
+  &:hover {
+    &:after {
+      opacity: 1;
+    }
+    &:before {
+      opacity: 0;
     }
   }
 }

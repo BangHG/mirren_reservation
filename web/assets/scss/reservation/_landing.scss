@@ -1,0 +1,84 @@
+﻿.section-landing {
+  // z-index: 100;
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  display: block;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .bg {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../images/landing/bg.webp) no-repeat 50% 50%;
+    background-size: cover;
+    &:before {
+      //dimmed
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: #000;
+      opacity: 0.6;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 1;
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+  }
+
+  .bi {
+    background: url(../images/landing/bi.webp) no-repeat 50% 50%;
+    width: 363px;
+    height: 326px;
+    margin: 0 auto;
+    // position: absolute;
+    // top: 42px;
+    // left: 50%;
+    // transform: translateX(-50%);
+  }
+  .title {
+    background: url(../images/landing/title.webp) no-repeat 50% 50%;
+    width: 790px;
+    height: 138px;
+    margin: -20px auto 10px;
+  }
+  .btnToReservation {
+    @include btnImg(392px, 204px, '../images/landing/btn.webp');
+    margin: 0 auto 50px;
+  }
+
+  .scrollDown {
+    $w: 125px;
+    display: block;
+    margin: 0 auto;
+    width: $w;
+    height: 86px;
+    background: url(../images/landing/scrolldown.webp) no-repeat;
+    // top: 50%;
+    // position: absolute;
+    // left: 50%;
+    // bottom: 180px;
+    // margin-left: ceil($w/-2);
+    z-index: 2;
+    transition: 500ms opacity;
+  }
+}

@@ -240,12 +240,13 @@ $stigmataColor: (
         @at-root #tabContent6 .stigmata-group {
           gap: vw(114);
           .thumb-btn {
-            margin: 0 !important;
+            top: 0 !important;
           }
         }
         .thumb-btn {
+          position: relative;
           &:nth-child(2n) {
-            margin-top: vw(140);
+            top: vw(140);
           }
         }
       }

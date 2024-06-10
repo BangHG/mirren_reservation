@@ -1,0 +1,130 @@
+<!-- 개인정보 수집 팝업 -->
+<aside class="popup popup-terms" id="popup__privacy">
+  <div class="popup__wrap">
+    <button type="button" class="popup__close" onclick="closed_popup()"></button>
+    <div class="popup__scroll">
+      <div class="popup__head">
+        <h2>(필수) 개인정보 수집 및 이용 동의</h2>
+      </div>
+      <div class="popup__body">
+        <div class="terms-content">
+          <p>(주)그리비티는 본 이벤트 참여와 게임 관련 소식 안내를 위해 개인정보를 수집 및 이용합니다.</p>
+          <ul class="list-dot" style="margin-top: 1em">
+            <li data-dot="▶ ">개인정보 수집 및 이용 목적 : 게임 출시, CBT, 이벤트 관련 안내의 LMS/SMS 발송 및 이벤트 보상 지급</li>
+            <li data-dot="▶ ">수집하는 개인정보 항목 : 휴대폰 번호</li>
+            <li data-dot="▶ ">개인정보의 보유 및 이용기간 : 이벤트 보상 지급 후 60일 이내 폐기</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- 개인정보 처리 위탁 동의 팝업 -->
+<aside class="popup popup-terms" id="popup__consignment">
+  <div class="popup__wrap">
+    <button type="button" class="popup__close" onclick="closed_popup()"></button>
+    <div class="popup__scroll">
+      <div class="popup__head">
+        <h2>(필수) 개인 정보 처리 위탁 동의</h2>
+      </div>
+      <div class="popup__body">
+        <div class="terms-content">
+          <p>(주)그리비티는 [이상한 나라의 라그나로크]의 개인정보 처리 업무를 위탁하고 있습니다.</p>
+          <ul class="list-dot" style="margin-top: 1em">
+            <li data-dot="▶ ">개인정보처리 위탁 업체명 : 네이버 클라우드 / NHN 클라우드</li>
+
+            <li data-dot="▶ ">개인정보처리 위탁 목적 : 게임 출시, CBT, 이벤트 관련 안내의 LMS/SMS 발송 및 이벤트 보상 지급</li>
+            <li data-dot="▶ ">개인정보의 보유 및 이용기간 : 이벤트 보상 지급 후 60일 이내 폐기</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- 광고성 정보 수신 동의 팝업 -->
+<aside class="popup popup-terms" id="popup__advertising">
+  <div class="popup__wrap">
+    <button type="button" class="popup__close" onclick="closed_popup()"></button>
+    <div class="popup__scroll">
+      <div class="popup__head">
+        <h2>(선택) 광고성 정보 수신 동의</h2>
+      </div>
+      <div class="popup__body">
+        <div class="terms-content">
+          <p>(주)그리비티는 본 이벤트 참여와 게임 관련 소식 안내를 위해 개인정보를 수집 및 이용합니다.</p>
+          <ul class="list-dot" style="margin-top: 1em">
+            <li data-dot="▶ ">개인정보 수집 및 이용 목적 : 신규 게임 출시, CBT, 이벤트 등 각종 서비스에 대한 LMS/SMS 발송</li>
+            <li data-dot="▶ ">수집하는 개인정보 항목 : 휴대폰 번호</li>
+            <li data-dot="▶ ">개인정보의 보유 및 이용기간 : 수집일로부터 180일 이내 폐기</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- 사전예약 완료 팝업  -->
+<aside class="popup popup-terms" id="popup__reservation">
+  <div class="popup__wrap">
+    <button type="button" class="popup__close" onclick="closed_popup()"></button>
+    <div class="popup__scroll">
+      <div class="popup__body">
+        <img
+          src="assets/images/popup/reservation.webp"
+          alt="
+      사전예약이 완료되었습니다.
+      ※ 공식 라운지에서 다양한 정보를 획득해보세요!
+      ※ 마켓 사전예약 추가 진행 시 정식 출시 후 더욱 푸짐한 보상으로 플레이!
+      "
+        />
+
+        <div class="btn-wrap">
+          <a href="#TODO:" class="btn" target="_blank">
+            <img src="assets/images/popup/btn-lounge.webp" alt="" title="라운지 바로가기" />
+          </a>
+          <a href="#TODO:" class="btn" onclick="closed_popup(); $('html,body').animate({scrollTop:$('.reservation-section--market').offset().top},300)">
+            <img src="assets/images/popup/btn-market.webp" alt="" title="마켓 사전예약" />
+          </a>
+        </div>
+      </div>
+    </div> </div
+></aside>
+
+<!-- 사전예약 유의사항  -->
+<aside class="popup popup-terms" id="popup__reservation-notice">
+  <div class="popup__wrap">
+    <button type="button" class="popup__close" onclick="closed_popup()"></button>
+    <div class="popup__scroll">
+      <div class="popup__head">
+        <h2>사전예약 유의사항</h2>
+      </div>
+      <div class="popup__body">
+        <div class="terms-content">
+          <p style="font-weight: 700; color: #111">※ 정식 사전 예약 유의사항</p>
+          <ul class="list-dot" style="margin-top: 0.5em">
+            <li data-dot="- ">광고성 정보 수신 동의 항목 선택 시 사전예약 보상 쿠폰 문자 및 이벤트 소식을 받을 수 있습니다.</li>
+            <li data-dot="- ">광고성 정보 수신 미동의 응모된 상태라면, 동의 체크 후 재응모 가능합니다.</li>
+            <li data-dot="- ">휴대폰 번호를 잘못 입력할 경우 사전예약 보상을 받지 못할 수 있습니다.</li>
+            <li data-dot="- "> 타인의 휴대폰 번호를 도용하거나 비정상적인 방법으로 신청 시 사전예약 관련 혜택 제공이 제한 될 수 있습니다. </li>
+            <li data-dot="- ">사전예약 완료 후 등록한 휴대폰 번호는 변경할 수 없습니다.</li>
+            <li data-dot="- "> 사전예약 일정 및 이벤트, 보상은 회사의 사정에 따라 변경 될 수 있습니다. </li>
+            <li data-dot="- ">광고성 수신 동의 철회를 원하실 경우, 그라비티 고객센터를 통하여 문의해 주시기 바랍니다.</li>
+            <li data-dot="- ">CBT 진행 시 사전예약에 참여한 휴대폰 번호로 문자(LMS)를 통해 CBT 참여 URL이 발송될 예정입니다.</li>
+            <li data-dot="- ">사전예약 보상은 정식 출시 후 사전예약에 참여한 휴대폰 번호로 문자(LMS)를 통해 쿠폰번호가 발송될 예정입니다.</li>
+
+            <li data-dot="- ">사전예약 쿠폰은 계정당 1회만 사용가능합니다.</li>
+          </ul>
+          <p style="font-weight: 700; color: #111; margin-top: 2em">※ 마켓 사전 예약 유의사항</p>
+          <ul class="list-dot" style="margin-top: 0.5em">
+            <li data-dot="- ">구글 마켓 스토어 또는 애플 스토어에서 이상한 나라의 라그나로크 앱의 [사전등록] 버튼을 눌러야만 정상 참여로 인정됩니다.</li>
+            <li data-dot="- ">보상은 정식 출시 후 게임 내 우편을 통해 지급될 예정입니다.</li>
+          </ul>
+
+          <p style="margin-top: 2em">※ 본 게임은 확률형 아이템이 포함되어 있습니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>

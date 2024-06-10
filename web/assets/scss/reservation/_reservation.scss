@@ -1,0 +1,123 @@
+﻿.section-reservation,
+.section-market {
+  // border-top: 1px solid yellow;
+  border-bottom: 1px solid yellow;
+  position: relative;
+  overflow: visible;
+  &__bg {
+    display: block;
+    max-width: 2560px;
+    width: 100%;
+    background-size: 2560px auto;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    // @include xl {
+    //   transform: none;
+    //   margin-left: -1920px;
+    // }
+  }
+  .container {
+    z-index: 2;
+    position: relative;
+  }
+}
+
+.section-reservation {
+  height: 1560px;
+  .ch {
+    position: absolute;
+    top: 390px;
+    margin-left: -935px;
+    left: 50%;
+    background: url(../images/reservation/ch.webp) no-repeat;
+    width: 533px;
+    height: 932px;
+  }
+  &__bg {
+    top: -349px;
+    height: 2628px;
+    background-image: url(../images/reservation/content.webp);
+  }
+  .form-area {
+    top: 800px;
+    // border: 1px solid yellow;
+    font-family: $font-family-sub;
+  }
+}
+
+//                                888               888
+//                                888               888
+//                                888               888
+// 88888b.d88b.   8888b.  888d888 888  888  .d88b.  888888
+// 888 "888 "88b     "88b 888P"   888 .88P d8P  Y8b 888
+// 888  888  888 .d888888 888     888888K  88888888 888
+// 888  888  888 888  888 888     888 "88b Y8b.     Y88b.
+// 888  888  888 "Y888888 888     888  888  "Y8888   "Y888
+
+.section-market {
+  height: 1515px;
+
+  &__bg {
+    top: -625px;
+    height: 2680px;
+    background-image: url(../images/market/content.webp);
+  }
+
+  .ch {
+    // position: absolute;
+    // top: 390px;
+    // margin-left: 935px;
+    // left: 50%;
+    // background: url(../images/market/ch.webp) no-repeat;
+    // width: 1258px;
+    // height: 1433px;
+
+    background-image: url(../images/market/ch.webp);
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+
+    left: 50%;
+
+    // border: 1px solid yellow;
+    // filter: invert(1);
+    // opacity: 0.5;
+    // z-index: 5;
+    &--1 {
+      @include spr(-5px, -5px, 406px, 448px);
+      margin-left: -819px;
+      top: 612px;
+    }
+
+    &--2 {
+      @include spr(-5px, -463px, 153px, 185px);
+      margin-left: -734px;
+      top: 361px;
+    }
+
+    &--3 {
+      @include spr(-5px, -658px, 138px, 124px);
+      margin-left: -574px;
+      top: 116px;
+    }
+  }
+
+  .badge-wrap {
+    position: absolute;
+    top: 866px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+  }
+
+  .btn-reservation-notice {
+    position: absolute;
+    top: 1064px;
+
+    @include btnImg(302px, 100px, '../images/reservation/reservation-notice.webp');
+  }
+}
