@@ -63,35 +63,35 @@ ST_cloud.to(
   '='
 );
 
-gsap.timeline({
-  scrollTrigger: {
-    trigger: '.event-content--3 ',
-    markers: true,
-    start: 'top center', //center',
-    end: 'bottom',
-    onEnter: () => {
-      TL_Cards.cardsFlip();
-    },
-  },
-});
+// gsap.timeline({
+//   scrollTrigger: {
+//     trigger: '.event-content--3 ',
+//     // markers: true,
+//     start: 'top center', //center',
+//     end: 'bottom',
+//     onEnter: () => {
+//       TL_Cards.cardsFlip();
+//     },
+//   },
+// });
 
-gsap.set('.achieve-list .card', { y: '20%', opacity: 0, duration: 0.3 });
-const TL_Cards = {
-  cardsFlip: () => {
-    var tl = gsap.timeline();
+// gsap.set('.achieve-list .card', { y: '20%', opacity: 0, duration: 0.02 });
+// const TL_Cards = {
+//   cardsFlip: () => {
+//     var tl = gsap.timeline();
 
-    document.querySelectorAll('.achieve-list .card').forEach((item, index) => {
-      tl.to(
-        item,
-        {
-          y: 0,
-          opacity: 1,
-        },
-        `<=${index * 0.1}`
-      );
-    });
-  },
-};
+//     document.querySelectorAll('.achieve-list .card').forEach((item, index) => {
+//       tl.to(
+//         item,
+//         {
+//           y: 0,
+//           opacity: 1,
+//         },
+//         `<=${index * 0.05}`
+//       );
+//     });
+//   },
+// };
 
 var tlRepeat = gsap.timeline();
 //반복 애니메이션

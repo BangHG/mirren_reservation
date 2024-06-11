@@ -16,11 +16,9 @@
   height: 590px;
   padding-top: 56px;
   &__close {
+    @include btnImg(90px, 180px, '../images/tournament/close-btn.webp');
     position: absolute;
-    bottom: -10px;
-    width: 74px;
-    aspect-ratio: 1;
-    background: url(../images/tournament/close-btn.webp) no-repeat;
+    bottom: 0;
     left: 50%;
     transform: translate(-50%, 100%);
   }
@@ -103,37 +101,93 @@
   }
 }
 
+#tournament-result {
+  opacity: 0;
+  transition: 300ms opacity;
+}
 .tournament-result-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
+  .img-bx {
+    flex: 0 0 400px;
+    position: relative;
+    .item-button {
+      position: relative;
+    }
+    &:before {
+      background: url(../images/tournament/finish-img-bg.webp) no-repeat;
+      content: '';
+      width: 417px;
+      aspect-ratio: 1;
+      display: block;
+      position: absolute;
+      top: 56%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: spin 30s infinite linear;
+      @keyframes spin {
+        from {
+          transform: translate(-50%, -50%) rotate(0);
+        }
+        to {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+    }
+    &:after {
+      content: '';
+      width: 417px;
+      height: 437px;
+      position: absolute;
+      content: '';
+      background: url(../images/tournament/finish-img-fly.webp) no-repeat;
+      display: block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
   .txt-bx {
-    width: 800px;
-    color: #fff;
+    flex: 0 0 280px;
     .btn {
-      top: auto;
-      // border: 1px solid #ddd;
-      padding: 0.5em;
-      line-height: 1;
+      display: inline-block;
+      &-saveImg {
+        @include btnImg(283px, 156px, '../images/tournament/btn-saveImg.webp');
+      }
+      &-restart {
+        @include btnImg(314px, 120px, '../images/tournament/btn-restart.webp');
+      }
     }
   }
   .share {
-    border: 1px solid #fff;
+    margin: 40px auto;
     &__title {
       background: url(../images/tournament/share-title.webp) no-repeat;
       width: 105px;
       height: 23px;
-      margin: 0 auto 20px;
+      margin: 0 auto 14px;
     }
     &__list {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      column-gap: 1em;
+      column-gap: 18px;
       .share-btn {
-        width: 50px;
-        height: 50px;
-        background-color: #fff;
+        display: block;
+        background-repeat: no-repeat;
+        background-image: url(../images/tournament/share-btn.webp);
+        &--facebook {
+          @include spr(-10px, -10px, 52px, 52px);
+        }
+
+        &--kakaotalk {
+          @include spr(-10px, -82px, 52px, 52px);
+        }
+
+        &--x {
+          @include spr(-10px, -154px, 52px, 52px);
+        }
       }
     }
   }

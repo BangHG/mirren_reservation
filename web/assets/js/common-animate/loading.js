@@ -30,8 +30,8 @@ function GsapLoadingNo() {
 }
 
 function GsapLoadingAnimation() {
-  // loadingSet();
-  // loadingAnimation();
+  loadingSet();
+  loadingAnimation();
 
   console.log('로딩 ㄱㄱ');
   // 세팅

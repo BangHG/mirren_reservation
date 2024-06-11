@@ -56,7 +56,8 @@
 .section-landing {
   overflow: hidden;
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 100px 0;
   display: block;
   width: 100%;
   display: -webkit-box;
@@ -160,7 +161,6 @@
 
 .section-reservation,
 .section-market {
-  border-bottom: 1px solid yellow;
   position: relative;
   overflow: visible;
 }
@@ -1235,14 +1235,40 @@
   padding-top: 56px;
 }
 .tournament-container__close {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  -webkit-transition: none;
+  transition: none;
   position: absolute;
-  bottom: -10px;
-  width: 74px;
-  aspect-ratio: 1;
-  background: url(../images/tournament/close-btn.webp) no-repeat;
+  bottom: 0;
   left: 50%;
   -webkit-transform: translate(-50%, 100%);
           transform: translate(-50%, 100%);
+}
+.tournament-container__close:before, .tournament-container__close:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("../images/tournament/close-btn.webp");
+  background-repeat: no-repeat;
+}
+.tournament-container__close:before {
+  background-position-y: 0;
+  opacity: 1;
+}
+.tournament-container__close:after {
+  background-position-y: -90px;
+  opacity: 0;
+}
+.tournament-container__close:hover:after {
+  opacity: 1;
+}
+.tournament-container__close:hover:before {
+  opacity: 0;
 }
 .tournament-container .title--select {
   margin: 0 auto 7px;
@@ -1316,6 +1342,12 @@
   background: url(../images/tournament/selected.webp) no-repeat;
 }
 
+#tournament-result {
+  opacity: 0;
+  -webkit-transition: 300ms opacity;
+  transition: 300ms opacity;
+}
+
 .tournament-result-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1327,23 +1359,140 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
+.tournament-result-wrap .img-bx {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 400px;
+          flex: 0 0 400px;
+  position: relative;
+}
+.tournament-result-wrap .img-bx .item-button {
+  position: relative;
+}
+.tournament-result-wrap .img-bx:before {
+  background: url(../images/tournament/finish-img-bg.webp) no-repeat;
+  content: "";
+  width: 417px;
+  aspect-ratio: 1;
+  display: block;
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: spin 30s infinite linear;
+          animation: spin 30s infinite linear;
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0);
+            transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0);
+            transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.tournament-result-wrap .img-bx:after {
+  content: "";
+  width: 417px;
+  height: 437px;
+  position: absolute;
+  content: "";
+  background: url(../images/tournament/finish-img-fly.webp) no-repeat;
+  display: block;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
 .tournament-result-wrap .txt-bx {
-  width: 800px;
-  color: #fff;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 280px;
+          flex: 0 0 280px;
 }
 .tournament-result-wrap .txt-bx .btn {
-  top: auto;
-  padding: 0.5em;
-  line-height: 1;
+  display: inline-block;
+}
+.tournament-result-wrap .txt-bx .btn-saveImg {
+  position: relative;
+  width: 283px;
+  height: 78px;
+  -webkit-transition: none;
+  transition: none;
+}
+.tournament-result-wrap .txt-bx .btn-saveImg:before, .tournament-result-wrap .txt-bx .btn-saveImg:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("../images/tournament/btn-saveImg.webp");
+  background-repeat: no-repeat;
+}
+.tournament-result-wrap .txt-bx .btn-saveImg:before {
+  background-position-y: 0;
+  opacity: 1;
+}
+.tournament-result-wrap .txt-bx .btn-saveImg:after {
+  background-position-y: -78px;
+  opacity: 0;
+}
+.tournament-result-wrap .txt-bx .btn-saveImg:hover:after {
+  opacity: 1;
+}
+.tournament-result-wrap .txt-bx .btn-saveImg:hover:before {
+  opacity: 0;
+}
+.tournament-result-wrap .txt-bx .btn-restart {
+  position: relative;
+  width: 314px;
+  height: 60px;
+  -webkit-transition: none;
+  transition: none;
+}
+.tournament-result-wrap .txt-bx .btn-restart:before, .tournament-result-wrap .txt-bx .btn-restart:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("../images/tournament/btn-restart.webp");
+  background-repeat: no-repeat;
+}
+.tournament-result-wrap .txt-bx .btn-restart:before {
+  background-position-y: 0;
+  opacity: 1;
+}
+.tournament-result-wrap .txt-bx .btn-restart:after {
+  background-position-y: -60px;
+  opacity: 0;
+}
+.tournament-result-wrap .txt-bx .btn-restart:hover:after {
+  opacity: 1;
+}
+.tournament-result-wrap .txt-bx .btn-restart:hover:before {
+  opacity: 0;
 }
 .tournament-result-wrap .share {
-  border: 1px solid #fff;
+  margin: 40px auto;
 }
 .tournament-result-wrap .share__title {
   background: url(../images/tournament/share-title.webp) no-repeat;
   width: 105px;
   height: 23px;
-  margin: 0 auto 20px;
+  margin: 0 auto 14px;
 }
 .tournament-result-wrap .share__list {
   display: -webkit-inline-box;
@@ -1355,12 +1504,27 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-column-gap: 1em;
-     -moz-column-gap: 1em;
-          column-gap: 1em;
+  -webkit-column-gap: 18px;
+     -moz-column-gap: 18px;
+          column-gap: 18px;
 }
 .tournament-result-wrap .share__list .share-btn {
-  width: 50px;
-  height: 50px;
-  background-color: #fff;
+  display: block;
+  background-repeat: no-repeat;
+  background-image: url(../images/tournament/share-btn.webp);
+}
+.tournament-result-wrap .share__list .share-btn--facebook {
+  background-position: -10px -10px;
+  width: 52px;
+  height: 52px;
+}
+.tournament-result-wrap .share__list .share-btn--kakaotalk {
+  background-position: -10px -82px;
+  width: 52px;
+  height: 52px;
+}
+.tournament-result-wrap .share__list .share-btn--x {
+  background-position: -10px -154px;
+  width: 52px;
+  height: 52px;
 }/*# sourceMappingURL=reservation.css.map */

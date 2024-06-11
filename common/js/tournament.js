@@ -2,22 +2,20 @@
   startTournament();
 });
 
+const tournamentContainer = document.getElementById('tournament');
+const tournamentResultContainer = document.getElementById('tournament-result');
+const resultWrap = document.querySelector('#tournament-result .tournament-result-wrap');
+
 function startTournament() {
-  const tournamentContainer = document.getElementById('tournament');
-
-  const tournamentResultContainer = document.getElementById('tournament-result');
-
-  const resultWrap = document.querySelector('#tournament-result .tournament-result-wrap');
-
   const items = [
     { id: '1', name: '일라' },
     { id: '2', name: '앰프사' },
-    // { id: '3', name: '대니' },
-    // { id: '4', name: '시슬리' },
-    // { id: '5', name: '사라' },
-    // { id: '6', name: '마키' },
-    // { id: '7', name: '제랄디아' },
-    // { id: '8', name: '크리슈나' },
+    { id: '3', name: '대니' },
+    { id: '4', name: '시슬리' },
+    { id: '5', name: '사라' },
+    { id: '6', name: '마키' },
+    { id: '7', name: '제랄디아' },
+    { id: '8', name: '크리슈나' },
     // { id: '9', name: '이카루스' },
     // { id: '10', name: '아넥스' },
     // { id: '11', name: '디아' },
@@ -47,6 +45,7 @@ function startTournament() {
   // 초기화 함수
   function initializeTournament() {
     tournamentContainer.innerHTML = '';
+    tournamentResultContainer.style.display = 'none';
     playRound(items);
   }
 
@@ -56,36 +55,90 @@ function startTournament() {
     items = shuffleArray(items);
 
     if (items.length === 2) {
-      tournamentContainer.innerHTML = `
-      <p class="title--select"><span class="sr-only">성흔을 선택해주세요!</span></p>
-      `;
-      // /* /<h2>결승전</h2>
+      tournamentContainer.innerHTML = `<p class="title--select"><span class="sr-only">성흔을 선택해주세요!
+      결승전</span></p>`;
     } else {
-      tournamentContainer.innerHTML = `
-      <p class="title--select"><span class="sr-only">성흔을 선택해주세요!</span></p>
-      `;
-      // /* /<h2>${items.length}강</h2>
+      tournamentContainer.innerHTML = `<p class="title--select"><span class="sr-only">성흔을 선택해주세요!
+      ${items.length}강</span></p>`;
     }
 
     let nextRound = [];
-
     const matchContainer = document.createElement('div');
     matchContainer.className = 'match-container';
 
     for (let i = 0; i < items.length; i += 2) {
+      const matchDiv = createMatch(items[i], items[i + 1], nextRound);
+      matchContainer.appendChild(matchDiv);
+
+      if (i === items.length - 2) {
+        matchDiv.style.opacity = '1'; // 마지막 matchDiv를 opacity 1로 설정
+      }
+    }
+
+    tournamentContainer.appendChild(matchContainer);
+
+    function checkRoundCompletion() {
+      if (nextRound.length === items.length / 2) {
+        if (nextRound.length === 1) {
+          setTimeout(() => {
+            fadeOutElement(tournamentContainer, () => {
+              const winner = nextRound[0];
+              localStorage.setItem('tournamentWinner', JSON.stringify(winner));
+
+              // 우승자를 #tournament-result 에 업데이트
+              const resultImg = resultWrap.querySelector('.img');
+              const resultName = resultWrap.querySelector('.name');
+              const resultBtn = resultWrap.querySelector('.btn-saveImg');
+
+              resultImg.style.backgroundImage = `url(../common/images/tournament/${winner.id}.png)`;
+              resultImg.appendChild(createElementFromHTML(`<i style="background:url('../common/images/tournament/새 폴더/${winner.id}.webp') 50% 50%;background-size:cover;;position:absolute;top: 66px; left: 28px; width: 242px;height:263px" title="FIXME:">${winner.name}</i>`));
+
+              resultName.textContent = `${winner.name}`;
+              resultBtn.href = `../common/images/tournament/${winner.id}.png`;
+              resultBtn.download = `${winner.name}.png`;
+
+              fadeInElement(tournamentResultContainer);
+
+              // 다시하기 버튼에 이벤트 추가
+              const restartButton = document.getElementById('btn-restart');
+              restartButton.addEventListener('click', () => {
+                fadeOutElement(tournamentResultContainer, () => {
+                  initializeTournament();
+                  fadeInElement(tournamentContainer);
+                });
+              });
+            });
+          }, 100);
+        } else {
+          //다음라운드
+          setTimeout(() => {
+            fadeOutElement(tournamentContainer, () => {
+              playRound(nextRound);
+              fadeInElement(tournamentContainer);
+            });
+          }, 100);
+        }
+      }
+    }
+
+    function createMatch(item1, item2, nextRound) {
       const matchDiv = document.createElement('div');
       matchDiv.className = 'match';
-
-      const item1 = items[i];
-      const item2 = items[i + 1];
+      matchDiv.style.opacity = '0';
 
       const button1HTML = `
         <button class="item-button">
-          <div class="img" style="background-image:url(../common/images/tournament/${item1.id}.png)"> <span class="sr-only">${item1.name}</span></div>          
+          <div class="img" style="background-image:url(../common/images/tournament/${item1.id}.png)">
+            <i style="background:url('../common/images/tournament/새 폴더/${item1.id}.webp') 50% 50%;background-size:cover;;position:absolute;top: 66px; left: 28px; width: 242px;height:263px" title="FIXME:">${item1.name}</i>
+            <span class="sr-only">${item1.name}</span>
+          </div>
         </button>`;
       const button2HTML = `
         <button class="item-button">
-          <div class="img" style="background-image:url(../common/images/tournament/${item2.id}.png)"> <span class="sr-only">${item2.name}</span></div>          
+          <div class="img" style="background-image:url(../common/images/tournament/${item2.id}.png)">
+            <i style="background:url('../common/images/tournament/새 폴더/${item2.id}.webp') 50% 50%;background-size:cover;;position:absolute;top: 66px; left: 28px; width: 242px;height:263px" title="FIXME:">${item2.name}</i>
+            <span class="sr-only">${item2.name}</span>
+          </div>
         </button>`;
 
       const button1 = createElementFromHTML(button1HTML);
@@ -115,60 +168,7 @@ function startTournament() {
       matchDiv.appendChild(createElementFromHTML('<span class="vs"><span class="sr-only">VS</span></span>'));
       matchDiv.appendChild(button2);
 
-      matchContainer.appendChild(matchDiv);
-    }
-
-    tournamentContainer.appendChild(matchContainer);
-
-    function checkRoundCompletion() {
-      if (nextRound.length === items.length / 2) {
-        //S: 결과 내오기
-        if (nextRound.length === 1) {
-          setTimeout(() => {
-            tournamentContainer.style.transition = 'opacity 0.3s';
-            tournamentContainer.style.opacity = '0';
-
-            setTimeout(() => {
-              const winner = nextRound[0];
-              localStorage.setItem('tournamentWinner', JSON.stringify(winner));
-
-              // 우승자를 #tournament-result 에 업데이트
-              const resultImg = resultWrap.querySelector('.img');
-              const resultName = resultWrap.querySelector('.name');
-              const resultBtn = resultWrap.querySelector('.download-btn');
-
-              resultImg.style.backgroundImage = `url(../common/images/tournament/${winner.id}.png)`;
-              resultName.textContent = `${winner.name}`;
-              resultBtn.href = `../common/images/tournament/${winner.id}.png`;
-              resultBtn.download = `${winner.name}.png`;
-
-              // 페이드인/페이드아웃 효과 적용
-              tournamentContainer.style.display = 'none';
-              tournamentResultContainer.style.display = '';
-              setTimeout(() => {
-                tournamentResultContainer.style.transition = 'opacity 0.3s';
-                tournamentResultContainer.style.opacity = '1';
-              }, 100);
-
-              // 다시하기 버튼에 이벤트 추가
-              const restartButton = document.getElementById('restart-btn');
-              restartButton.addEventListener('click', initializeTournament);
-
-              tournamentContainer.style.opacity = '1';
-            }, 500);
-          }, 100);
-        } //E: 결과 내오기
-        else {
-          setTimeout(() => {
-            tournamentContainer.style.transition = 'opacity 0.3s';
-            tournamentContainer.style.opacity = '0';
-            setTimeout(() => {
-              playRound(nextRound);
-              tournamentContainer.style.opacity = '1';
-            }, 500);
-          }, 100);
-        }
-      }
+      return matchDiv;
     }
   }
 
@@ -191,21 +191,52 @@ function shuffleArray(array) {
   return array;
 }
 
+// 요소 페이드 아웃 함수
+function fadeOutElement(element, callback) {
+  element.style.transition = 'opacity 0.3s';
+  element.style.opacity = '0';
+  setTimeout(() => {
+    element.style.display = 'none';
+    if (callback) callback();
+  }, 300);
+}
+
+// 요소 페이드 인 함수
+function fadeInElement(element) {
+  element.style.opacity = '0';
+  element.style.display = 'block';
+  setTimeout(() => {
+    element.style.transition = 'opacity 0.3s';
+    element.style.opacity = '1';
+  }, 100);
+}
+
 // 매치 페이드 아웃 함수
 function fadeOutMatch(matchDiv) {
   setTimeout(() => {
     matchDiv.style.transition = 'opacity 0.3s';
     matchDiv.style.opacity = '0';
+    const previousMatch = matchDiv.previousElementSibling;
+    if (previousMatch && previousMatch.classList.contains('match')) {
+      previousMatch.style.opacity = '1';
+    }
     setTimeout(() => {
-      // matchDiv.style.display = 'none';
       matchDiv.remove();
     }, 200);
-  }, 500); //0.5초간 정지
+  }, 300); //0.3초간 정지
+}
+
+function tournamentEnd() {
+  $('.tournament-container').fadeOut();
 }
 
 function tournamentStart() {
+  startTournament();
   $('.tournament-container').fadeIn();
-}
-function tournamentEnd() {
-  $('.tournament-container').fadeOut();
+  // fadeOutElement(tournamentResultContainer, () => {
+  //   initializeTournament();
+  fadeInElement(tournamentContainer);
+  // });
+
+  $('body,html').animate({ scrollTop: $('.tournament-start-btn').offset().top - 250 }, 300);
 }
