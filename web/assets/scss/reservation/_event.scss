@@ -1,26 +1,20 @@
-﻿$conH: 5385px;
+﻿$con1H: 1238px - 30px;
+$con2H: 1626px;
+$con3H: 1290px;
+$con4H: 1061px + 30px;
+// $conH: 5385px;
 .section-event {
   position: relative;
   z-index: 2;
   // height: $conH;
   overflow: hidden;
   background: url(../images/event/bg.webp) no-repeat 50% 0;
-  background-size: 2560px $conH; //auto;
-  // padding-top: 212px;
+  background-size: 2560px auto; //s$conH; //auto;
 }
 
 .event-content {
-  // box-sizing: content-box;
-  // border-top: 1px solid red;
-  // border-bottom: 1px solid red;
-
-  $con1H: 936px + 212px;
-  $con2H: 1466px;
-  $con3H: 1290px;
-  $con4H: $conH - $con1H - $con2H - $con3H - 260px;
-  // box-shadow: inset 0 0 2px red;
+  // box-shadow: inset 0 0 2px yellow; //FIXME:
   &--1 {
-    // position: 212px;
     height: $con1H;
   }
   &--2 {
@@ -78,7 +72,7 @@
       .i--3 {
         @include spr(-5px, -313px, 175px, 121px);
         top: 683px;
-        margin-left: 494px;
+        margin-left: 544px;
       }
 
       .i--4 {
@@ -90,19 +84,19 @@
       .i--5 {
         @include spr(-5px, -698px, 321px, 324px);
 
-        margin-left: 770px;
-        top: 234px;
+        margin-left: -1120px;
+        top: 890px;
       }
 
       .i--6 {
         @include spr(-5px, -1032px, 413px, 407px);
-        top: 890px;
-        margin-left: 550px;
+        top: 1040px;
+        margin-left: 780px;
       }
     }
     .gauge {
       position: relative;
-      top: 580px;
+      top: 573px;
       z-index: 2;
     }
   }
@@ -127,7 +121,7 @@
       height: 2188px;
       &--light {
         background: url(../images/event/2/bg-light.webp);
-        top: -355px;
+        top: -417px;
         margin-left: -1282px;
       }
       //구름이 제목을 가리는구나,..,
@@ -137,9 +131,18 @@
         background: url(../images/event/2/bg-cloud.webp);
       }
     }
+    .ch {
+      width: 1746px;
+      height: 1587px;
+      background: url(../images/event/2/ch.webp) no-repeat;
+      position: absolute;
+      left: 50%;
+      top: -16px;
+      margin-left: -1280px;
+    }
     .container {
       position: relative;
-      top: 522px;
+      top: 460px;
     }
     .attend-form {
       // border: 1px solid #fff;
@@ -172,10 +175,21 @@
         }
       }
     }
+    .btn-check-board-reward {
+      @include btnImg(314px, 124px, '../images/event/2/btn-check-board-reward.webp');
+      margin: -200px auto 0;
+      z-index: 3;
+    }
     .event-notice {
+      margin: -68px auto 0;
       z-index: 2;
       position: relative;
       font-family: $font-family-sub;
+      letter-spacing: -0.05em;
+      text-align: left;
+      font-size: 18px;
+      color: #bbbbbb;
+      max-width: 720px;
       h4 {
         font-weight: 400;
       }
@@ -183,12 +197,6 @@
         // margin-top: 0;
         line-height: 1.1;
       }
-      letter-spacing: -0.05em;
-      text-align: left;
-      font-size: 18px;
-      color: #bbbbbb;
-      max-width: 700px;
-      margin: -105px auto 0;
     }
   }
 
@@ -202,7 +210,17 @@
   //  "Y8888P"
 
   &--3 {
-    padding-top: 480px;
+    padding-top: 419px;
+    position: relative;
+    .ch {
+      width: 470px;
+      height: 721px;
+      background: url(../images/event/3/ch.webp) no-repeat;
+      position: absolute;
+      left: 50%;
+      margin-left: -704px;
+      top: 579px;
+    }
     .btn-wrap {
       display: flex;
       align-items: center;
@@ -214,7 +232,7 @@
           @include btnImg(283px, 156px, '../images/event/3/btn-x.webp');
         }
         &--lounge {
-          @include btnImg(282px, 154px, '../images/event/3/btn-lounge.webp');
+          @include btnImg(284px, 158px, '../images/event/3/btn-lounge.webp');
         }
       }
     }
@@ -230,10 +248,23 @@
   &--4 {
     position: relative;
     text-align: center;
-    padding-top: 446px;
+
     .tournament-start-btn {
-      @include btnImg(283px, 156px, '../images/event/4/btn.webp');
-      position: relative;
+      position: absolute;
+      @include btnImg(385px, 212px, '../images/event/4/btn.webp');
+      z-index: 2;
+      top: 370px;
+    }
+    .box {
+      display: block;
+      margin: 0 auto;
+      width: 1216px + 50px;
+      height: 683px + 50px;
+      background: url(../images/event/4/box.webp) 100% 100% no-repeat;
+      position: absolute;
+      top: 268px;
+      left: 50%;
+      margin-left: -627px;
     }
   }
 }
@@ -338,102 +369,10 @@
     }
   }
 }
-.achieve-list {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 257px * 3;
-  margin: 0 auto;
-  justify-content: center;
-  perspective: 1100px;
 
-  .card {
-    overflow: visible;
-    transition: 1s;
-    margin-left: -3px;
-    margin-right: -3px;
-    flex: 0 0 257px;
-    min-width: 257px;
-    aspect-ratio: 257/321;
-    position: relative;
-    // &.init .cardCase {
-    //   transform: rotateY(180deg);
-    // }
-
-    &.active .cardCase {
-      transform: rotateY(180deg) !important;
-    }
-    &-back,
-    &-front {
-      width: 100%;
-      height: 100%;
-      background-size: contain;
-      overflow: hidden;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      background-size: contain;
-    }
-    &-front {
-      transform: rotateY(180deg);
-    }
-  }
-
-  .cardCase {
-    transform-style: preserve-3d;
-    transform-origin: center;
-    transition-delay: 200ms;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    overflow: visible;
-    transition: 1s;
-    &--1 {
-      .card-front {
-        background-image: url(../images/event/3/1-active.webp);
-      }
-      .card-back {
-        background-image: url(../images/event/3/1.webp);
-      }
-    }
-    &--2 {
-      .card-front {
-        background-image: url(../images/event/3/2-active.webp);
-      }
-      .card-back {
-        background-image: url(../images/event/3/2.webp);
-      }
-    }
-    &--3 {
-      .card-front {
-        background-image: url(../images/event/3/3-active.webp);
-      }
-      .card-back {
-        background-image: url(../images/event/3/3.webp);
-      }
-    }
-    &--4 {
-      .card-front {
-        background-image: url(../images/event/3/4-active.webp);
-      }
-      .card-back {
-        background-image: url(../images/event/3/4.webp);
-      }
-    }
-    &--5 {
-      .card-front {
-        background-image: url(../images/event/3/5-active.webp);
-      }
-      .card-back {
-        background-image: url(../images/event/3/5.webp);
-      }
-    }
-  }
-}
+//소스 너무 긴 별도 유틸 분리..
+@import '_event-gauge.scss';
+@import '_event-achieve.scss';
 
 //          888
 //          888
@@ -443,7 +382,6 @@
 // "Y8888b. 888    .d888888 888     "Y8888b.
 //      X88 Y88b.  888  888 888          X88
 //  88888P'  "Y888 "Y888888 888      88888P'
-
 $blinkSecond: 5s;
 @mixin ratioBlink($w) {
   animation-duration: truncate-decimal(($w/30) * $blinkSecond, 2);
@@ -453,7 +391,7 @@ $blinkSecond: 5s;
 .event-content {
   .i_star {
     i {
-      z-index: 2;
+      z-index: 3;
       // border: 1px solid #fff;
       background: url(../images/event/i_star.webp) no-repeat;
       background-size: contain;
@@ -521,7 +459,7 @@ $blinkSecond: 5s;
       position: absolute;
       width: 1158px;
       height: 1156px;
-      top: 110px;
+      top: 50px;
       margin-left: -554px;
       i {
         &:nth-child(1) {

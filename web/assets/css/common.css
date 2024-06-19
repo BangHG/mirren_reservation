@@ -1134,7 +1134,7 @@ body {
   padding-bottom: 44px;
 }
 .loading__logo {
-  width: 570px;
+  width: 734px;
   aspect-ratio: 1;
   position: relative;
   display: block;
@@ -1151,6 +1151,7 @@ body {
 }
 .loading__logo .logo {
   background-image: url(../../../common/images/loading/bi.webp);
+  background-size: 570px;
 }
 .loading__logo .circle {
   -webkit-transform-origin: 50% 50%;
@@ -1182,6 +1183,10 @@ body {
   background-repeat: no-repeat;
   display: block;
   opacity: 0;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
 }
 .loading__badge .badge--1 {
   background-image: url(../../../common/images/loading/badge1.webp);

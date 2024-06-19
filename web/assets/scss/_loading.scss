@@ -25,7 +25,7 @@
     padding-bottom: 44px;
   }
   &__logo {
-    width: 570px;
+    width: 734px;
     aspect-ratio: 1;
     position: relative;
     display: block;
@@ -42,6 +42,7 @@
     }
     .logo {
       background-image: url(../../../common/images/loading/bi.webp);
+      background-size: 570px;
     }
     .circle {
       transform-origin: 50% 50%;
@@ -77,6 +78,11 @@
       display: block;
       // opacity: 0.5;
       opacity: 0;
+
+      transform: scale(1.1);
+      filter: blur(5px);
+      //  scale: '1.1', filter: 'blur(5px)'
+
       $verGap: 40px;
       &--1 {
         background-image: url(../../../common/images/loading/badge1.webp);

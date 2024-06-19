@@ -55,10 +55,12 @@ function startTournament() {
     items = shuffleArray(items);
 
     if (items.length === 2) {
-      tournamentContainer.innerHTML = `<p class="title--select"><span class="sr-only">성흔을 선택해주세요!
+      tournamentContainer.innerHTML = `<p class="title--select"><span class="sr-only">마음에 드는 성흔을 선택해주세요!
+
       결승전</span></p>`;
     } else {
-      tournamentContainer.innerHTML = `<p class="title--select"><span class="sr-only">성흔을 선택해주세요!
+      tournamentContainer.innerHTML = `<p class="title--select"><span class="sr-only">마음에 드는 성흔을 선택해주세요!
+
       ${items.length}강</span></p>`;
     }
 
@@ -90,11 +92,11 @@ function startTournament() {
               const resultName = resultWrap.querySelector('.name');
               const resultBtn = resultWrap.querySelector('.btn-saveImg');
 
-              resultImg.style.backgroundImage = `url(../common/images/tournament/${winner.id}.png)`;
-              resultImg.appendChild(createElementFromHTML(`<i style="background:url('../common/images/tournament/새 폴더/${winner.id}.webp') 50% 50%;background-size:cover;;position:absolute;top: 66px; left: 28px; width: 242px;height:263px" title="FIXME:">${winner.name}</i>`));
+              resultImg.style.backgroundImage = `url(${$rootUrl}/common/images/tournament/${winner.id}.png)`;
+              resultImg.appendChild(createElementFromHTML(`<i style="background:url('${$rootUrl}/common/images/tournament/새 폴더/${winner.id}.webp') 50% 50%;background-size:cover;;position:absolute;top: 66px; left: 28px; width: 242px;height:263px" title="FIXME:">${winner.name}</i>`));
 
               resultName.textContent = `${winner.name}`;
-              resultBtn.href = `../common/images/tournament/${winner.id}.png`;
+              resultBtn.href = `${$rootUrl}/common/images/tournament/${winner.id}.png`;
               resultBtn.download = `${winner.name}.png`;
 
               fadeInElement(tournamentResultContainer);
@@ -128,15 +130,15 @@ function startTournament() {
 
       const button1HTML = `
         <button class="item-button">
-          <div class="img" style="background-image:url(../common/images/tournament/${item1.id}.png)">
-            <i style="background:url('../common/images/tournament/새 폴더/${item1.id}.webp') 50% 50%;background-size:cover;;position:absolute;top: 66px; left: 28px; width: 242px;height:263px" title="FIXME:">${item1.name}</i>
+          <div class="img" style="background-image:url(${$rootUrl}/common/images/tournament/${item1.id}.png)">
+            <i style="background:url('${$rootUrl}/common/images/tournament/새 폴더/${item1.id}.webp') 50% 50%;background-size:cover;;position:absolute;top: 66px; left: 28px; width: 242px;height:263px" title="FIXME:">${item1.name}</i>
             <span class="sr-only">${item1.name}</span>
           </div>
         </button>`;
       const button2HTML = `
         <button class="item-button">
-          <div class="img" style="background-image:url(../common/images/tournament/${item2.id}.png)">
-            <i style="background:url('../common/images/tournament/새 폴더/${item2.id}.webp') 50% 50%;background-size:cover;;position:absolute;top: 66px; left: 28px; width: 242px;height:263px" title="FIXME:">${item2.name}</i>
+          <div class="img" style="background-image:url(${$rootUrl}/common/images/tournament/${item2.id}.png)">
+            <i style="background:url('${$rootUrl}/common/images/tournament/새 폴더/${item2.id}.webp') 50% 50%;background-size:cover;;position:absolute;top: 66px; left: 28px; width: 242px;height:263px" title="FIXME:">${item2.name}</i>
             <span class="sr-only">${item2.name}</span>
           </div>
         </button>`;

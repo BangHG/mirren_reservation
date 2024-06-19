@@ -6,9 +6,9 @@ document.querySelector('.btnTop').addEventListener('click', (e) => {
 });
 // 스크롤앵커는 얘로 다 해버리면 승산이 있다
 
-document.querySelector('.scrollDown').addEventListener('click', (e) => {
-  gsap.to(window, { duration: 0.3, scrollTo: { y: '#section-witch', offsetY: 30 } });
-});
+// document.querySelector('.scrollDown').addEventListener('click', (e) => {
+//   gsap.to(window, { duration: 0.3, scrollTo: { y: '#section-witch', offsetY: 30 } });
+// });
 
 // 888       .d88888b.         d8888 8888888b. 8888888 888b    888  .d8888b.
 // 888      d88P" "Y88b       d88888 888  "Y88b  888   8888b   888 d88P  Y88b
@@ -23,8 +23,6 @@ function GsapLoadingNo() {
   // gsap.to(window, { duration: 0.1, scrollTo: 0 });
   //로딩안하기
   console.log('작업을 위해 로딩화면 생략');
-
-  gsap.to('.section-main .bg', { duration: 1, scale: 1 }, '<=');
   gsap.to('.loading ', { duration: 1, opacity: 0, zIndex: '-1' }, '<');
 }
 

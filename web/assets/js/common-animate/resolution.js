@@ -126,7 +126,7 @@ function gsapScrollTriggerIndex() {
       start: 'top center',
       // end: 'bottom bottom+=500px ',
       end: 'bottom+=400px center',
-      //markers: true,
+      // markers: true,
       scrub: 1,
       scrub: true,
       ease: 'none',
@@ -298,38 +298,115 @@ function gsapScrollTriggerMedia() {
 }
 
 function gsapScrollTriggerReservation() {
-  // attached 효과
-  // const sectionTrans = document.querySelector('.section-trans');
-  // function setTopBg() {
-  //   var rect = sectionTrans.getBoundingClientRect();
-  //   // console.log(rect);
-  //   gsap.set('.section-trans .bg', {
-  //     y: -rect.top,
-  //   });
-  // }
-  /* 
-  $(document).ready(function () {
-    setTopBg();
+  function updateGauge(state) {
+    const percentages = [0, 6, 24, 41, 63, 81, 100]; // 각 state에 대한 퍼센티지 배열
+    const items = document.querySelectorAll('.gauge-list .item');
+    const itemsBg = document.querySelectorAll('.gauge .item-bg');
+    const bar = document.querySelector('.bar');
+    const duration = 0.5; // 각 애니메이션 단계의 지속 시간 (초)
+
+    gsap.set(bar, { width: 0 });
+
+    items.forEach((item) => item.classList.remove('active'));
+    itemsBg.forEach((item) => item.classList.remove('active'));
+
+    let widthPercentage = percentages[state];
+    for (let i = 0; i < state; i++) {
+      gsap.to(items[i], {
+        duration: duration,
+        delay: i * duration,
+        onComplete: () => items[i].classList.add('active'),
+      });
+      gsap.to(itemsBg[i], {
+        duration: duration,
+        delay: i * duration,
+        onComplete: () => itemsBg[i].classList.add('active'),
+      });
+    }
+
+    gsap.to(bar, {
+      delay: 0.1,
+      width: widthPercentage + '%',
+      duration: duration * state,
+      ease: 'none',
+    });
+  }
+
+  // event1
+  const gaugeList = document.querySelector('.gauge-list');
+  const state = parseInt(gaugeList.getAttribute('data-state'), 10);
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: '.event-content--1',
+      start: 'top center',
+      end: 'bottom',
+
+      marker: true,
+      onEnter: () => {
+        updateGauge(state);
+        // $('.reservation-bg').addClass('trans');
+      },
+
+      onLeaveBack: () => {
+        // updateGauge(state);
+        // $('.reservation-bg').removeClass('trans');
+      },
+    },
   });
-  $(document).scroll(function (e) {
-    setTopBg();
-    // gsap.ticker.add(function () {
-    //ticker는 60fps 마다 계속 호출함.. OMG
-    // });
-  }); */
-  // gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: '.section-trans #exBox2',
-  //     start: 'top center',
-  //     end: 'bottom',
-  //     onEnter: () => {
-  //       $('.reservation-bg').addClass('trans');
-  //     },
-  //     onLeaveBack: () => {
-  //       $('.reservation-bg').removeClass('trans');
-  //     },
-  //   },
-  // });
+
+  //event2
+  $(function SET_event2() {
+    gsap.set('.event-content--2 .ch', { opacity: 0 });
+    gsap.set('.event-content--3 .ch', { opacity: 0 });
+  });
+  const ST_event2 = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.event-content--2',
+      start: 'top center',
+      end: 'bottom',
+      //markers: true,
+      // scrub: 1,
+      onEnter: () => {
+        gsap.to('.event-content--2 .ch', { duration: 2, opacity: 1 });
+      },
+    },
+  });
+
+  // 반복
+  gsap.fromTo('.event-content--2 .ch', { y: '0' }, { duration: 5, y: '+=1.5%', repeat: -1, yoyo: true }, '<');
+
+  //event3
+  $(function SET_event3() {
+    gsap.set('.event-content--3 .card', { rotateY: -180 });
+  });
+  function cardFlip() {
+    const items = document.querySelectorAll('.achieve-list .card');
+    const delay = 0.3;
+    for (let i = 0; i < state; i++) {
+      gsap.to(items[i], {
+        duration: 0.5,
+        delay: i * delay,
+        rotateY: 0,
+      });
+    }
+  }
+  const ST_event3 = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.event-content--3',
+      start: 'top center',
+      end: 'bottom',
+      //markers: true,
+      scrub: 0,
+      onEnter: () => {
+        cardFlip();
+        gsap.to('.event-content--3 .ch', { duration: 2, opacity: 1 });
+        // gsap.to('.event-content--3 .card', { duration: 0.5, rotateY: 0 });
+      },
+    },
+  });
+
+  // 반복
+  gsap.fromTo('.event-content--3 .ch', { y: '0' }, { duration: 3, y: '+=1.5%', repeat: -1, yoyo: true }, '<');
 }
 // }; //호출은 resolution.js 에서. 1600이상에서만 작동
 

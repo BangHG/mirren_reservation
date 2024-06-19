@@ -141,7 +141,7 @@ tlRepeat
     {
       y: '0',
     },
-    { duration: 5, y: '-20%;', repeat: -1, yoyo: true },
+    { duration: 4.5, y: '-20%;', repeat: -1, yoyo: true },
     '<'
   )
   .fromTo(

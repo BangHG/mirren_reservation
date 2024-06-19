@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- #include file="/games/mirren/reservation/mobile/inc/head.html" -->
+    <script>
+      $rootUrl = '/games/mirren/reservation';
+    </script>
+    <link rel="stylesheet" href="assets/css/intro.min.css" />
+  </head>
+
+  <body class="main-page" data-page="media">
+    <!-- #include file="/games/mirren/reservation/mobile/inc/header.html" -->
+
+    <main class="main" id="contents">
+      <section class="section section-media" id="section-media">
+        <div class="i_star_wrap">
+          <i class="i_star"></i>
+          <i class="i_star"></i>
+          <i class="i_star"></i>
+          <i class="i_star"></i>
+        </div>
+        <div class="bg-clock_wrap">
+          <i class="bg-clock bg-clock--inner"></i>
+          <i class="bg-clock bg-clock--outer"></i>
+        </div>
+
+        <h2 class="section-title">
+          <span class="section-title__img" data-aos="fade-in" data-aos-duration="1000"></span>
+          <span class="sr-only">미디어 </span>
+        </h2>
+
+        <div class="tab" id="media-tab" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="100">
+          <ul class="tab-list">
+            <li><a data-hash="media--1" class="tab-link active"> 영상 </a></li>
+            <li><a data-hash="media--2" class="tab-link"> 일러스트 </a></li>
+          </ul>
+
+          <div class="tab-content active" id="media--1" style="display: block">
+            <div class="mediaSwiper mediaSwiper--video">
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide media-item">
+                    <div class="img-bx"><img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_1.webp" alt="" /></div>
+                    <button data-content="https://www.youtube.com/embed/sdXeCi0uDaE" class="play-btn popup-link--video"></button>
+                  </div>
+                </div>
+                <div class="swiper-button swiper-button--prev"></div>
+                <div class="swiper-button swiper-button--next"></div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content" id="media--2">
+            <div class="mediaSwiper mediaSwiper--picture">
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide media-item">
+                    <div class="img-bx">
+                      <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_2.webp" alt="" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide media-item">
+                    <div class="img-bx">
+                      <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_3.webp" alt="" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide media-item">
+                    <div class="img-bx">
+                      <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_4.webp" alt="" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide media-item">
+                    <div class="img-bx">
+                      <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_5.webp" alt="" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide media-item">
+                    <div class="img-bx">
+                      <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_6.webp" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-button swiper-button--prev"></div>
+                <div class="swiper-button swiper-button--next"></div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- #include file="/games/mirren/reservation/mobile/inc/footer.html" -->
+
+    <button type="button" title="최상단으로" class="btnTop"></button>
+    <!-- #include file="/games/mirren/reservation/mobile/inc/popup-common.html" -->
+
+    <script src="/games/mirren/reservation/mobile/assets/js/common.min.js"></script>
+    <script src="/games/mirren/reservation/mobile/assets/js/common-animate.min.js"></script>
+    <script src="/games/mirren/reservation/mobile/assets/js/media.min.js"></script>
+  </body>
+</html>

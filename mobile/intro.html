@@ -5,46 +5,16 @@
     <script>
       $rootUrl = '/games/mirren/reservation';
     </script>
+    <link rel="stylesheet" href="assets/css/intro.min.css" />
   </head>
 
-  <body class="main-page">
+  <body class="main-page" data-page="intro">
     <audio controls id="cv_audio" class="sr-only">
       <source src="/games/mirren/reservation/common/audio/ritsu_ja.wav" type="audio/wav" />
     </audio>
     <!-- #include file="/games/mirren/reservation/mobile/inc/header.html" -->
 
-    <section class="loading">
-      <div class="container">
-        <div class="loading__logo">
-          <span class="circle circle--outer"></span>
-          <span class="circle circle--inner"></span>
-          <span class="logo"></span>
-        </div>
-        <div class="loading__badge">
-          <span class="badge badge--1"></span>
-          <span class="badge badge--2"></span>
-          <span class="badge badge--3"></span>
-          <span class="badge badge--4"></span>
-          <span class="badge badge--5"></span>
-        </div>
-      </div>
-    </section>
-
     <main class="main" id="contents">
-      <section class="section section-main">
-        <div class="bg">
-          <span class="bg__petal">
-            <i class="p p-1"><i></i></i> <i class="p p-2"><i></i></i> <i class="p p-21"><i></i></i> <i class="p p-3"><i></i></i> <i class="p p-4"><i></i></i> <i class="p p-41"><i></i></i> <i class="p p-5"><i></i></i> <i class="p p-51"><i></i></i> <i class="p p--c p-1"><i></i></i> <i class="p p--c p-2"><i></i></i> <i class="p p--c p-3"><i></i></i> <i class="p p--c p-4"><i></i></i> <i class="p p--c p-5"><i></i></i>
-          </span>
-        </div>
-
-        <div class="bi"></div>
-
-        <button class="scrollDown" type="button">
-          <span class="sr-only"> scroll down </span>
-        </button>
-      </section>
-
       <section class="section section-witch" id="section-witch">
         <div class="i_star_wrap"> <i class="i_star"></i> <i class="i_star"></i> <i class="i_star"></i> <i class="i_star i_star--w"></i> </div>
         <h2 class="section-title">
@@ -212,8 +182,8 @@
             <span class="sr-only"> 마녀 리리아가 만든 시스템 </span>
           </p>
 
-          <p data-aos="fade-in" data-aos-duration="1000" data-aos-delay="150">마녀는 각 3명의 성흔을 소환할 수 있다. > </p></div
-        >
+          <p data-aos="fade-in" data-aos-duration="1000" data-aos-delay="150">마녀는 각 3명의 성흔을 소환할 수 있다. </p>
+        </div>
 
         <!-- S: 성흔 탭 -->
         <div class="tab" id="stigmata-tab">
@@ -227,22 +197,22 @@
           </ul>
 
           <div class="tab-content active" id="tabContent1">
-            <div class="stigmata-group"> <!-- json --> </div>
+            <div class="stigmata-group"> <!-- ajax --> </div>
           </div>
           <div class="tab-content" id="tabContent2">
-            <div class="stigmata-group"> <!-- json --> </div>
+            <div class="stigmata-group"> <!-- ajax --> </div>
           </div>
           <div class="tab-content" id="tabContent3">
-            <div class="stigmata-group"> <!-- json --> </div>
+            <div class="stigmata-group"> <!-- ajax --> </div>
           </div>
           <div class="tab-content" id="tabContent4">
-            <div class="stigmata-group"> <!-- json --> </div>
+            <div class="stigmata-group"> <!-- ajax --> </div>
           </div>
           <div class="tab-content" id="tabContent5">
-            <div class="stigmata-group"> <!-- json --> </div>
+            <div class="stigmata-group"> <!-- ajax --> </div>
           </div>
           <div class="tab-content" id="tabContent6">
-            <div class="stigmata-group"> <!-- json --> </div>
+            <div class="stigmata-group"> <!-- ajax --> </div>
           </div>
         </div>
         <!-- E: 성흔 탭 -->
@@ -250,7 +220,7 @@
         <div class="swiper">
           <div class="swiper-container">
             <div class="swiper-wrapper" id="stigmataList">
-              <!-- json -->
+              <!-- ajax -->
             </div>
           </div>
         </div>
@@ -338,83 +308,6 @@
           <div class="swiper-button swiper-button--next"></div>
         </div>
       </section>
-
-      <section class="section section-media" id="section-media">
-        <div class="i_star_wrap">
-          <i class="i_star"></i>
-          <i class="i_star"></i>
-          <i class="i_star"></i>
-          <i class="i_star"></i>
-        </div>
-        <div class="bg-clock_wrap">
-          <i class="bg-clock bg-clock--inner"></i>
-          <i class="bg-clock bg-clock--outer"></i>
-        </div>
-
-        <h2 class="section-title">
-          <span class="section-title__img" data-aos="fade-in" data-aos-duration="1000"></span>
-          <span class="sr-only">미디어 </span>
-        </h2>
-
-        <div class="tab" id="media-tab" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="100">
-          <ul class="tab-list">
-            <li><a data-hash="media--1" class="tab-link active"> 영상 </a></li>
-            <li><a data-hash="media--2" class="tab-link"> 일러스트 </a></li>
-          </ul>
-
-          <div class="tab-content active" id="media--1" style="display: block">
-            <div class="mediaSwiper mediaSwiper--video">
-              <div class="swiper-container">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide media-item">
-                    <div class="img-bx"><img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_1.webp" alt="" /></div>
-                    <button data-content="https://www.youtube.com/embed/sdXeCi0uDaE" class="play-btn popup-link--video"></button>
-                  </div>
-                </div>
-                <div class="swiper-button swiper-button--prev"></div>
-                <div class="swiper-button swiper-button--next"></div>
-                <div class="swiper-pagination"></div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-content" id="media--2">
-            <div class="mediaSwiper mediaSwiper--picture">
-              <div class="swiper-container">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide media-item">
-                    <div class="img-bx">
-                      <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_2.webp" alt="" />
-                    </div>
-                  </div>
-                  <div class="swiper-slide media-item">
-                    <div class="img-bx">
-                      <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_3.webp" alt="" />
-                    </div>
-                  </div>
-                  <div class="swiper-slide media-item">
-                    <div class="img-bx">
-                      <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_4.webp" alt="" />
-                    </div>
-                  </div>
-                  <div class="swiper-slide media-item">
-                    <div class="img-bx">
-                      <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_5.webp" alt="" />
-                    </div>
-                  </div>
-                  <div class="swiper-slide media-item">
-                    <div class="img-bx">
-                      <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_6.webp" alt="" />
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-button swiper-button--prev"></div>
-                <div class="swiper-button swiper-button--next"></div>
-                <div class="swiper-pagination"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
 
     <!-- #include file="/games/mirren/reservation/mobile/inc/footer.html" -->
@@ -424,5 +317,6 @@
 
     <script src="/games/mirren/reservation/mobile/assets/js/common.min.js"></script>
     <script src="/games/mirren/reservation/mobile/assets/js/common-animate.min.js"></script>
+    <script src="/games/mirren/reservation/mobile/assets/js/intro.min.js"></script>
   </body>
 </html>

@@ -9,13 +9,7 @@
 
 @import 'library/mixin';
 // 자주 사용하는 함수형 선언(@include 구문)을 모아놓은 경로입니다.
-
-@import 'library/reset';
-// imgc서버의 reset 대신 사용하는 파일. 필요에 따라 수정가능
-
-@import 'library/utilities';
-// 유틸리티 모음
-
+/* 
 main {
   position: relative;
   overflow: hidden;
@@ -33,7 +27,11 @@ main {
   align-content: center;
   background-color: #f2f2f2;
   text-align: center;
-}
+} */
+
+//  TODO: 분리작업
+//  TODO: 스크립트분리
+//  TODO: cbt 수급
 .section-tournament {
   width: 100%;
   padding: 0 10px;

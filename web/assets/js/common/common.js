@@ -43,6 +43,8 @@ $(document).ready(function () {
   // ## aos
   AOS.init({
     once: true,
+    // disable: 'mobile',
+    // offset: 100,
   });
 });
 

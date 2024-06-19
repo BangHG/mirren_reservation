@@ -31,9 +31,9 @@ function GsapLoadingNo() {
 
 function GsapLoadingAnimation() {
   loadingSet();
-  loadingAnimation();
+  loading();
 
-  console.log('로딩 ㄱㄱ');
+  // console.log('로딩 ㄱㄱ');
   // 세팅
   function loadingSet() {
     $('.main-page').css('overflow-y', 'hidden');
@@ -42,7 +42,7 @@ function GsapLoadingAnimation() {
     gsap.set('.loading .circle--outer', { rotate: '-450deg' });
     gsap.set('.loading .circle--inner', { rotate: '-360deg' });
     gsap.set('.loading .logo', { opacity: '0' });
-    gsap.set('.loading .badge', { opacity: '0', scale: '1.1', filter: 'blur(5px)' });
+    // gsap.set('.loading .badge', { opacity: '0', scale: '1.1', filter: 'blur(5px)' });
 
     // gsap.set('.section-main .bg', { scale: 1.15 }); //덜덜이 이슈로 삭제
 
@@ -51,7 +51,7 @@ function GsapLoadingAnimation() {
   }
 
   //애니메이션
-  function loadingAnimation() {
+  function loading() {
     var tl_logo = gsap.timeline({ ease: 'ease' });
     tl_logo
       //1. 로딩 컨테이너 fadeIn
@@ -61,7 +61,7 @@ function GsapLoadingAnimation() {
           duration: 0.3,
           opacity: '1',
         },
-        '<'
+        '<='
       )
       //2. bi outer 돌아가면서 나머지 요소 진행{ 뱃지 순차적으로 나타나기,  bg 사라지기,}
       .to(
@@ -78,6 +78,7 @@ function GsapLoadingAnimation() {
 
             // 하단 문양 나타나기
             // ease: 'elastic.inOut(0.5, 1)'
+            // gsap.to('.loading', { duration: 5, background: 'red' }, '<'); //
             gsap.to('.loading .badge--1', { duration: 1, opacity: 0.5, filter: 'none', scale: 1 }, '<-=0.5'); //
             gsap.to('.loading .badge--2', { duration: 1, opacity: 0.5, filter: 'none', scale: 1 }, '<+=0.4'); //
             gsap.to('.loading .badge--3', { duration: 1, opacity: 0.5, filter: 'none', scale: 1 }, '<+=0.4'); //
