@@ -248,23 +248,52 @@ $con4H: 1061px + 30px;
   &--4 {
     position: relative;
     text-align: center;
-
-    .tournament-start-btn {
+    .ch {
       position: absolute;
-      @include btnImg(385px, 212px, '../images/event/4/btn.webp');
-      z-index: 2;
-      top: 370px;
+      width: 198px;
+      height: 197px;
+      background: url(../images/event/4/bg-goods.webp) no-repeat;
+      left: 50%;
+      top: 297px;
+      margin-left: 765px;
     }
+    .tournament-start-btn {
+      @include btnImg(385px, 212px, '../images/event/4/btn.webp');
+      // position: absolute;
+      // margin-left: ceil(385px/-2);
+      z-index: 3;
+      // top: 370px;
+      top: 270px;
+    }
+
     .box {
+      z-index: 1;
       display: block;
       margin: 0 auto;
-      width: 1216px + 50px;
-      height: 683px + 50px;
-      background: url(../images/event/4/box.webp) 100% 100% no-repeat;
-      position: absolute;
-      top: 268px;
-      left: 50%;
-      margin-left: -627px;
+      position: relative;
+      top: 90px;
+      width: 100vw;
+      max-width: 2000px;
+      height: 1000px;
+
+      &__box {
+        width: 1216px + 50px;
+        height: 683px + 50px;
+        background: url(../images/event/4/box.webp) 100% 100% no-repeat;
+        position: absolute;
+        top: 178px;
+        left: 50%;
+        margin-left: -627px;
+      }
+      &__fly {
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        width: 1218px;
+        height: 696px;
+        margin-left: -600px;
+        background: url(../images/event/4/fly.webp) no-repeat;
+      }
     }
   }
 }

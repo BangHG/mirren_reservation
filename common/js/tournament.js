@@ -12,10 +12,10 @@ function startTournament() {
     { id: '2', name: '앰프사' },
     { id: '3', name: '대니' },
     { id: '4', name: '시슬리' },
-    { id: '5', name: '사라' },
-    { id: '6', name: '마키' },
-    { id: '7', name: '제랄디아' },
-    { id: '8', name: '크리슈나' },
+    // { id: '5', name: '사라' },
+    // { id: '6', name: '마키' },
+    // { id: '7', name: '제랄디아' },
+    // { id: '8', name: '크리슈나' },
     // { id: '9', name: '이카루스' },
     // { id: '10', name: '아넥스' },
     // { id: '11', name: '디아' },
@@ -55,13 +55,21 @@ function startTournament() {
     items = shuffleArray(items);
 
     if (items.length === 2) {
-      tournamentContainer.innerHTML = `<p class="title--select"><span class="sr-only">마음에 드는 성흔을 선택해주세요!
-
-      결승전</span></p>`;
+      tournamentContainer.innerHTML = `<p class="title--select">
+      <span class="sr-only">마음에 드는 성흔을 선택해주세요!</span>
+      </p>
+      <p class="match-round match-round--${items.length}">
+      <span class="sr-only">결승</span>
+      </p>      
+      `;
     } else {
-      tournamentContainer.innerHTML = `<p class="title--select"><span class="sr-only">마음에 드는 성흔을 선택해주세요!
-
-      ${items.length}강</span></p>`;
+      tournamentContainer.innerHTML = `<p class="title--select">
+      <span class="sr-only">마음에 드는 성흔을 선택해주세요!</span>
+      </p>
+      <p class="match-round match-round--${items.length}">
+      <span class="sr-only">${items.length}강</span>
+      </p>      
+      `;
     }
 
     let nextRound = [];

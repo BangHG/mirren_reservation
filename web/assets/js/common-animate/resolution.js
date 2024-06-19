@@ -357,7 +357,6 @@ function gsapScrollTriggerReservation() {
   //event2
   $(function SET_event2() {
     gsap.set('.event-content--2 .ch', { opacity: 0 });
-    gsap.set('.event-content--3 .ch', { opacity: 0 });
   });
   const ST_event2 = gsap.timeline({
     scrollTrigger: {
@@ -377,6 +376,7 @@ function gsapScrollTriggerReservation() {
 
   //event3
   $(function SET_event3() {
+    gsap.set('.event-content--3 .ch', { opacity: 0 });
     gsap.set('.event-content--3 .card', { rotateY: -180 });
   });
   function cardFlip() {
@@ -407,6 +407,52 @@ function gsapScrollTriggerReservation() {
 
   // 반복
   gsap.fromTo('.event-content--3 .ch', { y: '0' }, { duration: 3, y: '+=1.5%', repeat: -1, yoyo: true }, '<');
+
+  //event4
+  $(function SET_event4() {
+    gsap.set('.event-content--4 .ch', {
+      opacity: 0,
+      rotate: '-50',
+      x: '-50',
+      y: '-20',
+    });
+  });
+  const ST_event4 = gsap.timeline(
+    {
+      scrollTrigger: {
+        trigger: '.event-content--4',
+        start: 'top center',
+        end: 'bottom',
+        //markers: true,
+        // scrub: 1,
+        onEnter: () => {
+          gsap.to('.event-content--4 .ch', {
+            duration: 2,
+            opacity: 1,
+            y: 0,
+            x: 0,
+            rotate: 0,
+          });
+        },
+      },
+    },
+    '<+=2'
+  );
+
+  // // 반복
+  gsap.fromTo(
+    '.event-content--4 .box__fly',
+    { rotate: '-2', y: 0 },
+    {
+      rotate: '2',
+      duration: 5,
+      y: '10',
+      repeat: -1,
+      yoyo: true,
+      // ease: 'power4.out',
+    },
+    '<'
+  );
 }
 // }; //호출은 resolution.js 에서. 1600이상에서만 작동
 
