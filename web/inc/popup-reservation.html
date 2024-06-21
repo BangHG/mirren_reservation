@@ -3,16 +3,19 @@
   <div class="popup__wrap">
     <button type="button" class="popup__close" onclick="closed_popup()"></button>
     <div class="popup__scroll">
-      <div class="popup__head">
+      <!-- <div class="popup__head">
         <h2>(필수) 개인정보 수집 및 이용 동의</h2>
-      </div>
+      </div> --><!-- 240621 수정 : __head 삭제 -->
       <div class="popup__body">
+        <!-- S: 240621 수정 : 추가 -->
+        <h2 class="terms-title">(필수) 개인정보 수집 및 이용 동의</h2>
+        <!-- E: 240621 수정 : 추가 -->
         <div class="terms-content">
           <p>㈜그라비티는 뮈렌: 천년의 여정 사전예약 이벤트와 관련하여 다음과 같은 개인정보를 수집하고 있습니다. 개인정보 수집을 거부하는 경우 사전등록 참여에 제한이 될 수 있습니다.</p>
           <ul class="list-dot" style="margin-top: 1em">
             <li data-dot="▶ ">수집하는 개인정보 항목: 휴대전화번호</li>
             <li data-dot="▶ ">개인정보 수집 및 이용 목적: 사전예약 이벤트 참여, 게임 출시 안내 SMS 발송 및 이벤트 보상 지급</li>
-            <li data-dot="▶ ">개인정보의 보유 및 이용 기간: 이벤트 보상 지급 후 30일 이내 폐기</li>
+            <li data-dot="▶ ">개인정보의 보유 및 이용 기간: 이벤트 보상 지급 후 30일 이내 폐기</li>
           </ul>
         </div>
       </div>
@@ -25,10 +28,13 @@
   <div class="popup__wrap">
     <button type="button" class="popup__close" onclick="closed_popup()"></button>
     <div class="popup__scroll">
-      <div class="popup__head">
+      <!-- <div class="popup__head">
         <h2>(필수) 개인 정보 처리 위탁 동의</h2>
-      </div>
+      </div> --><!-- 240621 수정 : __head 삭제 -->
       <div class="popup__body">
+        <!-- S: 240621 수정 : 추가 -->
+        <h2 class="terms-title">(필수) 개인 정보 처리 위탁 동의</h2>
+        <!-- E: 240621 수정 : 추가 -->
         <div class="terms-content">
           <p>㈜그라비티는 [뮈렌: 천년의 여정]의 개인정보 처리 업무를 위탁하고 있습니다.</p>
           <ul class="list-dot" style="margin-top: 1em">
@@ -47,10 +53,13 @@
   <div class="popup__wrap">
     <button type="button" class="popup__close" onclick="closed_popup()"></button>
     <div class="popup__scroll">
-      <div class="popup__head">
+      <!-- <div class="popup__head">
         <h2>(선택) 광고성 정보 수신 동의</h2>
-      </div>
+      </div> --><!-- 240621 수정 : __head 삭제 -->
       <div class="popup__body">
+        <!-- S: 240621 수정 : 추가 -->
+        <h2 class="terms-title">(선택) 광고성 정보 수신 동의</h2>
+        <!-- E: 240621 수정 : 추가 -->
         <div class="terms-content">
           <p>
             ㈜그라비티는 광고성 정보 발송과 관련하여 다음과 같이 개인정보를 수집하고 있습니다.<br />
@@ -59,7 +68,7 @@
           <ul class="list-dot" style="margin-top: 1em">
             <li data-dot="▶ ">수집하는 개인정보 항목: 휴대전화번호</li>
             <li data-dot="▶ ">수집 및 이용 목적: 신규 게임 출시 및 각종 서비스 등 안내 SMS 발송</li>
-            <li data-dot="▶ ">보유 및 이용 기간: 수신동의일을 기준으로 180일 이내 폐기</li>
+            <li data-dot="▶ ">보유 및 이용 기간: 수신동의일을 기준으로 180일 이내 폐기</li>
           </ul>
         </div>
       </div>
@@ -68,23 +77,18 @@
 </aside>
 
 <!-- 사전예약 완료 팝업  -->
-<aside class="popup popup-terms" id="popup__reservation">
+
+<!-- S: 240621 수정  popup-terms 클래스 제거 -->
+<aside class="popup" id="popup__reservation">
+  <!-- E: 240621 수정  popup-terms 클래스 제거 -->
   <div class="popup__wrap">
     <button type="button" class="popup__close" onclick="closed_popup()"></button>
     <div class="popup__scroll">
       <div class="popup__body">
-        <!-- TODO: -->
-        <img src="assets/images/popup/reservation.webp" alt="      사전예약이 완료되었습니다." />
-        <p>TODO:디자인수급대기중</p>
-
-        <!-- <div class="btn-wrap">
-          <a href="#TODO:" class="btn" target="_blank">
-            <img src="assets/images/popup/btn-lounge.webp" alt="" title="라운지 바로가기" />
-          </a>
-          <a href="#TODO:" class="btn" onclick="closed_popup(); $('html,body').animate({scrollTop:$('.reservation-section--market').offset().top},300)">
-            <img src="assets/images/popup/btn-market.webp" alt="" title="마켓 사전예약" />
-          </a>
-        </div> -->
+        <!-- S: 240621 수정 -->
+        <img src="assets/images/popup/reservation.webp" alt="사전예약이 완료되었습니다." />
+        <button class="btn" title="확인" type="button" onclick="closed_popup()"></button>
+        <!-- E: 240621 수정 -->
       </div>
     </div>
   </div>
@@ -94,51 +98,106 @@
 <aside class="popup popup-terms" id="popup__reservation-notice">
   <div class="popup__wrap">
     <button type="button" class="popup__close" onclick="closed_popup()"></button>
+    <!-- S: 240621 수정 : 추가 및 수정 -->
     <div class="popup__scroll">
-      <div class="popup__head">
-        <h2>사전예약 유의사항</h2>
-      </div>
       <div class="popup__body">
+        <h2 class="terms-title">사전예약 유의사항</h2>
         <div class="terms-content">
-          TODO:내용수급대기중
-          <!-- <p style="font-weight: 700; color: #111">※ 정식 사전 예약 유의사항</p>
-          <ul class="list-dot" style="margin-top: 0.5em">
-            <li data-dot="- ">광고성 정보 수신 동의 항목 선택 시 사전예약 보상 쿠폰 문자 및 이벤트 소식을 받을 수 있습니다.</li>
-            <li data-dot="- ">광고성 정보 수신 미동의 응모된 상태라면, 동의 체크 후 재응모 가능합니다.</li>
-            <li data-dot="- ">휴대폰 번호를 잘못 입력할 경우 사전예약 보상을 받지 못할 수 있습니다.</li>
-            <li data-dot="- "> 타인의 휴대폰 번호를 도용하거나 비정상적인 방법으로 신청 시 사전예약 관련 혜택 제공이 제한 될 수 있습니다. </li>
-            <li data-dot="- ">사전예약 완료 후 등록한 휴대폰 번호는 변경할 수 없습니다.</li>
-            <li data-dot="- "> 사전예약 일정 및 이벤트, 보상은 회사의 사정에 따라 변경 될 수 있습니다. </li>
-            <li data-dot="- ">광고성 수신 동의 철회를 원하실 경우, 그라비티 고객센터를 통하여 문의해 주시기 바랍니다.</li>
-            <li data-dot="- ">CBT 진행 시 사전예약에 참여한 휴대폰 번호로 문자(LMS)를 통해 CBT 참여 URL이 발송될 예정입니다.</li>
-            <li data-dot="- ">사전예약 보상은 정식 출시 후 사전예약에 참여한 휴대폰 번호로 문자(LMS)를 통해 쿠폰번호가 발송될 예정입니다.</li>
-
-            <li data-dot="- ">사전예약 쿠폰은 계정당 1회만 사용가능합니다.</li>
+          <ul class="list-dot">
+            <li data-dot="- ">본 사전예약은 만 14세 이상 참여 가능합니다. </li>
+            <li data-dot="- ">본 사전예약 보상은 한국 출시 앱 및 참여자에게만 지급됩니다.</li>
+            <li data-dot="- ">사전예약 보상은 정식 출시 후 순차적으로 지급될 예정입니다. </li>
+            <li data-dot="- ">잘못된 휴대폰 번호를 입력하거나, 번호 변경 등으로 발생한 불이익에 대해서는 당사에서 책임지지 않습니다.</li>
+            <li data-dot="- ">광고성 정보 수신 동의를 선택하지 않은 경우 게임 관련 소식, 보상 관련 LMS를 받을 수 없습니다. </li>
+            <li data-dot="- ">사전예약 보상은 계정당 1회씩만 지급되며 중복 지급되지 않습니다. </li>
+            <li data-dot="- ">사전예약 진행 일정 및 보상 내용, 지급일정은 내부 사정에 따라 변경 될 수 있습니다.</li>
           </ul>
-          <p style="font-weight: 700; color: #111; margin-top: 2em">※ 마켓 사전 예약 유의사항</p>
-          <ul class="list-dot" style="margin-top: 0.5em">
-            <li data-dot="- ">구글 마켓 스토어 또는 애플 스토어에서 이상한 나라의 라그나로크 앱의 [사전등록] 버튼을 눌러야만 정상 참여로 인정됩니다.</li>
-            <li data-dot="- ">보상은 정식 출시 후 게임 내 우편을 통해 지급될 예정입니다.</li>
-          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- E: 240621 수정 : 추가 및 수정 -->
+  </div>
+</aside>
 
-          <p style="margin-top: 2em">※ 본 게임은 확률형 아이템이 포함되어 있습니다.</p> -->
+<!-- S: 240621 수정 : 추가 -->
+<!-- 출석체크 주차별 출석보상 보기 -->
+<aside class="popup" id="popup__check-board-reward">
+  <div class="popup__wrap">
+    <button type="button" class="popup__close" onclick="closed_popup()"></button>
+    <div class="popup__scroll">
+      <div class="popup__body">
+        <img src="assets/images/popup/reward.webp" />
+        <div class="sr-only">
+          <dl>
+            <dt>5일차 달성보상: </dt>
+            <dd>1일: 성흔 페이지 (소환티켓)x1 </dd>
+            <dd>2일: 성흔의장/시골편 (성흔 스킬 강화 재료)x1 </dd>
+            <dd>3일: 성흔력 (행동력) x15 </dd>
+            <dd>4일: 별의 정수 조각 (성흔 레벨업 재료)x1 </dd>
+            <dd>5일: 주사위 (쿠로로 여정 1회 추가)x1 </dd>
+          </dl>
+          <dl>
+            <dt>10일차 달성보상: </dt>
+            <dd>6일: 성흔 페이지 (소환티켓)x1 </dd>
+            <dd>7일: 성흔의장/시골편 (성흔 스킬 강화 재료)x1 </dd>
+            <dd>8일: 별의 정수 조각 (성흔 레벨업 재료)x1 </dd>
+            <dd>9일: 주사위 (쿠로로 여정 1회 추가)x1 </dd>
+            <dd>10일: 초급 돌파 재료 선택 패키지x1 </dd>
+          </dl>
+          <dl>
+            <dt>15일차 달성보상: </dt>
+            <dd>11일: 성흔 페이지 (소환티켓)x1 </dd>
+            <dd>12일: 성흔력 (행동력) x15 </dd>
+            <dd>13일: 별의 정수 조각 (성흔 레벨업 재료)x1 </dd>
+            <dd>14일: 주사위 (쿠로로 여정 1회 추가)x1 </dd>
+            <dd>15일: 성흔의장/기준편 (성흔 스킬 강화 재료)x1 </dd>
+          </dl>
+          <dl>
+            <dt>20일차 달성보상: </dt>
+            <dd>16일: 성흔력 (행동력) x15 </dd>
+            <dd>17일: 주사위 (쿠로로 여정 1회 추가)x1 </dd>
+            <dd>18일: 별의 정수 조각 (성흔 레벨업 재료)x1 </dd>
+            <dd>19일: 성흔의장/시인편 (성흔 스킬 강화 재료)x1 </dd>
+            <dd>20일: 성흔 페이지 (소환티켓)x5 </dd>
+          </dl>
         </div>
       </div>
     </div>
   </div>
 </aside>
 
-<!-- S: 2406XX 수정 : 추가 -->
-<!-- 출석체크 주차별 출석보상 보기 -->
-<aside class="popup" id="popup__check-board-reward">
+<aside class="popup popup--reservation-reward" id="popup__reward--danny">
   <div class="popup__wrap">
     <button type="button" class="popup__close" onclick="closed_popup()"></button>
     <div class="popup__scroll">
-      <!-- <div class="popup__body"> -->
-      <img src="https://picsum.photos/500/500" alt="" />
-      <p>FIXME: 내용수급대기 </p>
-      <!-- </div> -->
+      <div class="popup__body">
+        <img src="assets/images/popup/reward-danny.webp" loading="lazy" alt="" />
+        <a class="btn-fullscreen" target="_blank" href="assets/images/popup/reward-danny.webp" title="원본이미지 보기"> </a>
+      </div>
     </div>
   </div>
 </aside>
-<!-- E: 2406XX 수정 : 추가 -->
+<aside class="popup popup--reservation-reward" id="popup__reward--sisley">
+  <div class="popup__wrap">
+    <button type="button" class="popup__close" onclick="closed_popup()"></button>
+    <div class="popup__scroll">
+      <div class="popup__body">
+        <img src="assets/images/popup/reward-sisley.webp" loading="lazy" alt="" />
+        <a class="btn-fullscreen" target="_blank" href="assets/images/popup/reward-sisley.webp" title="원본이미지 보기"> </a>
+      </div>
+    </div>
+  </div>
+</aside>
+<aside class="popup popup--reservation-reward" id="popup__reward--krishna">
+  <div class="popup__wrap">
+    <button type="button" class="popup__close" onclick="closed_popup()"></button>
+    <div class="popup__scroll">
+      <div class="popup__body">
+        <img src="assets/images/popup/reward-krishna.webp" loading="lazy" alt="" />
+        <a class="btn-fullscreen" target="_blank" href="assets/images/popup/reward-krishna.webp" title="원본이미지 보기"> </a>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- E: 240621 수정 : 추가 -->

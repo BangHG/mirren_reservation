@@ -1,143 +1,27 @@
 @charset 'UTF-8';
 
 @import '_var';
-// variable : 프로젝트별 기본 폰트설정, 색상, 컨테이터 및 반응형 분기점 변수를 설정하고 수정할 수 있는 파일입니다.
-
-//## LIBRARY ##
 @import 'library/unit';
-// em, rem, vw 등 반응형 작업에 필요한 단위 관련 function 모음
-
 @import 'library/mixin';
-// 자주 사용하는 함수형 선언(@include 구문)을 모아놓은 경로입니다.
-/* 
-main {
-  position: relative;
-  overflow: hidden;
-}
-body {
-  overflow-x: hidden;
-}
-
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 50px 0;
-  align-content: center;
-  background-color: #f2f2f2;
-  text-align: center;
-} */
 
 //  TODO: 분리작업
 //  TODO: 스크립트분리
 //  TODO: cbt 수급
-.section-tournament {
-  width: 100%;
-  padding: 0 10px;
-  // font-size: 10px;
-  // padding: 150px 0;
 
-  &__wrap {
-    position: relative;
-  }
-
-  .tournament {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    &,
-    &__cover {
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid #666;
-    }
-    &__cover {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-      background: #222;
-      &,
-      button {
-        font-size: 2rem;
-        color: #fff;
-      }
-      button {
-        border: 1px solid #fff;
-        border-radius: 10px;
-        padding: 0.8em 1em;
-        line-height: 1;
-        background: lighten(#000, 0%);
-        &:hover {
-          background: lighten(#000, 30%);
-        }
-      }
-    }
-  }
-
-  .match {
-    position: absolute;
-    width: 100%;
-    top: 3em;
-    left: 0;
-    background: #f2f2f2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-    justify-content: center;
-  }
-  .item-button {
-    flex: 0 0 min(150px, 33vw);
-    max-width: min(150px, 33vw);
-    &.selected {
-      .img {
-        box-shadow: 0 0 0 5px rgba(red, 0.8);
-      }
-    }
-  }
-  .name {
-    width: 100%;
-    font-size: 18px;
-    margin: 0.5em auto;
-  }
-  .img {
-    aspect-ratio: (300/400);
-    width: 100%;
-    display: block;
-    background-position: 50% 50%;
-    background-size: cover;
-    margin: 0 auto;
-    border: 1px solid #ddd;
-  }
-
-  .winner {
-    .item-button {
-      margin: 0 auto;
-    }
-    .share {
-      margin: 2em auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      column-gap: 1em;
-      &__list {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        column-gap: 1em;
-      }
-    }
-    .btn {
-      border: 1px solid #ddd;
-      padding: 0.5em;
-      line-height: 1;
-    }
-  }
+.itemNotice {
+  width: vw(432);
+  aspect-ratio: 432/75;
+  background: url(../images/inc/itemNotice.webp) no-repeat;
+  background-size: contain;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 0;
+  z-index: 5;
 }
+
+@import 'reservation/_landing.scss';
+@import 'reservation/_reservation.scss';
+@import 'reservation/_form.scss';
+@import 'reservation/_event.scss';
+@import 'reservation/_tournament.scss';

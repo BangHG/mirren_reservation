@@ -298,6 +298,7 @@ function gsapScrollTriggerMedia() {
 }
 
 function gsapScrollTriggerReservation() {
+  /* 
   function updateGauge(state) {
     const percentages = [0, 6, 24, 41, 63, 81, 100]; // 각 state에 대한 퍼센티지 배열
     const items = document.querySelectorAll('.gauge-list .item');
@@ -452,7 +453,7 @@ function gsapScrollTriggerReservation() {
       // ease: 'power4.out',
     },
     '<'
-  );
+  ); */
 }
 // }; //호출은 resolution.js 에서. 1600이상에서만 작동
 
@@ -600,7 +601,11 @@ window.addEventListener('resize', function () {
 }) */
 
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('새로고침됨'); //FIXME:
+  // console.log('새로고침됨'); //FIXME:
+
+  gsap.to(window, { duration: 0.3, scrollTo: 0 });
+  //새로고침되면 상단부터 노출
+
   // 페이지 로드시 초기 조정
   // adjustSmallDevice();
 
@@ -608,10 +613,10 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!sessionStorage.getItem('visited')) {
     GsapLoadingAnimation(); //로딩하기
     // 세션 스토리지에 'visited' 키 설정
-    console.log('로딩하기'); //FIXME:
+    // console.log('로딩하기'); //FIXME:
     sessionStorage.setItem('visited', 'true');
   } else {
-    console.log('로딩안하기'); //FIXME:
+    // console.log('로딩안하기'); //FIXME:
     GsapLoadingNo(); //로딩안하기
   }
 });

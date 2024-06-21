@@ -1,4 +1,4 @@
-$header-height: 70px;
+$header-height: vw(160);
 $transition-timing: 300ms;
 
 .header {
@@ -9,7 +9,7 @@ $transition-timing: 300ms;
   z-index: 200;
   &__container {
     padding: 0 vw(17);
-    height: vw(160);
+    height: $header-height;
     background: rgba(#000, 0);
     display: flex;
     align-items: center;
@@ -138,9 +138,44 @@ $transition-timing: 300ms;
   overflow-y: auto;
   background-color: #000;
   text-align: center;
+  .logo-wrap {
+    height: $header-height;
+    padding: 0 vw(17);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo {
+      opacity: 1;
+    }
+  }
+
   &__wrap {
-    padding: vw(210) 0;
+    padding: 0 0 vw(210);
     // padding-bottom: 100px;
+  }
+  .btn-reservation {
+    a {
+      margin: 0 auto;
+      display: block;
+      max-width: vw(975);
+      width: 100%;
+      aspect-ratio: (975/253);
+      background: url(../images/inc/btn-reservation.webp) no-repeat;
+      background-size: contain;
+    }
+  }
+  .badge-wrap {
+    margin: vw(40) auto vw(90);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: vw(24);
+    .link {
+      display: block;
+      img {
+        height: vw(140);
+      }
+    }
   }
 
   &-list {

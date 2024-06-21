@@ -402,6 +402,9 @@
   margin-bottom: -32px;
   position: relative;
 }
+.section-witch .section-title {
+  top: 160px;
+}
 
 .witch-tab {
   z-index: 2;
@@ -508,7 +511,7 @@
 }
 
 .witch .title-bx {
-  top: 360px;
+  top: 390px;
 }
 .witch .bg {
   -webkit-transition: 2000ms -webkit-transform;

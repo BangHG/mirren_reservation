@@ -21,27 +21,61 @@ $('.nav__toggle').click(function () {
   }
 });
 
+const currentPage = $('body').attr('data-page');
+
+$(window).on('load', function () {
+  //## 전환효과
+  $('body').attr('data-loading', 'done');
+
+  // $(`.nav-list .nav-item--depth1 > .link[data-page=${currentPage}]`).addClass('active');
+
+  if (currentPage === 'media') {
+    var active = window.location.hash.split('?')[1];
+
+    // console.log(active);
+    if (active != null) {
+      $('.tab .tab-link').removeClass('active');
+      $('.tab .tab-content').removeClass('active');
+
+      $(`.section-media .tab-list .tab-link[data-hash=${active}]`).addClass('active');
+      $('#' + active).addClass('active');
+
+      return false;
+    }
+  } else {
+    //media 외 페이지
+    const href = window.location.hash;
+    if (href == '') {
+    } else {
+      const active = window.location.hash.split('#')[1];
+      const offset = $('#' + active).offset().top;
+      console.log(`#${active} ${offset}`);
+
+      setTimeout(() => {
+        $('html,body').animate({ scrollTop: offset }, 0);
+      }, 10);
+    }
+  }
+});
+
 //네비클릭시
 $('.nav .nav-list a.link').on('click', function () {
-  const href = $(this).attr('href');
+  const href = $(this).attr('href').split('#')[1];
 
-  // if (href && href.includes('#section')) {
-  const hrefOn = href.split('?')[0];
-  const active = href.split('?')[1];
-  // console.log(active);
+  if (currentPage === 'media' && href && href.includes('?media--')) {
+    console.log(href);
 
-  gsap.to(window, { duration: 0.5, scrollTo: { y: hrefOn, offsetY: 30 } });
-  // gsap.to(window, { duration: 0.3, scrollTo: hrefOn });
-
-  if (href && href.includes('?media--')) {
-    // console.log(active);
     $(`.section-media .tab-content`).removeClass('active');
     $(`.section-media .tab-list .tab-link`).removeClass('active');
 
+    const active = href.split('?')[1];
     $(`.section-media .tab-list .tab-link[data-hash=${active}]`).addClass('active');
     $('#' + active).addClass('active');
+  } else {
+    // smoother.scrollTo('#' + href, true, 'top');
+    var offset = $('#' + href).offset().top;
+    $('html,body').stop().animate({ scrollTop: offset }, 500);
   }
-  // }
 
   navClose();
 });

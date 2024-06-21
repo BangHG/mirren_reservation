@@ -30,6 +30,9 @@
   margin-top: -$top;
   margin-bottom: -$bot;
   position: relative;
+  .section-title {
+    top: 160px;
+  }
 }
 
 // 썸네일
@@ -149,7 +152,7 @@ $witchList: (
     }
   }
   .title-bx {
-    top: 360px;
+    top: 390px; //360px;
   }
   .bg {
     transition: 2000ms transform;

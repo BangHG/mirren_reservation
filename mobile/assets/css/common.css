@@ -743,8 +743,52 @@ body:after {
   background-color: #000;
   text-align: center;
 }
+.nav .logo-wrap {
+  height: 14.815vw;
+  padding: 0 1.574vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.nav .logo-wrap .logo {
+  opacity: 1;
+}
 .nav__wrap {
-  padding: 19.444vw 0;
+  padding: 0 0 19.444vw;
+}
+.nav .btn-reservation a {
+  margin: 0 auto;
+  display: block;
+  max-width: 90.278vw;
+  width: 100%;
+  aspect-ratio: 3.8537549407;
+  background: url(../images/inc/btn-reservation.webp) no-repeat;
+  background-size: contain;
+}
+.nav .badge-wrap {
+  margin: 3.704vw auto 8.333vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2.222vw;
+}
+.nav .badge-wrap .link {
+  display: block;
+}
+.nav .badge-wrap .link img {
+  height: 12.963vw;
 }
 .nav-list--depth2 {
   font-size: 5.556vw;

@@ -5,7 +5,7 @@ $con4H: 1061px + 30px;
 // $conH: 5385px;
 .section-event {
   position: relative;
-  z-index: 2;
+  z-index: 5;
   // height: $conH;
   overflow: hidden;
   background: url(../images/event/bg.webp) no-repeat 50% 0;
@@ -48,6 +48,8 @@ $con4H: 1061px + 30px;
   &--1 {
     text-align: center;
     .spr-marble {
+      position: relative;
+      transform-origin: 50% 100%;
       .i {
         background-image: url(../images/event/1/spr_marble.webp);
         background-repeat: no-repeat;
@@ -83,7 +85,6 @@ $con4H: 1061px + 30px;
 
       .i--5 {
         @include spr(-5px, -698px, 321px, 324px);
-
         margin-left: -1120px;
         top: 890px;
       }

@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 // });
 
 document.querySelector('.btnTop').addEventListener('click', (e) => {
-  gsap.to(window, { duration: 0.3, scrollTo: 0 });
+  gsap.to(window, { duration: 0.5, scrollTo: 0 });
 });
 
 // 888       .d88888b.         d8888 8888888b. 8888888 888b    888  .d8888b.
@@ -42,7 +42,7 @@ function GsapLoadingAnimation() {
     gsap.set('.loading .circle--outer', { rotate: '-450deg' });
     gsap.set('.loading .circle--inner', { rotate: '-360deg' });
     gsap.set('.loading .logo', { opacity: '0' });
-    // gsap.set('.loading .badge', { opacity: '0', scale: '1.1', filter: 'blur(5px)' });
+    gsap.set('.loading .badge', { opacity: '0', scale: '1.1', filter: 'blur(5px)' });
 
     // gsap.set('.section-main .bg', { scale: 1.15 }); //덜덜이 이슈로 삭제
 
@@ -74,12 +74,12 @@ function GsapLoadingAnimation() {
             //inner 시간차로 회전
             gsap.to('.loading .circle--inner', { duration: 3.9, rotate: '0' }, '=');
             //로고 보여주기
-            gsap.to('.loading .logo', { duration: 3.5, opacity: '1' }, '<+=1.5');
+            gsap.to('.loading .logo', { duration: 3.5, opacity: '1' }, '<+=0.5');
 
             // 하단 문양 나타나기
             // ease: 'elastic.inOut(0.5, 1)'
             // gsap.to('.loading', { duration: 5, background: 'red' }, '<'); //
-            gsap.to('.loading .badge--1', { duration: 1, opacity: 0.5, filter: 'none', scale: 1 }, '<-=0.5'); //
+            gsap.to('.loading .badge--1', { duration: 1, opacity: 0.5, filter: 'none', scale: 1 }, '<'); //
             gsap.to('.loading .badge--2', { duration: 1, opacity: 0.5, filter: 'none', scale: 1 }, '<+=0.4'); //
             gsap.to('.loading .badge--3', { duration: 1, opacity: 0.5, filter: 'none', scale: 1 }, '<+=0.4'); //
             gsap.to('.loading .badge--4', { duration: 1, opacity: 0.5, filter: 'none', scale: 1 }, '<+=0.4'); //
@@ -94,6 +94,7 @@ function GsapLoadingAnimation() {
         },
         '<='
       )
+
       // 3. 배경밝아지며 로고확대
 
       .to(

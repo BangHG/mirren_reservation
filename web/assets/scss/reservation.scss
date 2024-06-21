@@ -8,6 +8,20 @@
 @import 'library/mixin';
 // 자주 사용하는 함수형 선언(@include 구문)을 모아놓은 경로입니다.
 
+.header__container {
+  &:after {
+    content: '확률형 아이템 포함';
+    position: absolute;
+    top: 100%;
+    margin-top: 3px;
+    right: 0;
+    width: 197px;
+    height: 30px;
+    font-size: 0;
+    background: url(../images/inc/itemNotice.webp) no-repeat;
+    // background-size: contain;
+  }
+}
 .reservation-wrap {
   margin-bottom: -200px; //이벤트 중첩
   position: relative;

@@ -1,22 +1,117 @@
-/* 
-main {
-  position: relative;
-  overflow: hidden;
-}
-body {
-  overflow-x: hidden;
+.itemNotice {
+  width: 40vw;
+  aspect-ratio: 432/75;
+  background: url(../images/inc/itemNotice.webp) no-repeat;
+  background-size: contain;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 0;
+  z-index: 5;
 }
 
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.section-landing {
+  overflow: hidden;
+  position: relative;
   min-height: 100vh;
-  padding: 50px 0;
-  align-content: center;
-  background-color: #f2f2f2;
+  padding: 16.667vw 0 0;
+  display: block;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.section-landing .bg {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../images/landing/bg.webp) no-repeat 50% 50%;
+  background-size: cover;
+}
+.section-landing .bg:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+}
+.section-landing .bg video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 1;
+}
+.section-landing .container {
+  position: relative;
+  z-index: 5;
   text-align: center;
-} */
+}
+.section-landing .bi {
+  margin: 0 auto;
+  width: 77.407vw;
+  aspect-ratio: 836/593;
+  background: url(../images/landing/bi.webp) no-repeat;
+  background-size: contain;
+}
+.section-landing .title {
+  margin: 10.463vw auto 21.111vw;
+  width: 77.407vw;
+  aspect-ratio: 836/262;
+  background: url(../images/landing/title.webp) no-repeat;
+  background-size: contain;
+}
+.section-landing .btnToReservation {
+  margin: 0 auto 11.389vw;
+  width: 77.407vw;
+  aspect-ratio: 836/191;
+  background: url(../images/landing/btn.webp) no-repeat;
+  background-size: contain;
+}
+.section-landing .scrollDown {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 20.185vw;
+  aspect-ratio: 1.5797101449;
+  z-index: 2;
+}
+.section-landing .scrollDown:after {
+  background: url(../images/main/scrolldown.webp) no-repeat;
+  background-size: contain;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.section-landing .scrollDown:before {
+  content: "";
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: radial-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 50%);
+}
+
 .section-tournament {
   width: 100%;
   padding: 0 10px;

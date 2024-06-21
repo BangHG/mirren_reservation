@@ -54,7 +54,7 @@ $color-common: #bbbbbb;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1em;
+    gap: 40px; //1em;
     font-size: 16px;
     margin-bottom: 24px;
     img {
@@ -226,7 +226,7 @@ $color-common: #bbbbbb;
     }
   }
   .text-alert {
-    margin-top: 0.2em;
+    margin-top: 0.4em;
     padding-left: $input-indent;
     line-height: 1.2;
     color: $color-alert;
@@ -240,24 +240,42 @@ $color-common: #bbbbbb;
 }
 
 .popup-terms {
+  font-family: $font-family-sub;
   .popup {
     &__wrap {
-      background-color: #fff;
-      max-width: 600px;
+      max-width: 700px;
       width: 100%;
-      border-radius: 5px;
-      font-family: $font-family-sub;
     }
-    &__head {
-      background: #f2f2f2;
-      h2 {
-        font-size: 1.25em;
-        color: #111;
-      }
-    }
-    &__head,
     &__body {
-      padding: 20px;
+      background-color: #fff;
+      background-image: url(../images/popup/bg-top.webp),
+        //
+        url(../images/popup/bg.webp);
+      background-repeat: no-repeat, repeat-y;
+      background-position: 0 0;
+      background-size: 100% auto;
+      padding: 50px;
+
+      color: #222;
+      .terms-title {
+        font-size: em(22);
+        text-shadow: 0 0 3px #fff,
+          //
+          0 0 3px #fff,
+          //
+          0 0 3px #fff,
+          //
+          0 0 3px #fff,
+          //
+          0 0 3px #fff,
+          //
+          0 0 3px #fff;
+        text-align: center;
+        margin-bottom: 1em;
+        min-height: 37px;
+        min-width: 240px;
+        background: url(../images/popup/title-bg.webp) no-repeat 50% 100%;
+      }
     }
   }
 }

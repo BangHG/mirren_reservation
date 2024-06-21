@@ -12,34 +12,34 @@ function startTournament() {
     { id: '2', name: '앰프사' },
     { id: '3', name: '대니' },
     { id: '4', name: '시슬리' },
-    // { id: '5', name: '사라' },
-    // { id: '6', name: '마키' },
-    // { id: '7', name: '제랄디아' },
-    // { id: '8', name: '크리슈나' },
-    // { id: '9', name: '이카루스' },
-    // { id: '10', name: '아넥스' },
-    // { id: '11', name: '디아' },
-    // { id: '12', name: '나르키소스' },
-    // { id: '13', name: '아이카' },
-    // { id: '14', name: '쿠로신' },
-    // { id: '15', name: '플림턴' },
-    // { id: '16', name: '야요이' },
-    // { id: '17', name: '애슐' },
-    // { id: '18', name: '아포피스' },
-    // { id: '19', name: '나피' },
-    // { id: '20', name: '쿠로아이' },
-    // { id: '21', name: '베라' },
-    // { id: '22', name: '캐롤린' },
-    // { id: '23', name: '로잘리' },
-    // { id: '24', name: '처칠' },
-    // { id: '25', name: '나나브' },
-    // { id: '26', name: '에어린' },
-    // { id: '27', name: '베르다' },
-    // { id: '28', name: '라일라' },
-    // { id: '29', name: '플로라' },
-    // { id: '30', name: '도로시' },
-    // { id: '31', name: '호무라' },
-    // { id: '32', name: '시아' },
+    { id: '5', name: '사라' },
+    { id: '6', name: '마키' },
+    { id: '7', name: '제랄디아' },
+    { id: '8', name: '크리슈나' },
+    { id: '9', name: '이카루스' },
+    { id: '10', name: '아넥스' },
+    { id: '11', name: '디아' },
+    { id: '12', name: '나르키소스' },
+    { id: '13', name: '아이카' },
+    { id: '14', name: '쿠로신' },
+    { id: '15', name: '플림턴' },
+    { id: '16', name: '야요이' },
+    { id: '17', name: '애슐' },
+    { id: '18', name: '아포피스' },
+    { id: '19', name: '나피' },
+    { id: '20', name: '쿠로아이' },
+    { id: '21', name: '베라' },
+    { id: '22', name: '캐롤린' },
+    { id: '23', name: '로잘리' },
+    { id: '24', name: '처칠' },
+    { id: '25', name: '나나브' },
+    { id: '26', name: '에어린' },
+    { id: '27', name: '베르다' },
+    { id: '28', name: '라일라' },
+    { id: '29', name: '플로라' },
+    { id: '30', name: '도로시' },
+    { id: '31', name: '호무라' },
+    { id: '32', name: '시아' },
   ];
 
   // 초기화 함수
@@ -55,20 +55,18 @@ function startTournament() {
     items = shuffleArray(items);
 
     if (items.length === 2) {
-      tournamentContainer.innerHTML = `<p class="title--select">
+      tournamentContainer.innerHTML = `
       <span class="sr-only">마음에 드는 성흔을 선택해주세요!</span>
-      </p>
       <p class="match-round match-round--${items.length}">
       <span class="sr-only">결승</span>
-      </p>      
+      </p>
       `;
     } else {
-      tournamentContainer.innerHTML = `<p class="title--select">
+      tournamentContainer.innerHTML = `
       <span class="sr-only">마음에 드는 성흔을 선택해주세요!</span>
-      </p>
       <p class="match-round match-round--${items.length}">
       <span class="sr-only">${items.length}강</span>
-      </p>      
+      </p>
       `;
     }
 
@@ -97,23 +95,34 @@ function startTournament() {
 
               // 우승자를 #tournament-result 에 업데이트
               const resultImg = resultWrap.querySelector('.img');
-              const resultName = resultWrap.querySelector('.name');
+              // const resultName = resultWrap.querySelector('.name');
               const resultBtn = resultWrap.querySelector('.btn-saveImg');
 
-              resultImg.style.backgroundImage = `url(${$rootUrl}/common/images/tournament/${winner.id}.png)`;
-              resultImg.appendChild(createElementFromHTML(`<i style="background:url('${$rootUrl}/common/images/tournament/새 폴더/${winner.id}.webp') 50% 50%;background-size:cover;;position:absolute;top: 66px; left: 28px; width: 242px;height:263px" title="FIXME:">${winner.name}</i>`));
+              // 랜덤으로 1부터 5까지의 숫자를 생성하는 함수
+              function getRandomIndex() {
+                return Math.floor(Math.random() * 5) + 1;
+              }
 
-              resultName.textContent = `${winner.name}`;
-              resultBtn.href = `${$rootUrl}/common/images/tournament/${winner.id}.png`;
-              resultBtn.download = `${winner.name}.png`;
+              // const randomIndex = getRandomIndex();
+              resultImg.setAttribute('data-index', getRandomIndex());
 
-              fadeInElement(tournamentResultContainer);
+              resultImg.style.backgroundImage = `url(${$rootUrl}/common/images/tournament/${winner.id}.webp)`;
+              resultImg.textContent = `${winner.name}`;
+              resultBtn.href = `${$rootUrl}/common/images/tournament/${winner.id}.jpg`;
+              resultBtn.download = `${winner.name}.jpg`;
+
+              fadeInElement(tournamentResultContainer, 300);
+              setTimeout(() => {
+                //애니메이션용 addclass
+                $('.tournament-result-wrap').addClass('initAni');
+              }, 300);
 
               // 다시하기 버튼에 이벤트 추가
               const restartButton = document.getElementById('btn-restart');
               restartButton.addEventListener('click', () => {
                 fadeOutElement(tournamentResultContainer, () => {
                   initializeTournament();
+                  $('.tournament-result-wrap').removeClass('initAni');
                   fadeInElement(tournamentContainer);
                 });
               });
@@ -138,17 +147,11 @@ function startTournament() {
 
       const button1HTML = `
         <button class="item-button">
-          <div class="img" style="background-image:url(${$rootUrl}/common/images/tournament/${item1.id}.png)">
-            <i style="background:url('${$rootUrl}/common/images/tournament/새 폴더/${item1.id}.webp') 50% 50%;background-size:cover;;position:absolute;top: 66px; left: 28px; width: 242px;height:263px" title="FIXME:">${item1.name}</i>
-            <span class="sr-only">${item1.name}</span>
-          </div>
+          <div class="img" style="background-image:url(${$rootUrl}/common/images/tournament/${item1.id}.webp)">${item1.name}</div>
         </button>`;
       const button2HTML = `
         <button class="item-button">
-          <div class="img" style="background-image:url(${$rootUrl}/common/images/tournament/${item2.id}.png)">
-            <i style="background:url('${$rootUrl}/common/images/tournament/새 폴더/${item2.id}.webp') 50% 50%;background-size:cover;;position:absolute;top: 66px; left: 28px; width: 242px;height:263px" title="FIXME:">${item2.name}</i>
-            <span class="sr-only">${item2.name}</span>
-          </div>
+          <div class="img" style="background-image:url(${$rootUrl}/common/images/tournament/${item2.id}.webp)">${item2.name}</div>
         </button>`;
 
       const button1 = createElementFromHTML(button1HTML);
@@ -212,13 +215,13 @@ function fadeOutElement(element, callback) {
 }
 
 // 요소 페이드 인 함수
-function fadeInElement(element) {
+function fadeInElement(element, timing = 100) {
   element.style.opacity = '0';
   element.style.display = 'block';
   setTimeout(() => {
     element.style.transition = 'opacity 0.3s';
     element.style.opacity = '1';
-  }, 100);
+  }, timing);
 }
 
 // 매치 페이드 아웃 함수
@@ -237,11 +240,14 @@ function fadeOutMatch(matchDiv) {
 }
 
 function tournamentEnd() {
+  $('.dimmed').fadeOut();
   $('.tournament-container').fadeOut();
+  $('.tournament-result-wrap').removeClass('initAni');
 }
 
 function tournamentStart() {
   startTournament();
+  $('.dimmed').fadeIn();
   $('.tournament-container').fadeIn();
   // fadeOutElement(tournamentResultContainer, () => {
   //   initializeTournament();
