@@ -1,20 +1,14 @@
 ﻿//## 팝업열기
 $(document).on('click', '.popup-link', function () {
   var targetPopupName = $(this).attr('data-popup');
-  open_blind();
-  $('.' + targetPopupName)
+  $('#' + targetPopupName)
     .fadeIn()
     .css('display', 'flex');
   return false;
 });
 
-// ## 팝업 요청 시 블라인드 액션 함수.
-function open_blind() {
-  $('.blind, .blind--btnClosed').fadeIn(300);
-}
-// ## 팝업 닫기 요청 시 액션 함수.
+// ## 팝업 닫기 함수.
 function closed_popup() {
-  $('.blind, .blind--btnClosed').fadeOut(300);
   $('.popup--video').removeClass('open');
   $('.you_tube').empty();
   $('.popup').hide();
@@ -27,17 +21,23 @@ $(document).keyup(function (e) {
   }
 });
 
-// ## 동영상팝업 열기
+// 팝업 영역 외 클릭시 닫기
+// $('.popup').on('click', function (e) {
+//   if (!$(e.target).closest('.popup__wrap').length) {
+//     closed_popup();
+//   }
+// });
+
 $(document).ready(function () {
+  // ## 동영상 팝업 열기
   $('body').on('click', '.popup-link--video', function () {
-    open_blind();
     $('.popup--video').addClass('open').fadeIn('300');
     SetYoutube($(this).attr('data-content'));
     return false;
   });
 });
 
-// ## 게임영상 부분 유튜브 url 설정
+// ## 동영상 세팅
 function SetYoutube() {
   var youtube = '';
   var youtubeUrl = arguments[0];
@@ -48,7 +48,7 @@ function SetYoutube() {
   } else {
     //오디오 정지
     var audio = document.getElementById('cv_audio');
-    audio.pause();
+    // audio.pause();
 
     youtube = '<iframe id="video" width="900" height="576" src="' + youtubeUrl + '?autoplay=1" allow="autoplay; encrypted-media" frameborder="0" allowfullscreen></iframe>';
     $('.you_tube').html(youtube);

@@ -1,39 +1,10 @@
-//  블라인드
-.blind {
-  backdrop-filter: blur(4px);
-  display: none;
-  background-color: rgba(0, 0, 0, 0.7);
-  position: fixed;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 300;
-  text-align: left;
-  &--btnClosed {
-    $btn: 150;
-
-    display: none;
-    z-index: 500;
-    width: vw($btn);
-    height: vw($btn);
-    cursor: pointer;
-    right: 0;
-    top: 0;
-    position: fixed;
-    background: {
-      //기본 닫기 이미지
-      image: url("data:image/svg+xml,%0A%3Csvg width='31' height='31' viewBox='0 0 31 31' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M27.5858 30.4142C28.3668 31.1953 29.6332 31.1953 30.4142 30.4142C31.1953 29.6332 31.1953 28.3668 30.4142 27.5858L18.6642 15.8358L19 15.5L18.6642 15.1642L30.4142 3.41422C31.1953 2.63317 31.1953 1.36684 30.4142 0.585788C29.6332 -0.195261 28.3668 -0.195261 27.5858 0.585788L15.8358 12.3358L15.5 12L15.1642 12.3358L3.41421 0.585786C2.63316 -0.195262 1.36683 -0.195262 0.585786 0.585786C-0.195262 1.36684 -0.195262 2.63317 0.585786 3.41421L12.3358 15.1642L12 15.5L12.3358 15.8358L0.585786 27.5858C-0.195262 28.3668 -0.195262 29.6332 0.585786 30.4142C1.36684 31.1953 2.63317 31.1953 3.41421 30.4142L15.1642 18.6642L15.5 19L15.8358 18.6642L27.5858 30.4142ZM15.8358 18.6642L18.6642 15.8358L18.3284 15.5L18.6642 15.1642L15.8358 12.3358L15.5 12.6716L15.1642 12.3358L12.3358 15.1642L12.6716 15.5L12.3358 15.8358L15.1642 18.6642L15.5 18.3284L15.8358 18.6642Z' fill='white'/%3E%3C/svg%3E%0A");
-      repeat: no-repeat;
-      position: 50% 50%;
-      size: percentage(31/80);
-    }
-  }
-}
-
 .popup {
+  $gutter: vw(5);
+
+  $btnSize: vw(114);
+
+  $offset: $btnSize + $gutter * 2;
+
   display: none;
   z-index: 400;
   position: fixed;
@@ -43,40 +14,82 @@
   left: 0;
   align-items: center;
   justify-content: center;
+  align-items: flex-end;
+  padding: 0 $gutter;
+
   * {
     letter-spacing: -0.05em;
     word-break: keep-all;
   }
+
+  &:before {
+    // 배경
+    content: '';
+    backdrop-filter: blur(4px);
+    background-color: rgba(black, 0.7);
+    position: fixed;
+    -webkit-overflow-scrolling: touch;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__close {
+    z-index: 500;
+    cursor: pointer;
+    right: 0;
+    top: vw(-20);
+    transform: translateY(-100%);
+    position: absolute;
+    box-sizing: content-box;
+    width: vw(114);
+    aspect-ratio: 1;
+    background: url(../images/popup/close-btn.webp) no-repeat;
+    background-size: contain;
+  }
+
+  //팝업 컨테이너
+  &__wrap {
+    position: relative;
+    align-self: center;
+    //그림자
+    box-shadow: 0 0 min(20px, 3vw) rgba(#000, 0.3);
+
+    top: $offset/2;
+    font-size: vw(32);
+    max-width: vw(1080);
+    max-width: 96%;
+  }
+
   &__scroll {
-    max-height: calc(100vh - 100px);
+    max-height: calc(100vh - $offset * 2);
     overflow-x: hidden;
     overflow-y: auto;
     position: relative;
-    padding-right: 0;
+    // padding-right: 0;
     overflow-anchor: none;
     overscroll-behavior: contain;
 
     &::-webkit-scrollbar {
-      width: 6px;
+      width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: rgba(#999, 0.3);
     }
     &::-webkit-scrollbar-track {
       background-color: transparent;
-    }
-    &::-webkit-scrollbar-thumb {
-      border-radius: 3px;
-      background-color: rgba(#fff, 0.3);
     }
     &::-webkit-scrollbar-button {
       width: 0;
       height: 0;
     }
   }
-  &__wrap {
+
+  &__body {
     position: relative;
-    // height: 100%;
-    width: 100%;
-    max-width: 1200px;
-    // padding: 0 66px; //닫기버튼용 여백
+    border: 2px solid #bdbdbd;
   }
 }
 
@@ -86,7 +99,13 @@
   z-index: -2;
   transition: 500ms opacity;
   transition-delay: 100ms;
-
+  .popup__wrap {
+    max-width: 1200px;
+    width: 100%;
+  }
+  @include lg-max {
+    transform: none !important;
+  }
   &.open {
     z-index: 400;
     opacity: 1;
@@ -112,39 +131,102 @@
   }
 }
 
-// @include lg-max {
-$margin: vw(110);
-// .blind--btnClosed {
-//   opacity: 0.8;
-//   width: $margin;
-//   height: $margin;
-//   // background-size: (31px / 1.6); //원본 닫기 이미지 사이즈
-// }
-$gutter: 15px;
-.popup {
-  margin-top: calc(($margin - $gutter) / 2);
-  &__wrap {
-    width: calc(100% - $gutter * 2);
+.list-dot {
+  li {
+    position: relative;
+    line-height: 1.3;
+    display: flex;
+    margin-top: 0.3em;
+    &:nth-child(1) {
+      margin-top: 0;
+    }
+    &:before {
+      margin-right: 0.3em;
+      flex: 0 0 auto;
+      content: attr(data-dot);
+    }
   }
 }
-.popup__scroll {
-  max-height: calc(100vh - $margin - $gutter);
-  max-height: calc(var(--vh, 1vh) * 100 - $margin - $gutter);
-}
-// }
-// @include lg-max { //2안. 풀 팝업
-//   $margin: vw(110);
-//   .blind--btnClosed {
-//     opacity: 0.8;
-//     width: $margin;
-//     height: $margin;
-//     // background-size: (31px / 1.6); //원본 닫기 이미지 사이즈
-//   }
 
-//   .popup {
-//   }
-//   .popup__scroll {
-//     max-height: calc(100vh - $margin - $gutter);
-//     max-height: calc(var(--vh, 1vh) * 100 - $margin - $gutter);
-//   }
-// }
+#popup__check-board-done,
+#popup__reservation {
+  .btn {
+    position: absolute;
+    width: vw(346);
+    height: vw(111);
+    bottom: vw(85);
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    opacity: 0.5;
+  }
+}
+
+.btn-fullscreen {
+  position: absolute;
+  bottom: vw(10);
+  left: vw(10);
+  width: vw(70);
+  aspect-ratio: 1;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23222222' class='bi bi-arrows-fullscreen' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707m4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707m0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707m-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707'/%3E%3C/svg%3E") no-repeat //
+    50% 50%;
+  background-color: #f2f2f2;
+  background-size: percentage(16/30);
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.popup--reservation-reward {
+  .popup__body {
+    background-color: #fff;
+  }
+  img {
+    max-height: calc(100vh - 110px - 10px); // 100vh;
+    // max-height: 100vh;
+    // max-width: 100vw;
+  }
+}
+
+.popup-terms {
+  font-family: $font-family-sub;
+  .popup {
+    &__wrap {
+    }
+    &__body {
+      background-color: #fff;
+      background-image: url(../images/popup/bg-top.webp),
+        //
+        url(../images/popup/bg.webp);
+      background-repeat: no-repeat, repeat-y;
+      background-position: 0 0;
+      background-size: vw(977) auto, 100% auto;
+      padding: vw(40);
+
+      color: #222;
+      .terms-title {
+        font-size: em(22);
+        text-shadow: 0 0 3px #fff,
+          //
+          0 0 3px #fff,
+          //
+          0 0 3px #fff,
+          //
+          0 0 3px #fff,
+          //
+          0 0 3px #fff,
+          //
+          0 0 3px #fff;
+        text-align: center;
+        margin-bottom: 1em;
+        min-height: vw(51);
+        min-width: vw(505);
+        background: url(../images/popup/title-bg.webp) no-repeat 50% 100%;
+        background-size: vw(505);
+      }
+    }
+  }
+}

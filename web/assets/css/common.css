@@ -1102,6 +1102,39 @@ body::-webkit-scrollbar {
   opacity: 1;
 }
 
+.popup--reservation-reward .popup__body {
+  background-color: #fff;
+}
+.popup--reservation-reward img {
+  max-height: calc(100vh - 110px - 10px);
+}
+
+.popup-terms {
+  font-family: "Pretendard", "ChosunNm", "Noto Sans KR", sans-serif;
+}
+.popup-terms .popup__wrap {
+  max-width: 700px;
+  width: 100%;
+}
+.popup-terms .popup__body {
+  background-color: #fff;
+  background-image: url(../images/popup/bg-top.webp), url(../images/popup/bg.webp);
+  background-repeat: no-repeat, repeat-y;
+  background-position: 0 0;
+  background-size: 100% auto;
+  padding: 50px;
+  color: #222;
+}
+.popup-terms .popup__body .terms-title {
+  font-size: 1.375em;
+  text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
+  text-align: center;
+  margin-bottom: 1em;
+  min-height: 37px;
+  min-width: 240px;
+  background: url(../images/popup/title-bg.webp) no-repeat 50% 100%;
+}
+
 main {
   position: relative;
   overflow: hidden;

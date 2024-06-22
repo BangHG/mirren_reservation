@@ -137,6 +137,28 @@
     margin-bottom: -29px;
     // background: #fff;
     // border: 1px solid #ddd;
+    @at-root .match {
+      // .item-button:hover .img {
+      //   &:before {
+      //     opacity: 0.3;
+      //   }
+      // }
+      .item-button {
+        transition: 300ms transform;
+        // transition-delay: 200ms;
+        // transform-origin: 50% - 20% 70%;
+        &:hover {
+          // transform: rotate(-3deg);
+          transform: translateY(-1%);
+        }
+      }
+      // .vs + .item-button {
+      //   transform-origin: 50% +20% 70%;
+      //   &:hover {
+      //     transform: rotate(3deg);
+      //   }
+      // }
+    }
     &.selected {
       .img {
         &:before {
@@ -333,20 +355,14 @@
           @include spr(-10px, -10px, 52px, 52px);
         }
 
-        &--kakaotalk {
-          @include spr(-10px, -82px, 52px, 52px);
-        }
+        // &--kakaotalk {
+        //   @include spr(-10px, -82px, 52px, 52px);
+        // }
 
         &--x {
           @include spr(-10px, -154px, 52px, 52px);
         }
       }
     }
-  }
-  .text {
-    margin-top: 45px;
-    width: 294px;
-    height: 35px;
-    background: url(../images/tournament/text.webp) no-repeat;
   }
 }

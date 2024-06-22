@@ -11,61 +11,6 @@
   background: url(../images/inc/itemNotice.webp) no-repeat;
 }
 
-.reservation-wrap {
-  margin-bottom: -200px;
-  position: relative;
-  text-align: center;
-}
-.reservation-wrap .anchor {
-  position: absolute;
-  left: 0;
-  width: 100%;
-}
-.reservation-wrap .anchor--1 {
-  top: 33.33%;
-}
-.reservation-wrap .anchor--2 {
-  top: 66.66%;
-}
-.reservation-bg {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-position: 50% 50%;
-  z-index: -1;
-  max-width: 2560px;
-  margin: 0 auto;
-  background-image: url(../images/reservation/bg-1.webp);
-}
-.reservation-bg:before, .reservation-bg:after {
-  -webkit-transition: 1000ms all;
-  transition: 1000ms all;
-  content: "";
-  opacity: 0;
-  left: 0;
-  top: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: inherit;
-}
-.reservation-bg:before {
-  background-image: url(../images/reservation/bg-2.webp);
-  z-index: 2;
-}
-.reservation-bg:after {
-  background-image: url(../images/reservation/bg-3.webp);
-  z-index: 3;
-}
-.reservation-bg.noon:before {
-  opacity: 1;
-}
-.reservation-bg.night:after {
-  opacity: 1;
-}
-
 .section-landing {
   overflow: hidden;
   position: relative;
@@ -170,6 +115,61 @@
   z-index: 2;
   -webkit-transition: 500ms opacity;
   transition: 500ms opacity;
+}
+
+.reservation-wrap {
+  margin-bottom: -200px;
+  position: relative;
+  text-align: center;
+}
+.reservation-wrap .anchor {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+.reservation-wrap .anchor--1 {
+  top: 33.33%;
+}
+.reservation-wrap .anchor--2 {
+  top: 66.66%;
+}
+.reservation-bg {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: -1;
+  max-width: 2560px;
+  margin: 0 auto;
+  background-image: url(../images/reservation/bg-1.webp);
+}
+.reservation-bg:before, .reservation-bg:after {
+  -webkit-transition: 1000ms all;
+  transition: 1000ms all;
+  content: "";
+  opacity: 0;
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+}
+.reservation-bg:before {
+  background-image: url(../images/reservation/bg-2.webp);
+  z-index: 2;
+}
+.reservation-bg:after {
+  background-image: url(../images/reservation/bg-3.webp);
+  z-index: 3;
+}
+.reservation-bg.noon:before {
+  opacity: 1;
+}
+.reservation-bg.night:after {
+  opacity: 1;
 }
 
 .section-reservation,
@@ -279,10 +279,6 @@
 }
 .reservation-reward .btn--krishna {
   background-image: url(../images/reservation/reward-krishna.webp);
-}
-
-.popup--reservation-reward img {
-  max-height: calc(100vh - 110px - 10px);
 }
 
 .section-market {
@@ -561,16 +557,6 @@
 .form-area .clause-btn:hover {
   color: #a2a2a2;
 }
-.form-area .clause-btn:before {
-  width: 2px;
-  background-color: #888888;
-  height: 0.9em;
-  margin-top: -0.45em;
-  top: 50%;
-  left: 0;
-  display: block;
-  position: absolute;
-}
 .form-area .text-alert {
   margin-top: 0.4em;
   padding-left: 22px;
@@ -609,51 +595,6 @@
 }
 .form-area .btn-submit:hover:before {
   opacity: 0;
-}
-
-.popup-terms {
-  font-family: "Pretendard", "ChosunNm", "Noto Sans KR", sans-serif;
-}
-.popup-terms .popup__wrap {
-  max-width: 700px;
-  width: 100%;
-}
-.popup-terms .popup__body {
-  background-color: #fff;
-  background-image: url(../images/popup/bg-top.webp), url(../images/popup/bg.webp);
-  background-repeat: no-repeat, repeat-y;
-  background-position: 0 0;
-  background-size: 100% auto;
-  padding: 50px;
-  color: #222;
-}
-.popup-terms .popup__body .terms-title {
-  font-size: 1.375em;
-  text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
-  text-align: center;
-  margin-bottom: 1em;
-  min-height: 37px;
-  min-width: 240px;
-  background: url(../images/popup/title-bg.webp) no-repeat 50% 100%;
-}
-
-.popup__reservation .btn-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: min(12px, 1.2vw);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-.popup__reservation .btn-wrap .btn {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 50%;
-          flex: 0 0 50%;
-  max-width: 220px;
 }
 
 .section-event {
@@ -1126,17 +1067,6 @@
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
-}
-.check-board .btn.checked:before {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
 }
 .check-board .btn.checked:after {
   content: "";
@@ -1713,6 +1643,17 @@
   margin-right: -39px;
   margin-bottom: -29px;
 }
+.match .item-button {
+  -webkit-transition: 300ms -webkit-transform;
+  transition: 300ms -webkit-transform;
+  transition: 300ms transform;
+  transition: 300ms transform, 300ms -webkit-transform;
+}
+.match .item-button:hover {
+  -webkit-transform: translateY(-1%);
+          transform: translateY(-1%);
+}
+
 .tournament-container .item-button.selected .img:before {
   opacity: 1;
 }
@@ -1979,19 +1920,8 @@
   width: 52px;
   height: 52px;
 }
-.tournament-result-wrap .share__list .share-btn--kakaotalk {
-  background-position: -10px -82px;
-  width: 52px;
-  height: 52px;
-}
 .tournament-result-wrap .share__list .share-btn--x {
   background-position: -10px -154px;
   width: 52px;
   height: 52px;
-}
-.tournament-result-wrap .text {
-  margin-top: 45px;
-  width: 294px;
-  height: 35px;
-  background: url(../images/tournament/text.webp) no-repeat;
 }/*# sourceMappingURL=reservation.css.map */

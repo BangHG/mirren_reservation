@@ -5,8 +5,9 @@
   width: vw(154);
   height: vw(154);
   $offset: vw(48);
-  bottom: $offset;
+  // bottom: $offset;
   right: $offset;
+  bottom: $offset * 2;
   z-index: 100;
   background-size: contain;
   background-repeat: no-repeat;

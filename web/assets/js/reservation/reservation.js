@@ -123,7 +123,8 @@ function updateGauge(state) {
   const items = document.querySelectorAll('.gauge-list .item');
   const itemsBg = document.querySelectorAll('.gauge .item-bg');
   const bar = document.querySelector('.bar');
-  const duration = 0.5; // 각 애니메이션 단계의 지속 시간 (초)
+  const duration = 0.3; // 각 애니메이션 단계의 지속 시간 (초)
+  // const duration = 3 / state; // 3초동안 애니메이션 시간 나눠쓰기
 
   gsap.set(bar, { width: 0 });
 
@@ -133,19 +134,19 @@ function updateGauge(state) {
   let widthPercentage = percentages[state];
   for (let i = 0; i < state; i++) {
     gsap.to(items[i], {
-      duration: duration,
+      duration: 0.5, // duration,
       delay: i * duration,
       onComplete: () => items[i].classList.add('active'),
     });
     gsap.to(itemsBg[i], {
-      duration: duration,
+      duration: 0.5, // duration,
       delay: i * duration,
       onComplete: () => itemsBg[i].classList.add('active'),
     });
   }
 
   gsap.to(bar, {
-    delay: 0.1,
+    delay: 0.5,
     width: widthPercentage + '%',
     duration: duration * state,
     ease: 'none',
@@ -236,7 +237,8 @@ $(function SET_event3() {
 function cardFlip() {
   const items = document.querySelectorAll('.achieve-list .card');
   const delay = 0.3;
-  for (let i = 0; i < state; i++) {
+
+  for (let i = 0; i < 4; i++) {
     gsap.to(items[i], {
       duration: 0.5,
       delay: i * delay,

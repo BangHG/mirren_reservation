@@ -1,1 +1,224 @@
-﻿
+﻿.section-event {
+  z-index: 5;
+  position: relative;
+  background: url(../images/event/bg.webp) no-repeat 50% 0;
+
+  background-size: 100% auto;
+  // filter: invert(1);
+}
+$con1H: vw(3100 - 100);
+$con2H: vw(3010);
+$con3H: vw(2190);
+$con4H: vw(2018 + 100);
+
+.event-content {
+  // filter: invert(1);
+  position: relative;
+  // box-shadow: inset 0 0 2px yellow; //FIXME:
+  &--1 {
+    height: $con1H;
+  }
+  &--2 {
+    height: $con2H;
+  }
+  &--3 {
+    height: $con3H;
+  }
+  &--4 {
+    height: $con4H;
+  }
+
+  //                            888                      888
+  //                            888                      888
+  //                            888                      888
+  //  .d8888b  .d88b.  88888b.  888888  .d88b.  88888b.  888888
+  // d88P"    d88""88b 888 "88b 888    d8P  Y8b 888 "88b 888
+  // 888      888  888 888  888 888    88888888 888  888 888
+  // Y88b.    Y88..88P 888  888 Y88b.  Y8b.     888  888 Y88b.
+  //  "Y8888P  "Y88P"  888  888  "Y888  "Y8888  888  888  "Y888
+
+  //  d888
+  // d8888
+  //   888
+  //   888
+  //   888
+  //   888
+  //   888
+  // 8888888
+
+  &--1 {
+    text-align: center;
+
+    .gauge {
+      position: relative;
+      top: vw(1162);
+      z-index: 2;
+    }
+  }
+
+  //  .d8888b.
+  // d88P  Y88b
+  //        888
+  //      .d88P
+  //  .od888P"
+  // d88P"
+  // 888"
+  // 888888888
+
+  &--2 {
+    position: relative;
+    text-align: center;
+
+    .container {
+      position: relative;
+      top: vw(819);
+    }
+    .attend-form {
+      // border: 1px solid #fff;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: vw(28);
+      text-align: center;
+      padding: 0 vw(50);
+      &__btn {
+        @include btnImg(vw(405), vw(136), '../images/event/2/btn.webp');
+      }
+      &__input {
+        position: relative;
+        top: 1px;
+        height: vw(110);
+        background-color: #fff;
+        border: 0;
+        font-size: vw(36);
+        font-family: $font-family-sub;
+        font-weight: 500;
+        width: 100%;
+        text-align: center;
+        padding: 0 1em;
+        color: #111;
+        &::placeholder {
+          color: #bbb;
+        }
+      }
+    }
+    .btn-check-board-reward {
+      // background: yellow;// FIXME:
+      width: vw(488);
+      height: vw(107);
+      z-index: 3;
+      margin: 3vw auto;
+      font-size: 0;
+    }
+    .event-notice {
+      // TODO:
+      // margin: -68px auto 0;
+      padding: 0 vw(40);
+      z-index: 2;
+      position: relative;
+      font-family: $font-family-sub;
+      letter-spacing: -0.05em;
+      text-align: left;
+      font-size: vw(32);
+      color: #bbbbbb;
+      h4 {
+        font-weight: 400;
+      }
+      li {
+        // margin-top: 0;
+        line-height: 1.1;
+      }
+    }
+  }
+
+  //  .d8888b.
+  // d88P  Y88b
+  //      .d88P
+  //     8888"
+  //      "Y8b.
+  // 888    888
+  // Y88b  d88P
+  //  "Y8888P"
+
+  &--3 {
+    padding-top: vw(760);
+    position: relative;
+    .btn-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: vw(1957);
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      .btn {
+        width: vw(980/2);
+        height: vw(128);
+      }
+    }
+  }
+  //     d8888
+  //    d8P888
+  //   d8P 888
+  //  d8P  888
+  // d88   888
+  // 8888888888
+  //       888
+  //       888
+
+  &--4 {
+    position: relative;
+    text-align: center;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      aspect-ratio: (1080/1509);
+      background: url(../images/event/4/fly.webp) no-repeat;
+      background-size: contain;
+      left: 0;
+      top: vw(190);
+      animation: event4Fly 5s infinite alternate;
+    }
+    @keyframes event4Fly {
+      0%,
+      100% {
+        transform: translateY(0) rotate(0);
+        filter: brightness(1);
+      }
+      13%,
+      36%,
+      62%,
+      87% {
+        filter: brightness(1.1);
+      }
+      25%,
+      50%,
+      75% {
+        filter: brightness(1);
+      }
+      65% {
+        transform: translateY(2%) rotate(-2deg);
+      }
+    }
+    .tournament-start-btn {
+      position: absolute;
+      font-size: 0;
+      // background: rgba(yellow, 0.5);
+      z-index: 3;
+      top: vw(700);
+      width: vw(690);
+      height: vw(215);
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+}
+
+//소스 너무 긴 별도 유틸 분리..
+@import '_event-checkboard.scss';
+@import '_event-gauge.scss';
+@import '_event-achieve.scss';

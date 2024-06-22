@@ -1,0 +1,197 @@
+﻿.gauge {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1080/1666;
+  margin: 0 auto;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    //게이지 배경(아이템등)
+    background: url(../images/event/1/gauge.webp) no-repeat;
+    background-size: contain;
+  }
+  &-list {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    &__bar {
+      $space: 12;
+      position: absolute;
+      left: vw(377);
+      top: vw(28 + $space);
+      height: vw(1561 - $space * 2);
+      text-align: left;
+      .bar {
+        height: 50%;
+        display: block;
+        width: vw(32);
+        position: relative;
+        background: url(../images/event/1/gauge-bar.webp);
+        background-size: contain;
+        background-repeat: repeat-y;
+        &:before,
+        &:after {
+          height: vw($space);
+          width: 100%;
+          position: absolute;
+          content: '';
+          left: 0;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        &:after {
+          background-image: url(../images/event/1/gauge-bar-end.webp);
+          bottom: vw(-$space);
+        }
+        &:before {
+          background-image: url(../images/event/1/gauge-bar-start.webp);
+          top: vw(-$space);
+        }
+      }
+    }
+    .item {
+      position: absolute;
+      width: 100%;
+      height: vw(224);
+      top: 0;
+      // background: rgba(yellow, 0.2);//FIXME:
+
+      &.active {
+        &:after {
+          background-image: url(../images/event/1/on.webp);
+        }
+        &:before {
+          opacity: 1;
+          transform: rotateX(0);
+        }
+      }
+      &:before {
+        //마름모
+        content: '';
+        opacity: 0;
+        position: absolute;
+        // bottom: 98px;
+        top: vw(-3);
+        left: vw(274);
+        transition: 300ms opacity, 300ms transform;
+        transition-delay: 100ms transform;
+        background: url(../images/event/1/active.webp) no-repeat;
+        background-size: contain;
+        transform: rotateX(90deg);
+        width: vw(242);
+        height: vw(247);
+      }
+
+      $w: 684;
+      &:after {
+        content: '';
+        display: block;
+        width: vw(194);
+        height: vw(114);
+        position: absolute;
+        top: vw(62);
+        left: vw(456);
+
+        background: url(../images/event/1/off.webp) no-repeat;
+        background-size: 100%;
+      }
+      &--1 {
+        @at-root .item-bg--1,
+          & {
+          top: vw(26); //
+        }
+        &:after {
+          background-position-y: percentage((1-1)/5);
+        }
+      }
+      &--2 {
+        @at-root .item-bg--2,
+          & {
+          top: vw(294); //
+        }
+        &:after {
+          background-position-y: percentage((2-1)/5);
+        }
+      }
+      &--3 {
+        @at-root .item-bg--3,
+          & {
+          top: vw(555); //
+        }
+        &:after {
+          background-position-y: percentage((3-1)/5);
+        }
+      }
+      &--4 {
+        @at-root .item-bg--4,
+          & {
+          top: vw(832); //
+        }
+        &:after {
+          background-position-y: percentage((4-1)/5);
+        }
+      }
+      &--5 {
+        @at-root .item-bg--5,
+          & {
+          top: vw(1111); //
+        }
+        &:after {
+          background-position-y: percentage((5-1)/5);
+        }
+      }
+      &--6 {
+        @at-root .item-bg--6,
+          & {
+          top: vw(1376); //
+        }
+        &:after {
+          background-position-y: percentage((6-1)/5);
+        }
+      }
+    }
+  }
+
+  .item-bg {
+    //원판
+    position: absolute;
+    width: vw(224);
+    aspect-ratio: 1;
+    left: vw(104);
+    &:before,
+    &:after {
+      transition: 300ms opacity linear;
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &:before {
+      background-image: url(../images/event/1/item-bg.webp);
+    }
+    &:after {
+      opacity: 0;
+      background-image: url(../images/event/1/item-bg-active.webp);
+    }
+    &.active {
+      &:after {
+        opacity: 1;
+      }
+      &:before {
+        opacity: 0;
+      }
+    }
+  }
+}

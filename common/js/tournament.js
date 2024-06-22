@@ -254,5 +254,16 @@ function tournamentStart() {
   fadeInElement(tournamentContainer);
   // });
 
-  $('body,html').animate({ scrollTop: $('.tournament-start-btn').offset().top - 250 }, 300);
+  // $('body,html').animate({ scrollTop: $('.tournament-start-btn').offset().top - 250 }, 300);
+
+  //시작시 모달이 화면 중앙으로 오도록 조정
+  const target = $('.tournament-container');
+  const targetOffset = target.offset().top;
+  const targetHeight = target.outerHeight();
+
+  const windowHeight = $(window).height();
+
+  const scrollTopPosition = targetOffset - windowHeight / 2 + targetHeight / 2;
+
+  $('body,html').animate({ scrollTop: scrollTopPosition }, 300);
 }

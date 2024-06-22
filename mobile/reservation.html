@@ -12,16 +12,13 @@
   <body class="main-page" data-page="reservation">
     <!-- #include file="/games/mirren/reservation/mobile/inc/header.html" -->
 
-    <!-- TODO:배경처리 -->
     <span class="reservation-bg"></span>
-
-    <!-- <img src="assets/images/bg.cover.bak.webp" alt="스크린 FIXME:" style=" position: absolute; z-index: 3; left: 50%; top: 0; transform: translateX(-50%); max-width: max-content; filter: invert(1); opacity: 0.5; " /> -->
 
     <main class="main" id="contents">
       <!-- S: section-landing -->
       <section class="section section-landing">
         <div class="bg">
-          <video loop muted playsinline poster="/games/mirren/reservation/mobile/assets/images/landing/bg.webp">
+          <video loop muted playsinline autoplay poster="/games/mirren/reservation/mobile/assets/images/landing/bg.webp">
             <source src="/games/mirren/reservation/mobile/assets/images/landing/bg.mp4" type="video/mp4" />
           </video>
         </div>
@@ -51,16 +48,10 @@
         <!-- E: .reservation-bg transition용 anchor DOM -->
 
         <section class="section section-reservation" id="section-reservation">
-          <i class="ch ch--b"></i>
-          <i class="ch ch--l"></i>
-          <i class="ch ch--r"></i>
-
-          <div class="section-reservation__bg"></div>
-
           <div class="sr-only">
             <p> 당신과 마녀 그리고 성흔의 서사시 </p>
             <h2>뮈렌: 천년의 여정 사전예약</h2>
-            <p>2024.06.27. ~ 론칭 시 까지.</p>
+            <p>2024.06.27. ~ 런칭 시 까지</p>
             <h3> 뮈렌: 천년의 여정 사전예약 시 대니, 시슬리, 크리슈나 중 1종을 획득할 수 있는 5성 성흔 선택권 한개 지급! </h3>
           </div>
 
@@ -99,7 +90,7 @@
 
                 <!-- S: 개발용 -->
                 <!-- <div class="cf-turnstile" style="font-size: 0" data-sitekey="0x4AAAAAAAQKMbMx6pImjuzR" data-theme="dark"></div>
-                      <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script> -->
+                <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script> -->
                 <!-- E: 개발용 -->
 
                 <!-- 확인중 일 경우 : -->
@@ -205,11 +196,6 @@
         </section>
 
         <section class="section section-market">
-          <div class="section-market__bg"></div>
-
-          <i class="ch ch--r"></i>
-          <i class="ch ch--l"></i>
-
           <div class="container">
             <div class="sr-only">
               <h2>마켓 사전예약</h2>
@@ -222,30 +208,19 @@
             <div class="badge-wrap">
               <h3 class="sr-only">마켓 사전예약 바로가기</h3>
 
-              <a href="#TODO:" class="badge" target="_blank" title="Google Play에서 사전등록하기">
-                <img src="assets/images/app-download-aos-pre.webp" alt="" />
-              </a>
-              <a href="#TODO:" calss="badge" target="_blank" title="App Store에서 사전 주문하기">
-                <img src="assets/images/app-download-ios-pre.webp" alt="" />
-              </a>
+              <a href="#TODO:" class="badge" target="_blank" title="Google Play에서 사전등록하기"> </a>
+              <a href="#TODO:" class="badge" target="_blank" title="App Store에서 사전 주문하기"> </a>
             </div>
 
             <button type="button" class="popup-link btn-reservation-notice" data-popup="popup__reservation-notice"><span class="sr-only">사전예약 유의사항 </span></button>
           </div>
         </section>
-
-        <!-- <section class="section section-cbt" style="padding-bottom: 200px" id="section-cbt">
-                <div style="display: flex; align-items: center; justify-content: center; text-align: center; height: 1000px; max-width: 800px; margin: 0 auto; background-color: rgba(255, 255, 255, 0.3); color: #222"> TODO: CBT 내용수급 대기<br /> </div>
-                </section> -->
       </div>
 
       <section class="section section-event" id="section-event">
         <h2 class="sr-only"> 이벤트 </h2>
 
         <section class="event-content event-content--1">
-          <div class="spr-marble"> <i class="i i--1"></i><i class="i i--2"></i><i class="i i--3"></i><i class="i i--4"></i><i class="i i--5"></i><i class="i i--6"></i> </div>
-          <i class="i_star"><i></i><i></i><i></i><i></i><i></i></i>
-
           <div class="sr-only">
             <h3>01 : 사전예약 목표 인원 달성하고 보상받자! 사전예약 인원 달성 이벤트</h3>
             <p> 2024.06.27. ~ 런칭 시 까지 </p>
@@ -256,19 +231,19 @@
             <span class="item-bg item-bg--1"></span> <span class="item-bg item-bg--2"></span> <span class="item-bg item-bg--3"></span> <span class="item-bg item-bg--4"></span> <span class="item-bg item-bg--5"></span> <span class="item-bg item-bg--6"></span>
 
             <!-- TODO: 달성시 조정내용
-                  h4 텍스트 변경
-                  gauge-list [data-state] 값 변경
-                  -->
-            <!-- 
-                  TODO:
-                  data-state="0" : 미달성
-                  data-state="1" : 5만 달성
-                  data-state="2" : 10만 달성
-                  data-state="3" : 20만 달성
-                  data-state="4" : 30만 달성
-                  data-state="5" : 40만 달성
-                  data-state="6" : 50만 달성 
-                  -->
+            h4 텍스트 변경
+            gauge-list [data-state] 값 변경
+            -->
+            <!--
+            TODO:
+            data-state="0" : 미달성
+            data-state="1" : 5만 달성
+            data-state="2" : 10만 달성
+            data-state="3" : 20만 달성
+            data-state="4" : 30만 달성
+            data-state="5" : 40만 달성
+            data-state="6" : 50만 달성
+            -->
             <h4 class="sr-only"> 5만 달성 </h4>
             <div class="gauge-list" data-state="6">
               <div class="gauge-list__bar">
@@ -299,10 +274,6 @@
         </section>
 
         <section class="event-content event-content--2">
-          <i class="bg bg--cloud"></i>
-          <i class="bg bg--light"></i>
-          <i class="ch"></i>
-          <i class="i_star"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></i>
           <div class="sr-only">
             <h3>02 매일매일 출첵하고 아이템 받자! 출석체크 이벤트</h3>
 
@@ -310,12 +281,12 @@
             <p>사전예약 기간 동안 매일 출석체크하고 출석 보상을 받아보세요! </p>
           </div>
 
-          <div class="container" data-aos="fade-up">
+          <div class="container">
             <form action="" method="get" id="attendForm">
               <div class="attend-form">
                 <p class="sr-only">사전예약 휴대전화 번호 입력</p>
                 <input class="attend-form__input" type="tel" name="" autocomplete="off" placeholder="‘-’을 제외한 휴대 전화 번호를 입력해 주세요." />
-                <button type="submit" class="attend-form__btn" title="출석체크 하기"></button>
+                <button type="submit" class="attend-form__btn" title="출석체크 하기"> </button>
               </div>
             </form>
 
@@ -328,10 +299,13 @@
 
                 //로그인전/후 화면노출
                 $('#attendBtn').click();
+
+                //출석완료팝업열기
+                $('#popup__check-board-done').fadeIn().css('display', 'flex');
               });
             </script>
 
-            <button type="button" id="attendBtn" onclick=" $('.check-board').toggleClass('check-board--guest'); if($('.check-board').hasClass('check-board--guest')){ $('.check-board .btn').removeClass('checked'); }else{ $('.check-board .btn').addClass('checked'); } " style="color: red; background-color: yellow; position: absolute; right: 183px; top: 70px; z-index: 2">테스트BTN</button>
+            <button type="button" id="attendBtn" onclick=" $('.check-board').toggleClass('check-board--guest'); if($('.check-board').hasClass('check-board--guest')){ $('.check-board .btn').removeClass('checked'); }else{ $('.check-board .btn').addClass('checked'); } " style="color: red; background-color: yellow; position: absolute; right: 0; top: 11.185vw; z-index: 2"> 테스트BTN </button>
 
             <!-- E: 로그인전/후 테스트버튼/테스트코드 : 개발단에서 삭제해주세요 -->
 
@@ -384,7 +358,7 @@
             </div>
             <!-- E: 출석보드 -->
 
-            <button type="submit" class="btn-check-board-reward popup-link" data-popup="popup__check-board-reward"> 주차별 출석 보상 보기 </button>
+            <button type="button" class="btn-check-board-reward popup-link" data-popup="popup__check-board-reward"> 주차별 출석 보상 보기 </button>
 
             <div class="event-notice">
               <h4>[유의사항]</h4>
@@ -407,17 +381,15 @@
           <i class="ch"></i>
           <div class="sr-only">
             <h3>03 공식 라운지와 X에서 소통해요! 팔로워 달성 이벤트 </h3>
-
             <p>2024.06.27.~ 런칭 시 까지 </p>
-
             <p>뮈렌: 천년의 여정의 다양한 소식들을 공식 라운지와 X에서 만나보세요~! 목표 팔로워 수 달성 시 특별한 선물을 드립니다!</p>
           </div>
 
-          <div class="container" data-aos="fade-up" data-aos-duration="1000">
-            <!-- TODO:                    
-                  h4 텍스트 변경
-                  달성한 항목 .achieve-list .card 에 active addclass
-                   -->
+          <div class="container">
+            <!-- TODO:
+            h4 텍스트 변경
+            달성한 항목 .achieve-list .card 에 active addclass
+            -->
 
             <h4 class="sr-only">5천명 달성</h4>
             <ul class="achieve-list">
@@ -448,20 +420,12 @@
           </div>
         </section>
         <section class="event-content event-content--4">
-          [이상형월드컵시작]버튼 위치 수정 -->
-          <i class="ch"></i>
           <div class="sr-only">
             <h3>04 세이비어님이 첫눈에 반할 성흔은 누구? 성흔 첫인상 이상형 월드컵 </h3>
             <p>2024.06.27. ~ 런칭 시 까지</p>
           </div>
 
-          <div class="box">
-            <div class="box__box"></div>
-            <div class="box__fly"></div>
-            <button type="button" class="tournament-start-btn" data-aos="fade-up" data-aos-duration="1000" onclick="tournamentStart()">이상형 월드컵 시작 </button>
-          </div>
-
-          [이상형월드컵시작]버튼 위치 수정 -->
+          <button type="button" class="tournament-start-btn" onclick="tournamentStart()">이상형 월드컵 시작 </button>
 
           <!-- S: 이상형월드컵 -->
           <span class="dimmed"></span>
@@ -489,9 +453,6 @@
                     <ul class="share__list">
                       <!-- TODO: 공유하기 -->
                       <li><button type="button" onclick="shareOnX(localStorage.getItem('tournamentWinner'))" class="share-btn share-btn--x" title="X로 공유하기"> </button></li>
-
-                      <!-- <li><button type="button" onclick="shareOnKakaotalk(localStorage.getItem('tournamentWinner'))" class="share-btn share-btn--kakaotalk" title="카카오톡으로 공유하기"> </button></li> -->
-
                       <li><button type="button" onclick="shareOnFacebook(localStorage.getItem('tournamentWinner'))" class="share-btn share-btn--facebook" title="페이스북으로 공유하기"> </button></li>
                     </ul>
                     <script>
@@ -529,9 +490,7 @@
     <!-- #include file="/games/mirren/reservation/mobile/inc/popup-reservation.html" -->
 
     <script src="/games/mirren/reservation/mobile/assets/js/common-animate.min.js"></script>
-
     <script src="/games/mirren/reservation/common/js/tournament.min.js"></script>
-
     <script src="/games/mirren/reservation/mobile/assets/js/common.min.js"></script>
     <script src="/games/mirren/reservation/mobile/assets/js/reservation.min.js"></script>
   </body>

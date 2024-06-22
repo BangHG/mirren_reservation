@@ -151,6 +151,23 @@ function GsapLoadingAnimation() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  // GsapLoadingAnimation(); //로딩하기
-  GsapLoadingNo(); //로딩안하기 FIXME:
+  // console.log('새로고침됨'); //FIXME:
+
+  // gsap.to(window, { duration: 0.3, scrollTo: 0 });
+  //새로고침되면 상단부터 노출
+
+  // 페이지 로드시 초기 조정
+  // adjustSmallDevice();
+
+  // 처음 방문한 경우 실행할 코드
+  if (!sessionStorage.getItem('visited')) {
+    GsapLoadingAnimation(); //로딩하기
+    // 세션 스토리지에 'visited' 키 설정
+    // console.log('로딩하기'); //FIXME:
+    sessionStorage.setItem('visited', 'true');
+  } else {
+    // console.log('로딩안하기'); //FIXME:
+    GsapLoadingNo(); //로딩안하기
+  }
+  //TODO://reservation 로딩시 애니메이션 추가
 });

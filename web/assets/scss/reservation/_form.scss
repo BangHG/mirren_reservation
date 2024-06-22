@@ -211,19 +211,19 @@ $color-common: #bbbbbb;
     &:hover {
       color: lighten(darken($color-common, 15%), 5%);
     }
-    &:before {
-      //좌측 선
-      // content: '';
-      width: 2px;
-      // background-color: darken($color-common, 35%);
-      background-color: $color-alert;
-      height: 0.9em;
-      margin-top: -0.45em;
-      top: 50%;
-      left: 0;
-      display: block;
-      position: absolute;
-    }
+    // &:before {
+    //   //좌측 선
+    //   // content: '';
+    //   width: 2px;
+    //   // background-color: darken($color-common, 35%);
+    //   background-color: $color-alert;
+    //   height: 0.9em;
+    //   margin-top: -0.45em;
+    //   top: 50%;
+    //   left: 0;
+    //   display: block;
+    //   position: absolute;
+    // }
   }
   .text-alert {
     margin-top: 0.4em;
@@ -238,48 +238,6 @@ $color-common: #bbbbbb;
     margin: 30px auto 0;
   }
 }
-
-.popup-terms {
-  font-family: $font-family-sub;
-  .popup {
-    &__wrap {
-      max-width: 700px;
-      width: 100%;
-    }
-    &__body {
-      background-color: #fff;
-      background-image: url(../images/popup/bg-top.webp),
-        //
-        url(../images/popup/bg.webp);
-      background-repeat: no-repeat, repeat-y;
-      background-position: 0 0;
-      background-size: 100% auto;
-      padding: 50px;
-
-      color: #222;
-      .terms-title {
-        font-size: em(22);
-        text-shadow: 0 0 3px #fff,
-          //
-          0 0 3px #fff,
-          //
-          0 0 3px #fff,
-          //
-          0 0 3px #fff,
-          //
-          0 0 3px #fff,
-          //
-          0 0 3px #fff;
-        text-align: center;
-        margin-bottom: 1em;
-        min-height: 37px;
-        min-width: 240px;
-        background: url(../images/popup/title-bg.webp) no-repeat 50% 100%;
-      }
-    }
-  }
-}
-
 //팝업배경
 // .popup-terms .popup__wrap {
 //   background: #000d30 url(../images/popup/bg.webp) no-repeat 0 0;
@@ -293,15 +251,15 @@ $color-common: #bbbbbb;
 //   font-weight: 400;
 // }
 
-.popup__reservation {
-  .btn-wrap {
-    display: flex;
-    gap: min(12px, vw(12));
-    align-items: center;
-    justify-content: center;
-    .btn {
-      flex: 0 0 50%;
-      max-width: 220px;
-    }
-  }
-}
+// .popup__reservation {
+//   .btn-wrap {
+//     display: flex;
+//     gap: min(12px, vw(12));
+//     align-items: center;
+//     justify-content: center;
+//     .btn {
+//       flex: 0 0 50%;
+//       max-width: 220px;
+//     }
+//   }
+// }

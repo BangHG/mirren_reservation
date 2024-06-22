@@ -1,0 +1,89 @@
+﻿.check-board {
+  position: relative;
+  left: 28px;
+  width: 1222px;
+  height: 744px;
+  background: url(../images/event/2/board.webp) no-repeat;
+  &--guest {
+    background://
+      url(../images/event/2/board-guest.webp) no-repeat 50% 42%,
+      //
+      url(../images/event/2/board.webp) no-repeat;
+    .check-board__wrap {
+      opacity: 0.2;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-user-drag: none;
+      user-drag: none;
+    }
+  }
+  &__wrap {
+    position: absolute;
+    display: flex;
+    max-width: 828px;
+
+    top: 213px;
+    left: 197px;
+  }
+  &__check {
+    display: flex;
+    flex-wrap: wrap;
+    .btn {
+      // &.checked:before {
+      //   content: '출석';
+      // }
+      &:after {
+        background-image: url(../images/event/2/stamp_check.webp);
+      }
+    }
+  }
+  &__reward {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 (126px+12px);
+    .btn {
+      &:after {
+        background-image: url(../images/event/2/stamp_reward.webp);
+      }
+      p {
+        padding: 0 1em; //줄바꿈
+      }
+    }
+  }
+  .btn {
+    flex: 0 0 (126px+12px);
+    padding: 5px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    &.checked:after {
+      content: '';
+    }
+    &:after {
+      width: 87px;
+      height: 87px;
+      display: block;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: ceil(87px/-2);
+      margin-top: ceil(87px/-2);
+    }
+    p {
+      width: 126px;
+      height: 70px;
+      font-size: 22px;
+      line-height: (24/22);
+      color: #333;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      letter-spacing: -0.02em;
+    }
+  }
+}

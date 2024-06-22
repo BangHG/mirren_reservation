@@ -1,109 +1,297 @@
-﻿.section-tournament {
-  width: 100%;
-  padding: 0 10px;
-  // font-size: 10px;
-  // padding: 150px 0;
+﻿.dimmed {
+  display: none;
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(#000, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 10;
+}
 
-  &__wrap {
+.tournament-container {
+  display: none;
+  z-index: 20;
+  text-align: center;
+  position: absolute;
+
+  top: vw(390);
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1080/1549;
+  background: url(../images/tournament/bg.webp) no-repeat;
+  background-size: contain;
+
+  #tournament,
+  #tournament-result {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-repeat: no-repeat;
     position: relative;
+    background-size: contain;
+  }
+  #tournament-result {
+    background-image: url(../images/tournament/bg-result.webp);
   }
 
-  .tournament {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    &,
-    &__cover {
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid #666;
+  &__close {
+    background: url(../images/tournament/close-btn.webp) no-repeat;
+    background-size: contain;
+    width: vw(121);
+    aspect-ratio: 1;
+    position: absolute;
+    bottom: vw(50);
+    left: 50%;
+    transform: translate(-50%, 100%);
+  }
+  .match-round {
+    position: absolute;
+    left: 50%;
+    top: vw(320);
+    z-index: 2;
+    transform: translateX(-50%);
+    width: vw(224);
+    height: vw(325/5);
+    background: url(../images/tournament/match-round.webp) no-repeat;
+    background-size: 100% auto;
+    &--32 {
+      background-position-y: 0;
     }
-    &__cover {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-      background: #222;
-      &,
-      button {
-        font-size: 2rem;
-        color: #fff;
-      }
-      button {
-        border: 1px solid #fff;
-        border-radius: 10px;
-        padding: 0.8em 1em;
-        line-height: 1;
-        background: lighten(#000, 0%);
-        &:hover {
-          background: lighten(#000, 30%);
+    &--16 {
+      background-position-y: vw(325/5) * -1;
+    }
+    &--8 {
+      background-position-y: vw(325/5) * -2;
+    }
+    &--4 {
+      background-position-y: vw(325/5) * -3;
+    }
+    &--2 {
+      background-position-y: vw(325/5) * -4;
+    }
+  }
+
+  .match {
+    &-container {
+      position: relative;
+    }
+    position: absolute;
+    width: 100%;
+    top: vw(552);
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: vw(20);
+  }
+  .vs {
+    width: vw(160);
+    height: vw(114);
+    background: url(../images/tournament/versus.webp) no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+    position: absolute;
+    top: vw(-100);
+    z-index: 2;
+  }
+
+  .item-button {
+    padding-bottom: 0;
+    border: 0;
+    background: none;
+    margin-right: vw(-65);
+    margin-bottom: vw(-48);
+
+    &.selected {
+      .img {
+        &:before {
+          opacity: 1;
         }
       }
     }
   }
 
-  .match {
-    position: absolute;
-    width: 100%;
-    top: 3em;
-    left: 0;
-    background: #f2f2f2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-    justify-content: center;
-  }
-  .item-button {
-    flex: 0 0 min(150px, 33vw);
-    max-width: min(150px, 33vw);
-    &.selected {
-      .img {
-        box-shadow: 0 0 0 5px rgba(red, 0.8); //FIXME:
-      }
-    }
-  }
-  .name {
-    width: 100%;
-    font-size: 18px;
-    margin: 0.5em auto;
-  }
   .img {
-    aspect-ratio: (300/400);
-    width: 100%;
+    margin: 0 auto;
+    width: vw(560);
+    aspect-ratio: (560/726);
     display: block;
     background-position: 50% 50%;
-    background-size: cover;
-    margin: 0 auto;
-    border: 1px solid #ddd;
-  }
-
-  .winner {
-    .item-button {
-      margin: 0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    font-size: 0;
+    &:before {
+      content: '';
+      opacity: 0;
+      transition: 100ms all;
+      width: vw(526);
+      height: vw(649);
+      position: absolute;
+      top: vw(47);
+      left: vw(-13);
+      background: url(../images/tournament/selected.webp) no-repeat;
+      background-size: contain;
     }
-    .share {
-      margin: 2em auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      column-gap: 1em;
-      &__list {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        column-gap: 1em;
+  }
+}
+
+#tournament-result {
+  opacity: 0;
+  transition: 300ms opacity;
+}
+.tournament-result-wrap {
+  text-align: center;
+  .img-bx {
+    width: 100%;
+    top: vw(297);
+    position: relative;
+    .item-button {
+      position: relative;
+    }
+    &:before {
+      //마법진
+      background: url(../images/tournament/finish-img-bg.webp) no-repeat;
+      background-size: contain;
+      content: '';
+      width: vw(685);
+      aspect-ratio: 1;
+      display: block;
+      position: absolute;
+      top: 52%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: spin 40s infinite linear;
+      @keyframes spin {
+        from {
+          transform: translate(-50%, -50%) rotate(0);
+        }
+        to {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
       }
     }
+    &:after {
+      //나비
+      content: '';
+      width: vw(657);
+      height: vw(609);
+      position: absolute;
+      content: '';
+      background: url(../images/tournament/finish-img-fly.webp) no-repeat;
+      display: block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .txt-bx {
     .btn {
-      border: 1px solid #ddd;
-      padding: 0.5em;
-      line-height: 1;
+      display: inline-block;
+      // background: rgba(yellow, 0.5);
+      position: absolute;
+      &-saveImg {
+        width: vw(478);
+        height: vw(130);
+        left: vw(67);
+        top: vw(1025);
+      }
+      &-restart {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: vw(1173);
+        width: vw(512);
+        height: vw(100);
+      }
+    }
+  }
+  .img {
+    //랜덤대사
+    $line: (
+      1 '세이비어님♥ 잘 부탁해요.',
+      //
+      2 '앞으로도 잘 부탁드려요♥',
+      //
+      3 '우와♥ 세이비어님♥',
+      //
+      4 '저를 뽑아주셔서 감사해요♥',
+      //
+      5 '저에게 첫눈에 반하셨나요?♥',
+      //
+    );
+    @each $i, $lines in $line {
+      &[data-index='#{$i}']:after {
+        content: $lines;
+        background-image: url(../images/tournament/lines-#{$i}.webp);
+      }
+    }
+    &:after {
+      width: vw(333);
+      height: vw(192);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: vw(20);
+      left: vw(-260);
+      font-size: 0;
+    }
+  }
+
+  //ani
+  .img-bx {
+    opacity: 0;
+    transform: translateY(10%);
+    transition: 500ms all;
+  }
+  .img:after {
+    //말풍선
+    opacity: 0;
+    transform: rotate(-10deg) translateY(-2%);
+    transform-origin: 100% 100%;
+    transition: 300ms all;
+    transition-delay: 300ms;
+  }
+  &.initAni {
+    .img-bx {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .img:after {
+      opacity: 1;
+      top: 0;
+      transform: rotate(0) translateY(0);
+    }
+  }
+  //
+  .share {
+    position: absolute;
+    top: vw(1041);
+    left: vw(800);
+    &__list {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: vw(18);
+      .share-btn {
+        width: vw(90);
+        aspect-ratio: 1;
+        display: block;
+        background-repeat: no-repeat;
+        background-image: url(../images/tournament/share-btn.webp);
+        background-size: 100% auto;
+        &--facebook {
+          background-position-y: 0;
+        }
+
+        &--x {
+          background-position-y: 100%;
+        }
+      }
     }
   }
 }

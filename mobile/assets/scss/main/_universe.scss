@@ -15,18 +15,9 @@
     z-index: 2;
     position: relative;
     .txt {
-      // img {
-      //   width: vw(827);
-      //   margin: 0 auto;
-      // }
-      // margin-top: vw(80);
-      // &:nth-child(1) {
-      //   margin-top: 0;
-      // }
     }
     .txt {
       background: url(../images/universe/txt.webp) no-repeat;
-      // margin-top: 30px;
       background-size: vw(827);
       width: vw(827);
       margin: 0 auto;
@@ -103,7 +94,7 @@
       z-index: -1;
       background-repeat: no-repeat;
       background-size: contain;
-      $left: 350px;
+
       &--1 {
         background-image: url(../images/universe/hand1.webp);
         width: vw(459);

@@ -60,7 +60,7 @@
     display: flex;
     // align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: vw(50);
     // position: absolute;
     // top: 50%;
     transform: translateY(-65%);
@@ -103,7 +103,7 @@
   }
 }
 
-//TODO: 가로모드 작업
+// 가로모드 작업
 @media (min-aspect-ratio: '1/1') {
   .loading {
     &__logo {

@@ -1,0 +1,97 @@
+﻿.check-board {
+  margin-top: vw(56);
+  position: relative;
+  left: 0;
+  width: 100%;
+  aspect-ratio: (1080/957);
+  background: url(../images/event/2/board.webp) no-repeat;
+  background-size: contain;
+  &--guest {
+    background://
+      url(../images/event/2/board-guest.webp) no-repeat 0 0,
+      //
+      url(../images/event/2/board.webp) no-repeat;
+    background-size: contain;
+    .check-board__wrap {
+      opacity: 0.5;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-user-drag: none;
+      user-drag: none;
+    }
+  }
+  &__wrap {
+    position: absolute;
+    display: flex;
+    max-width: vw(972);
+    top: vw(300);
+    left: vw(53);
+  }
+  $w: 152;
+  $h: 118;
+  $gap: 12;
+  &__check {
+    display: flex;
+    flex-wrap: wrap;
+    gap: vw($gap + 2) vw($gap);
+    .btn {
+      &:after {
+        background-image: url(../images/event/2/stamp_check.webp);
+      }
+    }
+  }
+  &__reward {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 vw($w);
+    gap: vw($gap + 2) vw($gap);
+    margin-left: auto;
+    // background: rgba(yellow, 0.5);
+    .btn {
+      &:after {
+        background-image: url(../images/event/2/stamp_reward.webp);
+      }
+      p {
+        padding: 0 1em; //줄바꿈
+      }
+    }
+  }
+  .btn {
+    // background: rgba(red, 0.5);
+    flex: 0 0 vw($w);
+    height: vw($h);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    &.checked:after {
+      content: '';
+    }
+    &:after {
+      width: vw(145);
+      aspect-ratio: 1;
+      display: block;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: vw(145/-2);
+      margin-top: vw(145/-2);
+      background-size: contain;
+    }
+    p {
+      // width: $w;
+      // height: 70px;
+      font-size: vw(36);
+      line-height: (39/36);
+      color: #333;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      letter-spacing: -0.02em;
+    }
+  }
+}

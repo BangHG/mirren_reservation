@@ -21,3 +21,13 @@
   left: $left;
   top: $top;
 }
+
+@mixin btnImg($w, $h, $file) {
+  position: relative;
+  width: $w;
+  height: ($h);
+  transition: none;
+  background-image: url($file);
+  background-repeat: no-repeat;
+  background-size: contain;
+}

@@ -1,4 +1,65 @@
-﻿.section-reservation,
+﻿.reservation-wrap {
+  margin-bottom: -200px; //이벤트 중첩
+  position: relative;
+  text-align: center;
+  // overflow: hidden;
+  .anchor {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    &--1 {
+      top: 33.33%;
+    }
+    &--2 {
+      top: 66.66%;
+    }
+  }
+  @at-root .reservation-bg {
+    // 밤->아침->낮
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: -1;
+    max-width: 2560px;
+    margin: 0 auto;
+    background-image: url(../images/reservation/bg-1.webp);
+    &:before,
+    &:after {
+      transition: 1000ms all;
+      content: '';
+      opacity: 0;
+      left: 0;
+      top: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+    }
+    &:before {
+      background-image: url(../images/reservation/bg-2.webp);
+      z-index: 2;
+    }
+    &:after {
+      background-image: url(../images/reservation/bg-3.webp);
+      z-index: 3;
+    }
+    &.noon {
+      &:before {
+        opacity: 1;
+      }
+    }
+    &.night {
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.section-reservation,
 .section-market {
   // box-shadow: inset 0 0 1px 1px red; //FIXME:
   // border-top: 1px solid yellow;
@@ -123,16 +184,6 @@
     &--krishna {
       background-image: url(../images/reservation/reward-krishna.webp);
     }
-  }
-}
-.popup--reservation-reward {
-  .popup__wrap {
-    // max-width: 1800px;
-  }
-  img {
-    max-height: calc(100vh - 110px - 10px); // 100vh;
-    // max-height: 100vh;
-    // max-width: 100vw;
   }
 }
 

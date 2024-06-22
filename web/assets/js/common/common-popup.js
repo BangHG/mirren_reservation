@@ -48,7 +48,7 @@ function SetYoutube() {
   } else {
     //오디오 정지
     var audio = document.getElementById('cv_audio');
-    audio.pause();
+    // audio.pause();
 
     youtube = '<iframe id="video" width="900" height="576" src="' + youtubeUrl + '?autoplay=1" allow="autoplay; encrypted-media" frameborder="0" allowfullscreen></iframe>';
     $('.you_tube').html(youtube);
