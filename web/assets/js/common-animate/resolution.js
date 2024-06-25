@@ -28,7 +28,7 @@ function gsapScrollTriggerIndex() {
         setTimeout(() => {
           // activeSlide.addClass('initAni');
           $('.section-witch .swiper .swiper-slide-active').addClass('initAni');
-          console.log('뭔데');
+          // console.log('뭔데');
         }, 1000);
         // $('.section-witch .swiper-slide-thumb-active .thumb-btn').addClass('active');
       },
@@ -37,7 +37,7 @@ function gsapScrollTriggerIndex() {
         setTimeout(() => {
           // activeSlide.addClass('initAni');
           $('.section-witch .swiper .swiper-slide-active').addClass('initAni');
-          console.log('뭔데');
+          // console.log('뭔데');
         }, 1000);
         // $('.section-witch .swiper-slide-thumb-active .thumb-btn').addClass('active');
       },
@@ -603,7 +603,7 @@ window.addEventListener('resize', function () {
 document.addEventListener('DOMContentLoaded', function () {
   // console.log('새로고침됨'); //FIXME:
 
-  gsap.to(window, { duration: 0.3, scrollTo: 0 });
+  // gsap.to(window, { duration: 0.3, scrollTo: 0 });//TODO:?
   //새로고침되면 상단부터 노출
 
   // 페이지 로드시 초기 조정

@@ -4,7 +4,8 @@
   background-size: cover;
   padding-top: vw(560);
   // height: vw(2010);
-  height: vw(1660); //vw(2010);
+  // height: vw(1660); //vw(2010);
+  aspect-ratio: (1080/1703);
   overflow: hidden;
   .bg-clock {
     // border: 1px solid yellow;

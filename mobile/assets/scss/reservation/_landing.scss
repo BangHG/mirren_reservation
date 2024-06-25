@@ -3,7 +3,7 @@
   overflow: hidden;
   position: relative;
   min-height: 100vh;
-  padding: vw(180) 0 0;
+  padding: vw(180) 0 vw(90);
   // aspect-ratio: (2560/1080);
   display: block;
   width: 100%;
@@ -24,13 +24,14 @@
     &:before {
       //dimmed
       content: '';
-      width: 100%;
-      height: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120%;
+      height: 120%;
       background: #000;
       opacity: 0.6;
       position: absolute;
-      top: 0;
-      left: 0;
       display: block;
     }
     video {
@@ -45,6 +46,22 @@
     position: relative;
     z-index: 5;
     text-align: center;
+  }
+  //gsap과 aos 효과 동기화
+  @at-root {
+    html:not(.no-js) .section-landing {
+      // .bg {
+      //   transform: scale(1.15) translate(-50%, -50%);
+      //   transition: 500ms transform;
+      // }
+      [data-aos='fade-up'] {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+      }
+    }
+    // .section-landing .bg {
+    //   transform: scale(1) translate(-50%, -50%);
+    // }
   }
 
   .bi {

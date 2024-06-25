@@ -844,7 +844,9 @@
 .section-stigmata .tab-content {
   display: block;
   position: absolute;
-  top: 26.204vw;
+  top: 22.5vw;
+  padding-top: 3.704vw;
+  height: 37.037vw;
   left: 0;
   right: 0;
   z-index: -1;
@@ -1560,7 +1562,7 @@
 .section-world {
   background: url(../images/world/bg.webp) no-repeat 50% 0;
   background-size: cover;
-  height: 179.63vw;
+  aspect-ratio: 0.5351833499;
   z-index: 1;
   padding-top: 39.815vw;
 }
@@ -1656,7 +1658,7 @@
   background: url(../images/media/bg.webp) no-repeat 50% 0;
   background-size: cover;
   padding-top: 51.852vw;
-  height: 153.704vw;
+  aspect-ratio: 0.6341749853;
   overflow: hidden;
 }
 .section-media .bg-clock {

@@ -114,9 +114,9 @@ gsap.timeline({
 // 888       Y88b  d88P
 // 8888888888 "Y8888P"
 
-$(function SET_event3() {
-  gsap.set('.event-content--3 .card', { rotateY: -180 });
-});
+// $(function SET_event3() {
+//   gsap.set('.event-content--3 .card', { rotateY: -180 });
+// });
 function cardFlip() {
   const items = document.querySelectorAll('.achieve-list .card');
   const delay = 0.3;

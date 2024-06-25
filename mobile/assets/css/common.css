@@ -855,8 +855,8 @@ body:after {
   position: fixed;
   width: 14.259vw;
   height: 14.259vw;
-  right: 4.444vw;
-  bottom: 8.888vw;
+  right: 2.778vw;
+  bottom: 8.889vw;
   z-index: 100;
   background-size: contain;
   background-repeat: no-repeat;
@@ -895,7 +895,7 @@ body:after {
 }
 .btnTop.fix {
   position: absolute;
-  bottom: calc(100% + 4.444vw);
+  bottom: calc(100% + 2.778vw);
 }
 
 .common-footer,

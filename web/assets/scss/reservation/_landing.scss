@@ -24,13 +24,14 @@
     &:before {
       //dimmed
       content: '';
-      width: 100%;
-      height: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120%;
+      height: 120%;
       background: #000;
       opacity: 0.6;
       position: absolute;
-      top: 0;
-      left: 0;
       display: block;
     }
     video {

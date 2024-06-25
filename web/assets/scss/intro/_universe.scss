@@ -1,4 +1,4 @@
-﻿$bgH: 3343px;
+﻿$bgH: 2358px;
 .sectionsWrapper {
   width: 2560px;
   // left: 50%;
@@ -20,14 +20,14 @@ $margin: 130px;
   // background-color: rgba(yellow, 0.5);
 }
 .section-world {
-  height: 1131px;
+  height: (983px + 148px);
   z-index: 1;
 }
-.section-media {
-  height: 1036px; //906px + $margin;
-  background: url(../images/bg.webp) no-repeat 50% 100%;
-  background-size: 100% auto;
-}
+// .section-media {
+//   height: 1036px; //906px + $margin;
+//   background: url(../images/bg.webp) no-repeat 50% 100%;
+//   background-size: 100% auto;
+// }
 
 //
 .section-universe {

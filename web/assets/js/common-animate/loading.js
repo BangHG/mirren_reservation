@@ -47,7 +47,13 @@ function GsapLoadingAnimation() {
     // gsap.set('.section-main .bg', { scale: 1.15 }); //덜덜이 이슈로 삭제
 
     gsap.set('.header', { top: '-200%' });
-    // gsap.set('.bg__petal, .section-main .bi', { opacity: '0' });
+
+    if (currentPage === 'reservation') {
+      gsap.set('.section-landing .bi, .section-landing .title, .section-landing .btnToReservation', {
+        opacity: '0',
+        transition: '300ms all',
+      });
+    }
   }
 
   //애니메이션
@@ -141,9 +147,11 @@ function GsapLoadingAnimation() {
 
             // gsap.to('.section-main ', { zIndex: 1 }, '=');
             gsap.to('.main-page', { overflowY: 'scroll' });
-            // gsap.to('.main-page', { overflowY: 'scroll' }, '<=0.5');
-            // gsap.to('.section-main .bi', { duration: 1, opacity: '1' }, '<+=0.2');
-            // gsap.to('.bg__petal', { duration: 1, opacity: '1' }, '<=');
+            if (currentPage === 'reservation') {
+              gsap.to('.section-landing .bi', { duration: 0.3, opacity: 1 }, '<+=0.1');
+              gsap.to('.section-landing .title', { duration: 0.3, opacity: 1 }, '<+=0.3');
+              gsap.to('.section-landing .btnToReservation', { duration: 0.3, opacity: 1 }, '<+=0.5');
+            }
           },
           onComplete: () => {},
         },

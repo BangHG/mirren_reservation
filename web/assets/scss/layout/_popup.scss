@@ -175,13 +175,12 @@
   }
 }
 
+#popup__check-board-done,
 #popup__reservation {
   .btn {
     position: absolute;
     width: 136px;
-    height: 46px;
-    // background: red;
-    opacity: 0.5;
+    height: 55px;
     bottom: 42px;
     left: 50%;
     transform: translateX(-50%);

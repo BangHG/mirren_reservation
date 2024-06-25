@@ -63,7 +63,7 @@ $stigmataColor: (
   2 #3f7aff,
   //인간
   3 #ffbb4f,
-  //반수
+  //하프
   4 #8b82ff,
   //악마
   5 #4fb654,
@@ -183,7 +183,10 @@ $stigmataColor: (
     &-content {
       display: block;
       position: absolute;
-      top: vw(283);
+      top: vw(283 - 40);
+      padding-top: vw(40);
+      height: vw(400);
+      // background: rgba(yellow, 0.5);
       left: 0;
       right: 0;
       z-index: -1;
@@ -237,6 +240,7 @@ $stigmataColor: (
         // gap: vw(114);
         justify-content: center;
         gap: vw(12);
+
         @at-root #tabContent6 .stigmata-group {
           gap: vw(114);
           .thumb-btn {

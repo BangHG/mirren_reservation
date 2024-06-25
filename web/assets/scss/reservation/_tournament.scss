@@ -190,6 +190,35 @@
       background: url(../images/tournament/selected.webp) no-repeat;
     }
   }
+
+  .gauge-wrap {
+    $h: 3px;
+    $color: #d0fcfd;
+    // opacity: 0.8;
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    bottom: 35px;
+    right: 0;
+    left: 0;
+    border: 1px solid #fff;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: $h + 2px;
+    height: $h + 2px;
+    background: rgba(#fff, 0.2);
+    .gauge {
+      box-shadow: 0 0 1px 1px $color;
+      border-radius: $h;
+      height: $h;
+      width: 0%;
+      transition: 200ms width;
+      background: $color;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
 }
 
 #tournament-result {

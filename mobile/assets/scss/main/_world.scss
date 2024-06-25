@@ -2,7 +2,8 @@
   background: url(../images/world/bg.webp) no-repeat 50% 0;
   background-size: cover;
   // background-size: contain;
-  height: vw(1940);
+  // height: vw(1940);
+  aspect-ratio: (1080/2018);
   z-index: 1;
   padding-top: vw(430);
   .section-title {

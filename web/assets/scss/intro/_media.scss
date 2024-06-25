@@ -1,5 +1,9 @@
 ﻿.section-media {
   padding-top: 300px;
+  background: url(../images/media/bg.webp);
+  background-position: 50% 0;
+  background-size: 100% auto;
+  height: 1054px;
   .bg-clock {
     &_wrap {
       position: absolute;

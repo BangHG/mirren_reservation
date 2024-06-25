@@ -232,7 +232,6 @@ gsap.fromTo('.event-content--2 .ch', { y: '0' }, { duration: 5, y: '+=1.5%', rep
 
 $(function SET_event3() {
   gsap.set('.event-content--3 .ch', { opacity: 0 });
-  gsap.set('.event-content--3 .card', { rotateY: -180 });
 });
 function cardFlip() {
   const items = document.querySelectorAll('.achieve-list .card');

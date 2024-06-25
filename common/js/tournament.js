@@ -47,6 +47,10 @@ function startTournament() {
     tournamentContainer.innerHTML = '';
     tournamentResultContainer.style.display = 'none';
     playRound(items);
+
+    //게이지초기화
+    const gauge = document.querySelector('.tournament-container .gauge');
+    if (gauge) gauge.style.width = '0%';
   }
 
   // 32강 시작
@@ -67,6 +71,7 @@ function startTournament() {
       <p class="match-round match-round--${items.length}">
       <span class="sr-only">${items.length}강</span>
       </p>
+      <div class="gauge-wrap"><span class="gauge"></span></span></div>
       `;
     }
 
@@ -109,6 +114,7 @@ function startTournament() {
               resultImg.style.backgroundImage = `url(${$rootUrl}/common/images/tournament/${winner.id}.webp)`;
               resultImg.textContent = `${winner.name}`;
               resultBtn.href = `${$rootUrl}/common/images/tournament/${winner.id}.jpg`;
+              // resultBtn.href = `?down=${winner.id}.jpg &file_name=${winner.name}.jpg &board_name=${$rootUrl}/common/images/tournament/${winner.id}.jpg`;
               resultBtn.download = `${winner.name}.jpg`;
 
               fadeInElement(tournamentResultContainer, 300);
@@ -165,6 +171,7 @@ function startTournament() {
         nextRound.push(item1);
         checkRoundCompletion();
         fadeOutMatch(matchDiv);
+        updateGauge();
       });
 
       button2.addEventListener('click', () => {
@@ -175,6 +182,7 @@ function startTournament() {
         nextRound.push(item2);
         checkRoundCompletion();
         fadeOutMatch(matchDiv);
+        updateGauge();
       });
 
       matchDiv.appendChild(button1);
@@ -182,6 +190,15 @@ function startTournament() {
       matchDiv.appendChild(button2);
 
       return matchDiv;
+    }
+
+    let completedMatches = 0;
+    const totalMatches = items.length / 2;
+    function updateGauge() {
+      const gauge = document.querySelector('.tournament-container .gauge');
+      completedMatches += 1;
+      const progress = (completedMatches / totalMatches) * 100;
+      gauge.style.width = `${progress}%`;
     }
   }
 

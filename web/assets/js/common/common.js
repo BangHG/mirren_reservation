@@ -75,7 +75,7 @@ $(window).on('load', function () {
     } else {
       const active = window.location.hash.split('#')[1];
       const offset = $('#' + active).offset().top;
-      console.log(`#${active} ${offset}`);
+      // console.log(`#${active} ${offset}`);
 
       setTimeout(() => {
         $('html,body').animate({ scrollTop: offset }, 0);
@@ -102,7 +102,7 @@ $('.nav .nav-list a.link').on('click', function () {
   // 작업중
 
   if (currentPage === 'media' && href && href.includes('?media--')) {
-    console.log(href);
+    // console.log(href);
 
     $(`.section-media .tab-content`).removeClass('active');
     $(`.section-media .tab-list .tab-link`).removeClass('active');

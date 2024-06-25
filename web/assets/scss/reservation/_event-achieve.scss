@@ -16,6 +16,12 @@
     min-width: $w * 1px;
     aspect-ratio: $w/321;
     position: relative;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transition-delay: 200ms;
+    overflow: visible;
+    transition: 1s;
+    transform: rotateY(-180deg);
 
     &:before,
     &:after {
@@ -37,11 +43,6 @@
       background-image: url(../images/event/3/card-front.webp);
     }
     // .cardCase {
-    transform-style: preserve-3d;
-    transform-origin: center;
-    transition-delay: 200ms;
-    overflow: visible;
-    transition: 1s;
     &.active:after {
       background-position: 50% 11px,
         //스탬프

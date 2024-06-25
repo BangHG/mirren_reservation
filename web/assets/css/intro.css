@@ -1489,7 +1489,7 @@
   position: relative;
   margin: 0 auto;
   background: url(../images/bg.webp) no-repeat 50% 0;
-  background-size: 100% 3343px;
+  background-size: 100% 2358px;
 }
 
 .section-universe {
@@ -1500,12 +1500,6 @@
 .section-world {
   height: 1131px;
   z-index: 1;
-}
-
-.section-media {
-  height: 1036px;
-  background: url(../images/bg.webp) no-repeat 50% 100%;
-  background-size: 100% auto;
 }
 
 .section-universe {
@@ -1842,6 +1836,10 @@
 
 .section-media {
   padding-top: 300px;
+  background: url(../images/media/bg.webp);
+  background-position: 50% 0;
+  background-size: 100% auto;
+  height: 1054px;
 }
 .section-media .bg-clock {
   width: 100%;

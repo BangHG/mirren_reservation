@@ -49,7 +49,7 @@ $(window).on('load', function () {
     } else {
       const active = window.location.hash.split('#')[1];
       const offset = $('#' + active).offset().top;
-      console.log(`#${active} ${offset}`);
+      // console.log(`#${active} ${offset}`);
 
       setTimeout(() => {
         $('html,body').animate({ scrollTop: offset }, 0);
