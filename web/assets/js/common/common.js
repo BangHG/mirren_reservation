@@ -114,6 +114,8 @@ $('.nav .nav-list a.link').on('click', function () {
     // smoother.scrollTo('#' + href, true, 'top');
     var offset = $('#' + href).offset().top;
     $('html,body').stop().animate({ scrollTop: offset }, 500);
+
+    console.log(`제자리로 가고있니..? ${offset} 아니네..^^ 이걸어쨰.,. 분기처리고..`);
   }
 
   return false;

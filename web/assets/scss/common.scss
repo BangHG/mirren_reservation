@@ -38,9 +38,9 @@ body {
 }
 
 .resolution-wrap {
-  position: relative;
+  position: absolute; // relative;
   width: 2560px;
-  margin: 0 auto;
+  // margin: 0 auto;
   transform-origin: 50% 0;
   @media (max-width: 2560px) {
     transform: translateX(-50%);

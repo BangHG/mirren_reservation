@@ -993,7 +993,7 @@ body:after {
   max-width: 96%;
 }
 .popup__scroll {
-  max-height: calc(100vh - 22.964vw);
+  max-height: calc(100svh - 22.964vw);
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;

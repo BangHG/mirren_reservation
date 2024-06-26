@@ -117,6 +117,32 @@ function startTournament() {
               // resultBtn.href = `?down=${winner.id}.jpg &file_name=${winner.name}.jpg &board_name=${$rootUrl}/common/images/tournament/${winner.id}.jpg`;
               resultBtn.download = `${winner.name}.jpg`;
 
+              $(document).on('click', '.tournament-result-wrap .btn-saveImg', function () {
+                const url = `${$rootUrl}/common/images/tournament/${winner.id}.jpg`;
+                const fileName = `${winner.name}.jpg`;
+                // const url = $(this).attr('href'); //`${$rootUrl}/common/images/tournament/${winner.id}.jpg`;
+                // const fileName = $(this).attr('download'); //`${winner.name}.jpg`;
+
+                // Fetch the image and force the download
+                fetch(url)
+                  .then((response) => response.blob())
+                  .then((blob) => {
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = fileName;
+
+                    // Append link to body
+                    document.body.appendChild(link);
+
+                    // Simulate click
+                    link.click();
+
+                    // Remove link from body
+                    document.body.removeChild(link);
+                  })
+                  .catch((error) => console.error('Error downloading the image:', error));
+              });
+
               fadeInElement(tournamentResultContainer, 300);
               setTimeout(() => {
                 //애니메이션용 addclass
@@ -262,7 +288,7 @@ function tournamentEnd() {
   $('.tournament-result-wrap').removeClass('initAni');
 }
 
-function tournamentStart() {
+function tournamentStart(r) {
   startTournament();
   $('.dimmed').fadeIn();
   $('.tournament-container').fadeIn();
@@ -282,5 +308,9 @@ function tournamentStart() {
 
   const scrollTopPosition = targetOffset - windowHeight / 2 + targetHeight / 2;
 
-  $('body,html').animate({ scrollTop: scrollTopPosition }, 300);
+  if (r == 'mo') {
+    $('body,html').animate({ scrollTop: $('.event-content--4').offset().top }, 300);
+  } else {
+    $('body,html').animate({ scrollTop: scrollTopPosition }, 300);
+  }
 }

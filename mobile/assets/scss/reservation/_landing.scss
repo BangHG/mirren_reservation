@@ -72,14 +72,14 @@
     background-size: contain;
   }
   .title {
-    margin: vw(113) auto vw(228);
+    margin: vw(113) auto vw(150);
     width: vw(836);
     aspect-ratio: 836/262;
     background: url(../images/landing/title.webp) no-repeat;
     background-size: contain;
   }
   .btnToReservation {
-    margin: 0 auto vw(123);
+    margin: 0 auto vw(80);
     width: vw(836);
     aspect-ratio: 836/191;
     background: url(../images/landing/btn.webp) no-repeat;
@@ -100,7 +100,7 @@
     // position: absolute;
     // bottom: vw(700);
     &:after {
-      background: url(../images/main/scrolldown.webp) no-repeat;
+      background: url(../images/landing/scrolldown.webp) no-repeat;
       background-size: contain;
       content: '';
       width: 100%;

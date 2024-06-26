@@ -59,9 +59,12 @@
   &__close {
     @include btnImg(84px, 168px, '../images/tournament/close-btn.webp');
     position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translate(-50%, 100%);
+    // bottom: 50px;
+    // left: 50%;
+    // transform: translate(-50%, 100%);
+
+    top: -40px;
+    right: 53px;
   }
   // .title {
   //   &--select {
@@ -291,6 +294,7 @@
       display: inline-block;
       &-saveImg {
         @include btnImg(283px, 156px, '../images/tournament/btn-saveImg.webp');
+        cursor: pointer;
       }
       &-restart {
         @include btnImg(304px, 92px, '../images/tournament/btn-restart.webp');

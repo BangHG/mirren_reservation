@@ -1556,10 +1556,8 @@
   -webkit-transition: none;
   transition: none;
   position: absolute;
-  bottom: 50px;
-  left: 50%;
-  -webkit-transform: translate(-50%, 100%);
-          transform: translate(-50%, 100%);
+  top: -40px;
+  right: 53px;
 }
 .tournament-container__close:before, .tournament-container__close:after {
   content: "";
@@ -1801,6 +1799,7 @@
   height: 78px;
   -webkit-transition: none;
   transition: none;
+  cursor: pointer;
 }
 .tournament-result-wrap .txt-bx .btn-saveImg:before, .tournament-result-wrap .txt-bx .btn-saveImg:after {
   content: "";

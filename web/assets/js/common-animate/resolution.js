@@ -467,8 +467,8 @@ function gsapScrollTriggerReservation() {
 // 888      "Y8888   88888P'  "Y88P"   "Y88888 888  "Y88888  "Y888 888  "Y88P"  888  888
 
 // 1600 이하로 떨어졌을때 html.css(zoom) 으로 1600사이즈로 보이게하기+관련 gsap 스크립트 조정
-/* 
-// function adjustSmallDevice() {
+
+function adjustSmallDevice() {
   // setTimeout(function () {
   //   window.scrollTo(0, 0);
   // }, 10);
@@ -487,33 +487,33 @@ function gsapScrollTriggerReservation() {
         zoom: `${ratio / 1600}`,
       });
 
-      // if ($('body').attr('data-page') === 'intro') {
-      //   //가변적으로 하면 offset 값이 자꾸 바뀌는 이슈로 각 if처리
-      //   const witchTop = $('#section-witch').offset().top;
-      //   const stigmataTop = $('#section-stigmata').offset().top;
-      //   const universeTop = $('#section-universe').offset().top;
-      //   const worldTop = $('#section-world').offset().top;
+      if ($('body').attr('data-page') === 'intro') {
+        //가변적으로 하면 offset 값이 자꾸 바뀌는 이슈로 각각 분기처리
+        const witchTop = $('#section-witch').offset().top;
+        const stigmataTop = $('#section-stigmata').offset().top;
+        const universeTop = $('#section-universe').offset().top;
+        const worldTop = $('#section-world').offset().top;
 
-      //   // console.log(`witch : ${witchTop}\nstigm : ${stigmataTop}\nunive : ${universeTop}\nworld : ${worldTop}\nmedia : ${mediaTop}\n `);
+        // console.log(`witch : ${witchTop}\nstigm : ${stigmataTop}\nunive : ${universeTop}\nworld : ${worldTop}\nmedia : ${mediaTop}\n `);
 
-      //   // navigation
-      //   $('.nav-list a.link').on('click', function () {
-      //     const href = $(this).attr('href');
-      //     const hrefOn = href.split('?')[0];
-      //     //가변적으로 하면 offset 값이 자꾸 바뀌는 이슈로 각 if처리
-      //     // console.log(hrefOn);
-      //     if (hrefOn == '#section-witch') {
-      //       $('html,body').animate({ scrollTop: (witchTop * ratio) / 1600 }, 300);
-      //     } else if (hrefOn == '#section-stigmata') {
-      //       $('html,body').animate({ scrollTop: (stigmataTop * ratio) / 1600 }, 300);
-      //     } else if (hrefOn == '#section-universe') {
-      //       $('html,body').animate({ scrollTop: (universeTop * ratio) / 1600 }, 300);
-      //     } else if (hrefOn == '#section-world') {
-      //       $('html,body').animate({ scrollTop: (worldTop * ratio) / 1600 }, 300);
-      //     }
-      //   });
-      //   console.log('지금은 게임소개 섹션');
-      // }
+        // navigation
+        // $('.nav-list a.link').on('click', function () {
+        //   const href = $(this).attr('href');
+        //   const hrefOn = href.split('#')[1];
+        //   //가변적으로 하면 offset 값이 자꾸 바뀌는 이슈로 각 if처리
+        //   console.log(hrefOn);
+        //   if (hrefOn == 'section-witch') {
+        //     $('html,body').animate({ scrollTop: (witchTop * ratio) / 1600 }, 300);
+        //   } else if (hrefOn == 'section-stigmata') {
+        //     $('html,body').animate({ scrollTop: (stigmataTop * ratio) / 1600 }, 300);
+        //   } else if (hrefOn == 'section-universe') {
+        //     $('html,body').animate({ scrollTop: (universeTop * ratio) / 1600 }, 300);
+        //   } else if (hrefOn == 'section-world') {
+        //     $('html,body').animate({ scrollTop: (worldTop * ratio) / 1600 }, 300);
+        //   }
+        // });
+        console.log('지금은 게임소개 섹션');
+      }
 
       // $('.scrollDown').on('click', function () {
       //   $('html,body').animate({ scrollTop: (witchTop * ratio) / 1600 }, 300);
@@ -521,13 +521,14 @@ function gsapScrollTriggerReservation() {
 
       AOS.init({ disable: true });
 
+      console.log('작동중');
       setTimeout(() => {
         // swiper 첫항목에 수동 포커스
         $('.witch.swiper-slide-active').addClass('initAni');
         $('.stigmata--11').addClass('initAni');
       }, 100);
     } else {
-      // [1600 이상]
+      // [1600 이상: 정상작동시키기]
       AOS.refresh;
       if ($('body').attr('data-page') === 'intro') {
         gsapScrollTriggerIndex();
@@ -558,7 +559,7 @@ function gsapScrollTriggerReservation() {
       // });
     }
   }, 100);
-} */
+}
 // TODO: resoulution 뺴..
 
 if ($('body').attr('data-page') === 'intro') {
@@ -569,7 +570,7 @@ if ($('body').attr('data-page') === 'intro') {
   gsapScrollTriggerReservation();
 }
 
-/* 
+/* 실시간 새로고침은 뺌
 window.addEventListener('resize', function () {
   let previousWidth = window.innerWidth;
   let resizeTimeout;
@@ -607,7 +608,7 @@ document.addEventListener('DOMContentLoaded', function () {
   //새로고침되면 상단부터 노출
 
   // 페이지 로드시 초기 조정
-  // adjustSmallDevice();
+  adjustSmallDevice();
 
   // 처음 방문한 경우 실행할 코드
   if (!sessionStorage.getItem('visited')) {

@@ -63,7 +63,7 @@
   }
 
   &__scroll {
-    max-height: calc(100vh - $offset * 2);
+    max-height: calc(100svh - $offset * 2);
     overflow-x: hidden;
     overflow-y: auto;
     position: relative;

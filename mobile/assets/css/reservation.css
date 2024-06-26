@@ -78,14 +78,14 @@ html:not(.no-js) .section-landing [data-aos=fade-up] {
   background-size: contain;
 }
 .section-landing .title {
-  margin: 10.463vw auto 21.111vw;
+  margin: 10.463vw auto 13.889vw;
   width: 77.407vw;
   aspect-ratio: 836/262;
   background: url(../images/landing/title.webp) no-repeat;
   background-size: contain;
 }
 .section-landing .btnToReservation {
-  margin: 0 auto 11.389vw;
+  margin: 0 auto 7.407vw;
   width: 77.407vw;
   aspect-ratio: 836/191;
   background: url(../images/landing/btn.webp) no-repeat;
@@ -100,7 +100,7 @@ html:not(.no-js) .section-landing [data-aos=fade-up] {
   z-index: 2;
 }
 .section-landing .scrollDown:after {
-  background: url(../images/main/scrolldown.webp) no-repeat;
+  background: url(../images/landing/scrolldown.webp) no-repeat;
   background-size: contain;
   content: "";
   width: 100%;
@@ -1062,10 +1062,9 @@ html:not(.no-js) .section-landing [data-aos=fade-up] {
   width: 11.204vw;
   aspect-ratio: 1;
   position: absolute;
-  bottom: 4.63vw;
-  left: 50%;
-  -webkit-transform: translate(-50%, 100%);
-          transform: translate(-50%, 100%);
+  right: 2%;
+  top: -3.704vw;
+  z-index: 2;
 }
 .tournament-container .match-round {
   position: absolute;
@@ -1074,8 +1073,8 @@ html:not(.no-js) .section-landing [data-aos=fade-up] {
   z-index: 2;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  width: 20.741vw;
-  height: 6.019vw;
+  width: 29.907vw;
+  height: 9.722vw;
   background: url(../images/tournament/match-round.webp) no-repeat;
   background-size: 100% auto;
 }
@@ -1083,16 +1082,16 @@ html:not(.no-js) .section-landing [data-aos=fade-up] {
   background-position-y: 0;
 }
 .tournament-container .match-round--16 {
-  background-position-y: -6.019vw;
+  background-position-y: -9.722vw;
 }
 .tournament-container .match-round--8 {
-  background-position-y: -12.038vw;
+  background-position-y: -19.444vw;
 }
 .tournament-container .match-round--4 {
-  background-position-y: -18.057vw;
+  background-position-y: -29.166vw;
 }
 .tournament-container .match-round--2 {
-  background-position-y: -24.076vw;
+  background-position-y: -38.888vw;
 }
 .tournament-container .match {
   position: absolute;

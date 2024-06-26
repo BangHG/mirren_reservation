@@ -44,9 +44,13 @@
     width: vw(121);
     aspect-ratio: 1;
     position: absolute;
-    bottom: vw(50);
-    left: 50%;
-    transform: translate(-50%, 100%);
+    // bottom: vw(50);
+    // left: 50%;
+    // transform: translate(-50%, 100%);
+
+    right: 2%;
+    top: vw(-40);
+    z-index: 2;
   }
   .match-round {
     position: absolute;
@@ -54,24 +58,25 @@
     top: vw(320);
     z-index: 2;
     transform: translateX(-50%);
-    width: vw(224);
-    height: vw(325/5);
+    width: vw(323);
+    $h: 525;
+    height: vw($h/5);
     background: url(../images/tournament/match-round.webp) no-repeat;
     background-size: 100% auto;
     &--32 {
       background-position-y: 0;
     }
     &--16 {
-      background-position-y: vw(325/5) * -1;
+      background-position-y: vw($h/5) * -1;
     }
     &--8 {
-      background-position-y: vw(325/5) * -2;
+      background-position-y: vw($h/5) * -2;
     }
     &--4 {
-      background-position-y: vw(325/5) * -3;
+      background-position-y: vw($h/5) * -3;
     }
     &--2 {
-      background-position-y: vw(325/5) * -4;
+      background-position-y: vw($h/5) * -4;
     }
   }
 
