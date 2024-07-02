@@ -59,6 +59,7 @@ $(window).on('load', function () {
   if (currentPage === 'media') {
     var active = window.location.hash.split('?')[1];
 
+    // console.log(active);
     if (active != null) {
       $('.tab .tab-link').removeClass('active');
       $('.tab .tab-content').removeClass('active');
@@ -90,35 +91,6 @@ window.addEventListener('resize', function () {
   setTimeout(function () {
     AOS.refresh();
   }, 500);
-});
-
-$('.nav .nav-list a.link').on('click', function () {
-  const href = $(this).attr('href').split('#')[1];
-
-  // if (window.innerWidth <= 1600) {
-  //   console.log('작음');
-
-  // } else {
-  // 작업중
-
-  if (currentPage === 'media' && href && href.includes('?media--')) {
-    // console.log(href);
-
-    $(`.section-media .tab-content`).removeClass('active');
-    $(`.section-media .tab-list .tab-link`).removeClass('active');
-
-    const active = href.split('?')[1];
-    $(`.section-media .tab-list .tab-link[data-hash=${active}]`).addClass('active');
-    $('#' + active).addClass('active');
-  } else {
-    // smoother.scrollTo('#' + href, true, 'top');
-    var offset = $('#' + href).offset().top;
-    $('html,body').stop().animate({ scrollTop: offset }, 500);
-
-    console.log(`제자리로 가고있니..? ${offset} 아니네..^^ 이걸어쨰.,. 분기처리고..`);
-  }
-
-  return false;
 });
 
 // ----

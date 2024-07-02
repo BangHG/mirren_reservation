@@ -23,11 +23,13 @@
               </div>
 
               <h2 class="section-title">
-                <span class="section-title__img" data-aos="fade-up" data-aos-duration="1000"></span>
+                <span class="section-title__img"></span>
+                <!-- 240701 수정 : data-aos 삭제-->
                 <span class="sr-only">미디어 </span>
               </h2>
 
-              <div class="tab" id="media-tab" data-aos="fade-up" data-aos-duration="1000">
+              <div class="tab" id="media-tab">
+                <!-- 240701 수정 : data-aos 삭제-->
                 <ul class="tab-list">
                   <li><a data-hash="media--1" class="tab-link active"> 영상 </a></li>
                   <li><a data-hash="media--2" class="tab-link"> 일러스트 </a></li>
@@ -37,11 +39,24 @@
                   <div class="mediaSwiper mediaSwiper--video">
                     <div class="swiper-container">
                       <div class="swiper-wrapper">
+                        <!-- S: 240701 수정 -->
                         <div class="swiper-slide media-item">
-                          <div class="img-bx"><img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_1.webp" alt="" /></div>
-
-                          <button data-content="https://www.youtube.com/embed/sdXeCi0uDaE?autoplay=1&loop=1&playlist=sdXeCi0uDaE" class="play-btn popup-link--video"></button>
+                          <div class="img-bx"><img loading="lazy" src="/games/mirren/reservation/common/images/media/video_1.webp" alt="마키" /></div>
+                          <button data-content="https://www.youtube.com/embed/ba7-pU5B1Qw?autoplay=1&loop=1&playlist=ba7-pU5B1Qw" class="play-btn popup-link--video"></button>
                         </div>
+                        <div class="swiper-slide media-item">
+                          <div class="img-bx"><img loading="lazy" src="/games/mirren/reservation/common/images/media/video_2.webp" alt="아넥스" /></div>
+                          <button data-content="https://www.youtube.com/embed/n28NwXgiJBE?autoplay=1&loop=1&playlist=n28NwXgiJBE" class="play-btn popup-link--video"></button>
+                        </div>
+                        <div class="swiper-slide media-item">
+                          <div class="img-bx"><img loading="lazy" src="/games/mirren/reservation/common/images/media/video_3.webp" alt="쿠로신" /></div>
+                          <button data-content="https://www.youtube.com/embed/Qz8l5g2hE7o?autoplay=1&loop=1&playlist=Qz8l5g2hE7o" class="play-btn popup-link--video"></button>
+                        </div>
+                        <!-- <div class="swiper-slide media-item">
+                          <div class="img-bx"><img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_1.webp" alt="" /></div>
+                          <button data-content="https://www.youtube.com/embed/sdXeCi0uDaE?autoplay=1&loop=1&playlist=sdXeCi0uDaE" class="play-btn popup-link--video"></button>
+                        </div> --><!-- 240701 수정 : 삭제 -->
+                        <!-- E: 240701 수정 -->
                       </div>
                       <div class="swiper-button swiper-button--prev"></div>
                       <div class="swiper-button swiper-button--next"></div>

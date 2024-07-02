@@ -73,3 +73,18 @@ $('#media-tab').each(function (e) {
       return false;
     });
 });
+
+$('.nav .nav-list a.link').on('click', function () {
+  const href = $(this).attr('href').split('#')[1];
+
+  if (currentPage === 'media' && href && href.includes('?media--')) {
+    console.log(href);
+
+    $(`.section-media .tab-content`).removeClass('active');
+    $(`.section-media .tab-list .tab-link`).removeClass('active');
+
+    const active = href.split('?')[1];
+    $(`.section-media .tab-list .tab-link[data-hash=${active}]`).addClass('active');
+    $('#' + active).addClass('active');
+  }
+});

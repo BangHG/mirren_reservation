@@ -278,7 +278,8 @@ html:not(.no-js) .section-landing [data-aos=fade-up] {
   font-size: 3.704vw;
   width: 100%;
   background-color: #fff;
-  border: 1px solid #dbcbad;
+  border: 0.463vw solid #74c3b6;
+  border-radius: 0.926vw;
   text-align: center;
   margin: 1.852vw auto;
 }
@@ -780,6 +781,9 @@ html:not(.no-js) .section-landing [data-aos=fade-up] {
   margin: 0 auto;
   position: relative;
   z-index: 2;
+}
+.gauge-list[data-state="0"] .bar {
+  display: none;
 }
 .gauge-list__bar {
   position: absolute;

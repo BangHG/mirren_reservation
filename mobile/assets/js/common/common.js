@@ -21,6 +21,13 @@ $('.nav__toggle').click(function () {
   }
 });
 
+$('.nav .btn-reservation').click(function () {
+  if (currentPage === 'reservation') {
+    $('html,body').animate({ scrollTop: $('#section-reservation').offset().top }, 0);
+  }
+  navClose();
+});
+
 const currentPage = $('body').attr('data-page');
 
 $(window).on('load', function () {

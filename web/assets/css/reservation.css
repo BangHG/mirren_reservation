@@ -402,8 +402,8 @@
   font-size: 1.2222222222em;
   width: 100%;
   background-color: #fff;
-  border: 1px solid #dbcbad;
-  border-radius: 10px;
+  border: 4px solid #74c3b6;
+  border-radius: 6px;
   text-align: center;
   margin: 20px auto;
 }
@@ -1130,6 +1130,9 @@
   margin: 0 auto;
   position: relative;
   z-index: 2;
+}
+.gauge-list[data-state="0"] .bar {
+  display: none;
 }
 .gauge-list__bar {
   position: absolute;

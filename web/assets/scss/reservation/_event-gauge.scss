@@ -27,9 +27,11 @@
     margin: 0 auto;
     position: relative;
     z-index: 2;
-    // &[data-state=0]{
-
-    // }
+    &[data-state='0'] {
+      .bar {
+        display: none;
+      }
+    }
     &__bar {
       position: absolute;
       left: 20px;

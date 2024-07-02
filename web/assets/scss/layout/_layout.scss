@@ -5,7 +5,7 @@
 }
 
 html {
-  // scroll-behavior: smooth;
+  scroll-behavior: smooth;
   // overflow-x: hidden;
 }
 
@@ -23,6 +23,7 @@ body {
       // FIXME:
     }
     transition: opacity 300ms !important;
+
     opacity: 0;
     &[data-loading='done'] {
       opacity: 1;

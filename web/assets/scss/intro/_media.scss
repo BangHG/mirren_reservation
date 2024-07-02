@@ -4,6 +4,7 @@
   background-position: 50% 0;
   background-size: 100% auto;
   height: 1054px;
+  overflow: hidden;
   .bg-clock {
     &_wrap {
       position: absolute;
@@ -40,6 +41,8 @@
   }
 
   .tab {
+    max-width: 1920px;
+    margin: 0 auto;
     position: relative;
     &-list {
       font-size: 0;

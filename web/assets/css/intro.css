@@ -1840,6 +1840,7 @@
   background-position: 50% 0;
   background-size: 100% auto;
   height: 1054px;
+  overflow: hidden;
 }
 .section-media .bg-clock {
   width: 100%;
@@ -1889,6 +1890,8 @@
   background-image: url(../images/media/clock-outer.webp);
 }
 .section-media .tab {
+  max-width: 1920px;
+  margin: 0 auto;
   position: relative;
 }
 .section-media .tab-list {
