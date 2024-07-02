@@ -19,7 +19,7 @@ document.querySelector('.btnTop').addEventListener('click', (e) => {
 // 888      888     888   d88P   888 888    888  888   888  Y88888 888    888
 // 888      Y88b. .d88P  d8888888888 888  .d88P  888   888   Y8888 Y88b  d88P
 // 88888888  "Y88888P"  d88P     888 8888888P" 8888888 888    Y888  "Y8888P88
-/* 
+
 function GsapLoadingNo() {
   // gsap.to(window, { duration: 0.1, scrollTo: 0 });
   //로딩안하기
@@ -159,4 +159,3 @@ function GsapLoadingAnimation() {
       );
   }
 }
- */

@@ -1150,124 +1150,108 @@ body {
   overflow-x: hidden;
 }
 
-/* .loading {
+.loading {
   z-index: 1000;
-  background-color: #000; //!important;
-  opacity: 1; //!important;
-  // display: block !important;
+  background-color: #000;
+  opacity: 1;
   position: fixed;
   top: 0;
   width: 100%;
-  // bottom: 0;
   min-height: 100dvh;
   height: 100dvh;
-  .container {
-    flex-wrap: wrap;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    height: 100%;
-    // padding-bottom: 44px;
-  }
-  &__logo {
-    // margin: 0 !important;
-    width: 60vw;
-    aspect-ratio: 1;
-    position: relative;
-    display: block;
-
-    .circle,
-    .logo {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-    .logo {
-      background-image: url(../../../common/images/loading/bi.webp);
-    }
-    .circle {
-      transform-origin: 50% 50%;
-
-      &--outer {
-        background-image: url(../../../common/images/loading/circle-outer.webp);
-      }
-      &--inner {
-        background-image: url(../../../common/images/loading/circle-inner.webp);
-        // animation-delay: -5s !important;
-        // animation-duration: 5s !important;
-      }
-
-      // animation: rotate 8s infinite linear;
-    }
-    // @keyframes rotate {
-  }
-  &__badge {
-    width: 100%;
-    display: flex;
-    // align-items: center;
-    justify-content: center;
-    gap: vw(50);
-    // position: absolute;
-    // top: 50%;
-    transform: translateY(-65%);
-    // margin: 180px auto 0;
-
-    .badge {
-      width: vw(60);
-      // border: 1px solid yellow;
-      background-size: contain;
-      aspect-ratio: 1;
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
-      display: block;
-      // opacity: 0.5;
-      opacity: 0;
-      $verGap: vw(30);
-      position: relative;
-      &--1 {
-        background-image: url(../../../common/images/loading/badge1.webp);
-      }
-      &--2 {
-        background-image: url(../../../common/images/loading/badge2.webp);
-        // margin-top: $verGap;
-        top: $verGap;
-      }
-      &--3 {
-        background-image: url(../../../common/images/loading/badge3.webp);
-        // margin-top: $verGap * 2;
-        top: $verGap * 2;
-      }
-      &--4 {
-        background-image: url(../../../common/images/loading/badge4.webp);
-        // margin-top: $verGap;
-        top: $verGap;
-      }
-      &--5 {
-        background-image: url(../../../common/images/loading/badge5.webp);
-      }
-    }
-  }
+}
+.loading .container {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  height: 100%;
+}
+.loading__logo {
+  width: 60vw;
+  aspect-ratio: 1;
+  position: relative;
+  display: block;
+}
+.loading__logo .circle,
+.loading__logo .logo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.loading__logo .logo {
+  background-image: url(../../../common/images/loading/bi.webp);
+}
+.loading__logo .circle {
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+.loading__logo .circle--outer {
+  background-image: url(../../../common/images/loading/circle-outer.webp);
+}
+.loading__logo .circle--inner {
+  background-image: url(../../../common/images/loading/circle-inner.webp);
+}
+.loading__badge {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 4.63vw;
+  -webkit-transform: translateY(-65%);
+          transform: translateY(-65%);
+}
+.loading__badge .badge {
+  width: 5.556vw;
+  background-size: contain;
+  aspect-ratio: 1;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  display: block;
+  opacity: 0;
+  position: relative;
+}
+.loading__badge .badge--1 {
+  background-image: url(../../../common/images/loading/badge1.webp);
+}
+.loading__badge .badge--2 {
+  background-image: url(../../../common/images/loading/badge2.webp);
+  top: 2.778vw;
+}
+.loading__badge .badge--3 {
+  background-image: url(../../../common/images/loading/badge3.webp);
+  top: 5.556vw;
+}
+.loading__badge .badge--4 {
+  background-image: url(../../../common/images/loading/badge4.webp);
+  top: 2.778vw;
+}
+.loading__badge .badge--5 {
+  background-image: url(../../../common/images/loading/badge5.webp);
 }
 
-// 가로모드 작업
-@media (min-aspect-ratio: '1/1') {
-  .loading {
-    &__logo {
-      width: 60vh;
-    }
+@media (min-aspect-ratio: 1/1) {
+  .loading__logo {
+    width: 60vh;
   }
 }
- */
-.loading {
-  display: none;
-}
-
 .goToPortraitMode {
   position: fixed;
   left: 0;

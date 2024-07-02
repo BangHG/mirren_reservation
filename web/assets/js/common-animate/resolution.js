@@ -820,7 +820,7 @@ if ($('body').attr('data-page') === 'intro') {
 } else if ($('body').attr('data-page') === 'reservation') {
   gsapScrollTriggerReservation();
 }
-/* 
+
 document.addEventListener('DOMContentLoaded', function () {
   // console.log('새로고침됨'); //FIXME:
 
@@ -840,7 +840,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // console.log('로딩안하기'); //FIXME:
     GsapLoadingNo(); //로딩안하기
   }
-}); */
+});
 // <!-- 240702 수정 -->로딩삭제
 
 function adjustViewport() {
