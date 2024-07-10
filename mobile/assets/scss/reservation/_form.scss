@@ -4,6 +4,25 @@ $border-color: #dbcbad;
 $color-alert: #888888;
 $color-common: #bbbbbb;
 
+.cloudeflare-container {
+  $h: 65px;
+  height: calc($h + 1.5 * 0.9em);
+  padding-top: $h;
+  position: relative;
+  width: 100%;
+  * {
+    text-align: center !important;
+  }
+  .cf-turnstile {
+    font-size: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 100%;
+    // min-width: 330px;
+  }
+}
 // .cf-turnstile {//소용없음
 //   position: relative;
 //   &:before {

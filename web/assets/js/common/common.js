@@ -132,3 +132,13 @@ $(document).on('click', function (event) {
     clickEffects.splice(clickEffects.indexOf(clickEffect), 1);
   }, 600);
 });
+
+$('.sideMenu').on('click', function () {
+  if ($(this).hasClass('active')) {
+    $('.sideMenu__toggle').attr('title', '열기');
+    $('.sideMenu').stop().removeClass('active');
+  } else {
+    $('.sideMenu__toggle').attr('title', '닫기');
+    $('.sideMenu').stop().addClass('active');
+  }
+});

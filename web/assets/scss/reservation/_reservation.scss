@@ -1,4 +1,8 @@
-﻿.reservation-wrap {
+﻿#reservation {
+  position: absolute;
+  top: 230px;
+}
+.reservation-wrap {
   margin-bottom: -200px; //이벤트 중첩
   position: relative;
   text-align: center;
@@ -207,8 +211,10 @@
     width: 2560px;
     height: 2628px;
     background: url(../images/market/bg.webp) no-repeat 50% 50%;
+    // background-color: rgba(yellow, 0.3) ;
     position: absolute;
-    top: 59.4%;
+    // top: 59.4%;
+    top: 50%;
     left: 50%;
     display: block;
     transform: translate(-50%, -50%);

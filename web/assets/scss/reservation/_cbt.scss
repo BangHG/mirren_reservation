@@ -1,0 +1,132 @@
+﻿.section-cbt {
+  // z-index: 2;
+  margin-top: -140px;
+  position: relative;
+  height: 1244px;
+  // border-top: 1px solid red;
+  // border-bottom: 1px solid red;
+  &:before {
+    content: '';
+    width: 2560px;
+    height: 1754px;
+    background: url(../images/cbt/bg.webp) no-repeat 50% 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    transform: translate(-50%, -50%);
+  }
+  .container {
+    z-index: 2;
+    position: relative;
+  }
+  &__bg {
+    display: block;
+    z-index: 2;
+    margin: 0 auto;
+    width: 1362px;
+    height: 758px;
+    position: absolute;
+    top: 89px;
+    left: 0;
+    right: 0;
+    background: url(../images/cbt/content.webp) no-repeat;
+  }
+  .ch {
+    position: absolute;
+    background: url(../images/cbt/ch.webp) no-repeat;
+    display: block;
+    left: 50%;
+    &--l {
+      @include spr(-10px, -10px, 1141px, 1041px);
+      top: -36px;
+      margin-left: -1280px;
+    }
+
+    &--r {
+      @include spr(-10px, -1071px, 1021px, 1172px);
+      margin-left: 201px;
+      top: -44px;
+    }
+  }
+
+  .badge-wrap {
+    position: absolute;
+    top: 464px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    .badge {
+      // background: yellow;
+      // opacity: 0.5;
+      display: block;
+      width: 257px;
+      aspect-ratio: 257/224;
+    }
+  }
+
+  .btn-cbt-notice {
+    position: absolute;
+    top: 800px;
+    @include btnImg(316px, 114px, '../images/cbt/btn.webp');
+  }
+}
+
+//사이드메뉴
+.sideMenu {
+  $handle: 22px;
+  position: fixed;
+  top: 170px;
+  right: 0;
+  z-index: 10;
+  width: 261px;
+  height: 248px;
+  background: url(../images/inc/sideMenu.webp) no-repeat;
+  right: 0;
+  transform: translateX(calc(100% - $handle));
+  transition: 500ms transform;
+  &.active {
+    transform: translateX(0);
+    .sideMenu__toggle:before {
+      transform: none;
+    }
+  }
+  &__toggle {
+    width: $handle;
+    height: 125px;
+    top: 63px;
+    left: 0;
+    position: absolute;
+    cursor: pointer;
+    &:before {
+      //손잡이화살표
+      background: url(../images/inc/sideMenu-toggle.webp) no-repeat;
+      width: 13px;
+      height: 20px;
+      content: '';
+      display: block;
+      position: absolute;
+      right: 2px;
+      top: 50%;
+      margin-top: -10px;
+      transform: rotateY(180deg);
+      transition: 300ms transform;
+    }
+  }
+  .badge {
+    &-wrap {
+      gap: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      position: absolute;
+      top: 99px;
+      left: 48px;
+    }
+    display: block;
+    width: 188px;
+    aspect-ratio: 188/58;
+    // background: rgba(yellow, 0.5);
+  }
+}

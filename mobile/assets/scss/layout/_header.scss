@@ -153,17 +153,28 @@ $transition-timing: 300ms;
     padding: 0 0 vw(210);
     // padding-bottom: 100px;
   }
-  .btn-reservation {
+  .btn-reservation,
+  .btn-cbt {
     a {
-      margin: 0 auto;
       display: block;
       max-width: vw(975);
       width: 100%;
       aspect-ratio: (975/253);
-      background: url(../images/inc/btn-reservation.webp) no-repeat;
       background-size: contain;
+      background-repeat: no-repeat;
+      margin: 0 auto;
     }
   }
+  .btn-reservation {
+    margin-top: vw(-40);
+    a {
+      background-image: url(../images/inc/btn-reservation.webp);
+    }
+  }
+  .btn-cbt a {
+    background-image: url(../images/inc/btn-cbt.webp);
+  }
+
   .badge-wrap {
     margin: vw(40) auto vw(90);
     display: flex;

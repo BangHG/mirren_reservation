@@ -762,14 +762,24 @@ body:after {
 .nav__wrap {
   padding: 0 0 19.444vw;
 }
-.nav .btn-reservation a {
-  margin: 0 auto;
+.nav .btn-reservation a,
+.nav .btn-cbt a {
   display: block;
   max-width: 90.278vw;
   width: 100%;
   aspect-ratio: 3.8537549407;
-  background: url(../images/inc/btn-reservation.webp) no-repeat;
   background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+.nav .btn-reservation {
+  margin-top: -3.704vw;
+}
+.nav .btn-reservation a {
+  background-image: url(../images/inc/btn-reservation.webp);
+}
+.nav .btn-cbt a {
+  background-image: url(../images/inc/btn-cbt.webp);
 }
 .nav .badge-wrap {
   margin: 3.704vw auto 8.333vw;

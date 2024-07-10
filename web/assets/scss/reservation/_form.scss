@@ -3,6 +3,12 @@ $input-indent: 22px; // 체크박스 들여쓰기
 $border-color: #dbcbad;
 $color-alert: #888888;
 $color-common: #bbbbbb;
+.cloudeflare-container {
+  &,
+  * {
+    text-align: center !important;
+  }
+}
 // .cf-turnstile {//소용없음
 //   position: relative;
 //   &:before {

@@ -392,7 +392,7 @@ function gsapScrollTriggerReservation() {
   });
   ST_market.to(
     '.section-market .ch--r',
-    { duration: 5, top: '+=100' },
+    { duration: 5, top: '-=100' },
     '=' //
   );
   // .to(
@@ -670,7 +670,30 @@ function gsapScrollTriggerReservation() {
       '<'
     );
 }
-// }; //호출은 resolution.js 에서. 1600이상에서만 작동
+
+function gsapScrollTriggerCBT() {
+  gsap.set('.section-cbt .ch', { opacity: 0 });
+  const ST_cbt = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.section-cbt',
+      start: 'top center',
+      end: 'bottom',
+      scrub: true,
+      onEnter: () => {
+        gsap.to('.section-cbt .ch', { duration: 1, opacity: 1 });
+      },
+    },
+  });
+  ST_cbt.to(
+    '.section-cbt .ch--l',
+    { duration: 5, top: '-=80' },
+    '<' //
+  ).to(
+    '.section-cbt .ch--r',
+    { duration: 5, top: '-=100' },
+    '<' //
+  );
+}
 
 //                                             888          888    d8b
 //                                             888          888    Y8P
@@ -819,6 +842,13 @@ if ($('body').attr('data-page') === 'intro') {
   gsapScrollTriggerMedia();
 } else if ($('body').attr('data-page') === 'reservation') {
   gsapScrollTriggerReservation();
+
+  if ($('.section-cbt').length > 0) {
+    // console.log('cbt있음');
+    gsapScrollTriggerCBT();
+  } else {
+    // console.log('cbt없음');
+  }
 }
 /* 
 document.addEventListener('DOMContentLoaded', function () {
@@ -843,7 +873,7 @@ document.addEventListener('DOMContentLoaded', function () {
 }); */
 // <!-- 240702 수정 -->로딩삭제
 
-function adjustViewport() {
+/* function adjustViewport() {
   const viewport = document.querySelector('meta[name="viewport"]');
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
@@ -868,6 +898,6 @@ function adjustViewport() {
     }
   }
 }
-
+ */
 // adjustViewport();
 // window.addEventListener('resize', adjustViewport);

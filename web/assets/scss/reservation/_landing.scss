@@ -69,6 +69,31 @@
     margin: 0 auto 50px;
   }
 
+  .btn-wrap {
+    margin: 0 auto 50px;
+    display: flex;
+    // gap: 10px;
+    justify-content: center;
+    .btn {
+      margin: 0 -5px;
+      width: 380px;
+      aspect-ratio: 380/116;
+      display: block;
+      transition: 300ms filter;
+      background-repeat: no-repeat;
+      font-size: 0;
+      &:hover {
+        filter: brightness(1.2);
+      }
+      &--toReservation {
+        background-image: url(../images/landing/btn-reservation.webp);
+      }
+      &--toCbt {
+        background-image: url(../images/landing/btn-cbt.webp);
+      }
+    }
+  }
+
   .scrollDown {
     $w: 125px;
     display: block;

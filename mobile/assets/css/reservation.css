@@ -91,6 +91,31 @@ html:not(.no-js) .section-landing [data-aos=fade-up] {
   background: url(../images/landing/btn.webp) no-repeat;
   background-size: contain;
 }
+.section-landing .btn-wrap {
+  margin: 0 auto 7.407vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.section-landing .btn-wrap .btn {
+  width: 76.944vw;
+  aspect-ratio: 831/203;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 0;
+}
+.section-landing .btn-wrap .btn--toReservation {
+  background-image: url(../images/landing/btn-reservation.webp);
+}
+.section-landing .btn-wrap .btn--toCbt {
+  background-image: url(../images/landing/btn-cbt.webp);
+}
 .section-landing .scrollDown {
   display: block;
   position: relative;
@@ -217,7 +242,8 @@ html:not(.no-js) .section-landing [data-aos=fade-up] {
 }
 
 .section-market {
-  aspect-ratio: 0.464516129;
+  aspect-ratio: 0.3389830508;
+  margin-bottom: -101.852vw;
   background-position-y: 100%;
 }
 .section-market .badge-wrap {
@@ -248,6 +274,25 @@ html:not(.no-js) .section-landing [data-aos=fade-up] {
   left: 0;
   right: 0;
   margin: 0 auto;
+}
+
+.cloudeflare-container {
+  height: calc(65px + 1.35em);
+  padding-top: 65px;
+  position: relative;
+  width: 100%;
+}
+.cloudeflare-container * {
+  text-align: center !important;
+}
+.cloudeflare-container .cf-turnstile {
+  font-size: 0;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 0;
+  width: 100%;
 }
 
 .form-area {
@@ -440,6 +485,49 @@ html:not(.no-js) .section-landing [data-aos=fade-up] {
   aspect-ratio: 4.1907894737;
   background: url(../images/reservation/btn.webp) no-repeat;
   background-size: contain;
+}
+
+.section-cbt {
+  background: url(../images/cbt/content.webp) no-repeat;
+  background-size: 100% auto;
+  margin-top: -138.889vw;
+  margin-bottom: -30.556vw;
+  position: relative;
+  aspect-ratio: 0.399703923;
+  background-position-y: 100%;
+}
+.section-cbt .container {
+  z-index: 2;
+  position: relative;
+}
+.section-cbt .badge-wrap {
+  position: absolute;
+  top: 127.037vw;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.667vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.section-cbt .badge-wrap .badge {
+  width: 39.074vw;
+  aspect-ratio: 422/362;
+  display: block;
+}
+.section-cbt .btn-cbt-notice {
+  position: absolute;
+  top: 177.407vw;
+  width: 42.593vw;
+  height: 10.185vw;
+  opacity: 0.5;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 .section-event {

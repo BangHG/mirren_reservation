@@ -1,0 +1,39 @@
+﻿.section-cbt {
+  background: url(../images/cbt/content.webp) no-repeat;
+  background-size: 100% auto;
+  margin-top: vw(-1500);
+  margin-bottom: vw(-330);
+  position: relative;
+  aspect-ratio: (1080/2702);
+  background-position-y: 100%;
+  .container {
+    z-index: 2;
+    position: relative;
+  }
+  .badge-wrap {
+    position: absolute;
+    top: vw(1372);
+    // background-color: rgba(yellow, 0.5);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: vw(18);
+    justify-content: center;
+    .badge {
+      width: vw(422);
+      aspect-ratio: 422/362;
+      display: block;
+    }
+  }
+
+  .btn-cbt-notice {
+    position: absolute;
+    top: vw(1916);
+    width: vw(460);
+    height: vw(110);
+    opacity: 0.5;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
