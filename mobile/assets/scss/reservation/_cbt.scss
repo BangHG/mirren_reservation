@@ -1,18 +1,31 @@
 ﻿.section-cbt {
-  background: url(../images/cbt/content.webp) no-repeat;
-  background-size: 100% auto;
-  margin-top: vw(-1500);
-  margin-bottom: vw(-330);
-  position: relative;
+  $offset: 400; //도달위치 변경
+  // background: url(../images/cbt/content.webp) no-repeat;
+  // background-size: 100% auto;
+  // border-top: 1px solid red;
+  margin-top: vw(-1500 + $offset);
+  margin-bottom: vw(-330 - $offset);
   aspect-ratio: (1080/2702);
-  background-position-y: 100%;
+  position: relative;
+  &:before {
+    //배경
+    content: '';
+    display: block;
+    top: vw(-$offset);
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../images/cbt/content.webp) no-repeat;
+    background-size: 100% auto;
+  }
   .container {
     z-index: 2;
     position: relative;
   }
   .badge-wrap {
     position: absolute;
-    top: vw(1372);
+    top: vw(1372 - $offset);
     // background-color: rgba(yellow, 0.5);
     left: 50%;
     transform: translateX(-50%);
@@ -28,7 +41,7 @@
 
   .btn-cbt-notice {
     position: absolute;
-    top: vw(1916);
+    top: vw(1916 - $offset);
     width: vw(460);
     height: vw(110);
     opacity: 0.5;

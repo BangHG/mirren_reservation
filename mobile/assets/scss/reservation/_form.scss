@@ -6,7 +6,7 @@ $color-common: #bbbbbb;
 
 .cloudeflare-container {
   $h: 65px;
-  height: calc($h + 1.5 * 0.9em);
+  min-height: calc($h + 1.5 * 0.9em);
   padding-top: $h;
   position: relative;
   width: 100%;
@@ -19,9 +19,22 @@ $color-common: #bbbbbb;
     left: 50%;
     transform: translateX(-50%);
     top: 0;
-    width: 100%;
+    // width: 100%;
     // min-width: 330px;
   }
+  line-height: 1.2;
+  font-size: 0.9em;
+  p {
+    margin-top: 0.2em;
+  }
+  #turnstile-message-progress {
+  }
+  // #turnstile-message-success {
+  //   color: #038127 !important;
+  // }
+  // #turnstile-message-error {
+  //   color: #de1303 !important;
+  // }
 }
 // .cf-turnstile {//소용없음
 //   position: relative;
@@ -68,7 +81,7 @@ $color-common: #bbbbbb;
   .input {
     // height: 70 * 0.8px;
     height: vw(110);
-    padding: 0 0.5em;
+    // padding: 0 0.5em;
     font-size: vw(40); //(22em/18);
     width: 100%;
     background-color: #fff;
@@ -78,6 +91,24 @@ $color-common: #bbbbbb;
     text-align: center;
     margin: vw(20) auto;
   }
+
+  // .input {//어그로
+  //   filter: hue-rotate(360deg);
+  //   border: vw(5) solid transparent;
+  //   background-image: linear-gradient(#fff, #fff), linear-gradient(to left, #74c3b6, #5951f3);
+  //   background-clip: content-box, border-box;
+  //   background-origin: border-box;
+  //   animation: huerotate 6s infinite linear alternate;
+  // }
+
+  // @keyframes huerotate {
+  //   0% {
+  //     filter: hue-rotate(0deg);
+  //   }
+  //   100% {
+  //     filter: hue-rotate(30deg);
+  //   }
+  // }
 
   .radio-wrap {
     display: flex;

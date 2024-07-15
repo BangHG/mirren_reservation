@@ -10,8 +10,9 @@
   </head>
 
   <body class="main-page" data-page="reservation">
-    <!-- cbt기간 header -->
+    <!-- S: CBT 수정 -->
     <!-- #include file="/games/mirren/reservation/mobile/inc/header-cbt.html" -->
+    <!-- E: CBT 수정 -->
 
     <span class="reservation-bg"></span>
 
@@ -32,15 +33,17 @@
             <span class="sr-only"> 완벽했던 세상에서 신이 사라진다. </span>
           </div>
 
+          <!-- S: CBT 수정 -->
           <!-- 
-          <button data-aos="fade-up" data-aos-duration="300" data-aos-delay="450" class="btnToReservation" type="button" onclick="$('body,html').animate({scrollTop: $('.reservation-wrap').offset().top}, 500)">
-            <span class="sr-only">사전예약하기</span>
-          </button> 
+            <button data-aos="fade-up" data-aos-duration="300" data-aos-delay="450" class="btnToReservation" type="button" onclick="$('body,html').animate({scrollTop: $('.reservation-wrap').offset().top}, 500)">
+              <span class="sr-only">사전예약하기</span>
+            </button> 
           --><!-- 삭제 -->
           <div class="btn-wrap" data-aos="fade-in" data-aos-duration="300" data-aos-delay="450">
             <button class="btn btn--toReservation" type="button" onclick="$('body,html').animate({scrollTop: $('.reservation-wrap').offset().top},300)"> 사전예약하기 </button>
             <button class="btn btn--toCbt" type="button" onclick="$('body,html').animate({scrollTop: $('.section-cbt').offset().top},300)"> CBT참여하기 </button>
           </div>
+          <!-- E: CBT 수정 -->
 
           <button class="scrollDown" type="button" onclick="$('body,html').animate({scrollTop: $('.reservation-wrap').offset().top}, 500)">
             <span class="sr-only"> scroll down </span>
@@ -92,12 +95,12 @@
               <!-- S: turnstile : 테스트 코드 -->
               <div class="cloudeflare-container">
                 <!-- S: 퍼블 테스트용 -->
-                <div class="cf-turnstile" style="font-size: 0; height: 65px; border: 1px solid #666; background: #222" data-theme="dark"></div>
+                <!-- <div class="cf-turnstile" style="font-size: 0; height: 65px; border: 1px solid #666; background: #222" data-theme="dark"></div> -->
                 <!-- E: 퍼블 테스트용 -->
 
                 <!-- S: 개발용 -->
-                <!-- <div class="cf-turnstile" style="font-size: 0" data-sitekey="0x4AAAAAAAQKMbMx6pImjuzR" data-theme="dark"></div>
-                <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script> -->
+                <div class="cf-turnstile" style="font-size: 0" data-sitekey="0x4AAAAAAAQKMbMx6pImjuzR" data-theme="dark"></div>
+                <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
                 <!-- E: 개발용 -->
 
                 <!-- 확인중 일 경우 : -->

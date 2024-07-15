@@ -9,22 +9,7 @@ $color-common: #bbbbbb;
     text-align: center !important;
   }
 }
-// .cf-turnstile {//소용없음
-//   position: relative;
-//   &:before {
-//     content: '';
-//     position: absolute;
-//     width: calc(100% + 2px);
-//     height: calc(100% + 2px);
-//     border: 1px solid #444;
-//     top: -1px;
-//     left: -1px;
-//     z-index: 5;
-//   }
-// }
-// .theme-dark #content {
-//   border-color: #444 !important;
-// }
+
 .form-area {
   z-index: 2;
   position: relative;

@@ -133,8 +133,8 @@ $(document).on('click', function (event) {
   }, 600);
 });
 
-$('.sideMenu').on('click', function () {
-  if ($(this).hasClass('active')) {
+$('.sideMenu__toggle').on('click', function () {
+  if ($('.sideMenu').hasClass('active')) {
     $('.sideMenu__toggle').attr('title', '열기');
     $('.sideMenu').stop().removeClass('active');
   } else {

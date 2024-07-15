@@ -27,6 +27,12 @@ $('.nav .btn-reservation').click(function () {
   }
   navClose();
 });
+$('.nav .btn-cbt').click(function () {
+  if (currentPage === 'reservation') {
+    $('html,body').animate({ scrollTop: $('#section-cbt').offset().top }, 0);
+  }
+  navClose();
+});
 
 const currentPage = $('body').attr('data-page');
 
