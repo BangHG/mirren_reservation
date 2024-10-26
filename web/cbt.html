@@ -1,16 +1,36 @@
 ﻿<!DOCTYPE html>
 <html lang="ko">
   <head>
-    <!-- #include file="/games/mirren/reservation/web/inc/head.html" -->
     <script>
-      $rootUrl = '/games/mirren/reservation';
+      $rootUrl = '..';
+      document.addEventListener('DOMContentLoaded', function () {
+        // 파일을 로드할 id와 파일 경로를 매핑합니다.
+        const filesToLoad = {
+          head: 'inc/head.html',
+          header: 'inc/header.html',
+          footer: 'inc/footer.html',
+          'popup-common': 'inc/popup-common.html',
+          'popup-reservation': 'inc/popup-reservation.html',
+        };
+
+        // 각 div에 대해 파일을 로드합니다.
+        for (const [id, file] of Object.entries(filesToLoad)) {
+          fetch(file)
+            .then((response) => response.text())
+            .then((data) => {
+              document.getElementById(id).insertAdjacentHTML('beforeend', data);
+            })
+            .catch((error) => console.error(`Error loading ${file}:`, error));
+        }
+      });
     </script>
+    <div id="head"></div>
     <link rel="stylesheet" href="assets/css/reservation.min.css" />
   </head>
   <body class="main-page" data-page="reservation">
     <!-- S: CBT 수정 -->
     <!-- cbt기간 header -->
-    <!-- #include file="/games/mirren/reservation/web/inc/header-cbt.html" -->
+    <!-- #include file="inc/header-cbt.html" -->
     <!-- E: CBT 수정 -->
     <span class="reservation-bg"></span>
     <div id="smooth-wrapper">
@@ -20,8 +40,8 @@
             <!-- S: section-landing -->
             <section class="section section-landing">
               <div class="bg">
-                <video loop muted playsinline autoplay poster="/games/mirren/reservation/web/assets/images/landing/bg.webp">
-                  <source src="/games/mirren/reservation/web/assets/images/landing/bg.mp4" type="video/mp4" />
+                <video loop muted playsinline autoplay poster="assets/images/landing/bg.webp">
+                  <source src="assets/images/landing/bg.mp4" type="video/mp4" />
                 </video>
               </div>
               <div class="container">
@@ -486,13 +506,12 @@
               </section>
             </section>
           </main>
-          <!-- #include file="/games/mirren/reservation/web/inc/footer.html" -->
         </div>
       </div>
     </div>
     <button type="button" title="최상단으로" class="btnTop"></button>
-    <!-- #include file="/games/mirren/reservation/web/inc/popup-common.html" -->
-    <!-- #include file="/games/mirren/reservation/web/inc/popup-reservation.html" -->
+    <div id="popup-common"></div>
+    <div id="popup-reservation"></div>
 
     <!-- S: CBT 수정 : 추가 -->
     <aside class="popup popup-terms" id="popup__cbt-notice">
@@ -531,9 +550,9 @@
 
     <!-- E: CBT 수정 : 추가 -->
 
-    <script src="/games/mirren/reservation/web/assets/js/common-animate.min.js"></script>
-    <script src="/games/mirren/reservation/common/js/tournament.min.js"></script>
-    <script src="/games/mirren/reservation/web/assets/js/common.min.js"></script>
-    <script src="/games/mirren/reservation/web/assets/js/reservation.min.js"></script>
+    <script src="assets/js/common-animate.min.js"></script>
+    <script src="../common/js/tournament.min.js"></script>
+    <script src="assets/js/common.min.js"></script>
+    <script src="assets/js/reservation.min.js"></script>
   </body>
 </html>

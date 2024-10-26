@@ -1,15 +1,35 @@
 ﻿<!DOCTYPE html>
 <html lang="ko">
   <head>
-    <!-- #include file="/games/mirren/reservation/web/inc/head.html" -->
     <script>
-      $rootUrl = '/games/mirren/reservation';
+      $rootUrl = '..';
+      document.addEventListener('DOMContentLoaded', function () {
+        // 파일을 로드할 id와 파일 경로를 매핑합니다.
+        const filesToLoad = {
+          head: 'inc/head.html',
+          header: 'inc/header.html',
+          footer: 'inc/footer.html',
+          'popup-common': 'inc/popup-common.html',
+          'popup-reservation': 'inc/popup-reservation.html',
+        };
+
+        // 각 div에 대해 파일을 로드합니다.
+        for (const [id, file] of Object.entries(filesToLoad)) {
+          fetch(file)
+            .then((response) => response.text())
+            .then((data) => {
+              document.getElementById(id).insertAdjacentHTML('beforeend', data);
+            })
+            .catch((error) => console.error(`Error loading ${file}:`, error));
+        }
+      });
     </script>
+    <div id="head"></div>
     <link rel="stylesheet" href="assets/css/intro.min.css" />
   </head>
 
   <body class="main-page" data-page="media">
-    <!-- #include file="/games/mirren/reservation/web/inc/header.html" -->
+    <div id="header"></div>
 
     <div id="smooth-wrapper">
       <div id="smooth-content">
@@ -39,24 +59,22 @@
                   <div class="mediaSwiper mediaSwiper--video">
                     <div class="swiper-container">
                       <div class="swiper-wrapper">
-                        <!-- S: 240701 수정 -->
                         <div class="swiper-slide media-item">
-                          <div class="img-bx"><img loading="lazy" src="/games/mirren/reservation/common/images/media/video_1.webp" alt="마키" /></div>
+                          <div class="img-bx"><img loading="lazy" src="../common/images/media/video_1.webp" alt="마키" /></div>
                           <button data-content="https://www.youtube.com/embed/ba7-pU5B1Qw?autoplay=1&loop=1&playlist=ba7-pU5B1Qw" class="play-btn popup-link--video"></button>
                         </div>
                         <div class="swiper-slide media-item">
-                          <div class="img-bx"><img loading="lazy" src="/games/mirren/reservation/common/images/media/video_2.webp" alt="아넥스" /></div>
+                          <div class="img-bx"><img loading="lazy" src="../common/images/media/video_2.webp" alt="아넥스" /></div>
                           <button data-content="https://www.youtube.com/embed/n28NwXgiJBE?autoplay=1&loop=1&playlist=n28NwXgiJBE" class="play-btn popup-link--video"></button>
                         </div>
                         <div class="swiper-slide media-item">
-                          <div class="img-bx"><img loading="lazy" src="/games/mirren/reservation/common/images/media/video_3.webp" alt="쿠로신" /></div>
+                          <div class="img-bx"><img loading="lazy" src="../common/images/media/video_3.webp" alt="쿠로신" /></div>
                           <button data-content="https://www.youtube.com/embed/Qz8l5g2hE7o?autoplay=1&loop=1&playlist=Qz8l5g2hE7o" class="play-btn popup-link--video"></button>
                         </div>
                         <!-- <div class="swiper-slide media-item">
-                          <div class="img-bx"><img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_1.webp" alt="" /></div>
+                          <div class="img-bx"><img loading="lazy" src="../common/images/media/picture_1.webp" alt="" /></div>
                           <button data-content="https://www.youtube.com/embed/sdXeCi0uDaE?autoplay=1&loop=1&playlist=sdXeCi0uDaE" class="play-btn popup-link--video"></button>
                         </div> --><!-- 240701 수정 : 삭제 -->
-                        <!-- E: 240701 수정 -->
                       </div>
                       <div class="swiper-button swiper-button--prev"></div>
                       <div class="swiper-button swiper-button--next"></div>
@@ -70,27 +88,27 @@
                       <div class="swiper-wrapper">
                         <div class="swiper-slide media-item">
                           <div class="img-bx">
-                            <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_2.webp" alt="" />
+                            <img loading="lazy" src="../common/images/media/picture_2.webp" alt="" />
                           </div>
                         </div>
                         <div class="swiper-slide media-item">
                           <div class="img-bx">
-                            <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_3.webp" alt="" />
+                            <img loading="lazy" src="../common/images/media/picture_3.webp" alt="" />
                           </div>
                         </div>
                         <div class="swiper-slide media-item">
                           <div class="img-bx">
-                            <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_4.webp" alt="" />
+                            <img loading="lazy" src="../common/images/media/picture_4.webp" alt="" />
                           </div>
                         </div>
                         <div class="swiper-slide media-item">
                           <div class="img-bx">
-                            <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_5.webp" alt="" />
+                            <img loading="lazy" src="../common/images/media/picture_5.webp" alt="" />
                           </div>
                         </div>
                         <div class="swiper-slide media-item">
                           <div class="img-bx">
-                            <img loading="lazy" src="/games/mirren/reservation/common/images/media/picture_6.webp" alt="" />
+                            <img loading="lazy" src="../common/images/media/picture_6.webp" alt="" />
                           </div>
                         </div>
                       </div>
@@ -103,17 +121,15 @@
               </div>
             </section>
           </main>
-
-          <!-- #include file="/games/mirren/reservation/web/inc/footer.html" -->
         </div>
       </div>
     </div>
 
     <button type="button" title="최상단으로" class="btnTop"></button>
-    <!-- #include file="/games/mirren/reservation/web/inc/popup-common.html" -->
+    <div id="popup-common"></div>
 
-    <script src="/games/mirren/reservation/web/assets/js/common-animate.min.js"></script>
-    <script src="/games/mirren/reservation/web/assets/js/media.min.js"></script>
-    <script src="/games/mirren/reservation/web/assets/js/common.min.js"></script>
+    <script src="assets/js/common-animate.min.js"></script>
+    <script src="assets/js/media.min.js"></script>
+    <script src="assets/js/common.min.js"></script>
   </body>
 </html>

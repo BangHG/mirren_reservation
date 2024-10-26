@@ -1,16 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang="ko">
   <head>
-    <!-- #include file="/games/mirren/reservation/web/inc/head.html" -->
-    <script>
-      $rootUrl = '/games/mirren/reservation';
-    </script>
+    <div id="head"></div>
 
     <link rel="stylesheet" href="assets/css/reservation.min.css" />
   </head>
 
   <body class="main-page" data-page="reservation">
-    <!-- #include file="/games/mirren/reservation/web/inc/header.html" -->
+    <div id="header"></div>
 
     <span class="reservation-bg"></span>
 
@@ -21,15 +18,13 @@
             <!-- S: section-landing -->
             <section class="section section-landing">
               <div class="bg">
-                <video loop muted playsinline autoplay poster="/games/mirren/reservation/web/assets/images/landing/bg.webp">
-                  <source src="/games/mirren/reservation/web/assets/images/landing/bg.mp4" type="video/mp4" />
+                <video loop muted playsinline autoplay poster="assets/images/landing/bg.webp">
+                  <source src="assets/images/landing/bg.mp4" type="video/mp4" />
                 </video>
               </div>
               <div class="container">
                 <div class="bi" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="100">
-                  <!-- S: 240621 수정 -->
                   <span class="sr-only"> 초월적 판타지 애니메이션 RPG </span>
-                  <!-- E: 240621 수정 -->
                 </div>
 
                 <div class="title" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="300">
@@ -53,17 +48,14 @@
               <!-- E: .reservation-bg transition용 anchor DOM -->
 
               <section class="section section-reservation" id="section-reservation">
-                <!-- S: 240703 수정 : 추가(광고목적 앵커위치 추가)-->
                 <div id="reservation"></div>
-                <!-- E: 240703 수정 : 추가(광고목적 앵커위치 추가)-->
-                <!-- S: 240621 수정 : 추가 -->
+
                 <i class="ch ch--b"></i>
                 <i class="ch ch--l"></i>
                 <i class="ch ch--r"></i>
-                <!-- E: 240621 수정 : 추가 -->
+
                 <div class="section-reservation__bg"></div>
 
-                <!-- S: 240621 수정 및 추가 -->
                 <div class="sr-only">
                   <p> 당신과 마녀 그리고 성흔의 서사시 </p>
                   <h2>뮈렌: 천년의 여정 사전예약</h2>
@@ -85,8 +77,6 @@
                     <span class="sr-only"> 크리슈나 자세히보기</span>
                   </button>
                 </div>
-
-                <!-- E: 240621 수정 및 추가 -->
 
                 <!-- S: 사전예약 폼 -->
                 <div class="form-area">
@@ -116,13 +106,12 @@
 
                       <!-- 확인중 일 경우 : -->
                       <p style="font-size: 0.9em">접속에 대한 보안을 검사 중입니다.</p>
-                      <!-- S: 240621 수정 : [개발영역수정] 스타일 수정  -->
+
                       <!-- 성공 일 경우 : -->
                       <!-- <p style="font-size: 0.9em; text-align: left; color: #289e4a">접속에 대한 보안 확인이 완료되었습니다.</p> -->
 
                       <!-- 실패 일 경우 : -->
                       <!-- <p style="font-size: 0.9em; text-align: left; color: #fd4e4e">접속에 대한 보안이 미흡합니다. 다른 환경에서 재시도하거나 고객센터에 문의해주세요.</p> -->
-                      <!-- E: 240621 수정 : [개발영역수정] 스타일 수정  -->
                     </div>
 
                     <script>
@@ -219,29 +208,26 @@
 
               <section class="section section-market">
                 <div class="section-market__bg"></div>
-                <!-- S: 240621 수정 -->
+
                 <i class="ch ch--r"></i>
                 <i class="ch ch--l"></i>
-                <!-- E: 240621 수정 -->
 
                 <div class="container">
                   <div class="sr-only">
                     <h2>마켓 사전예약</h2>
-                    <!-- S: 240621 수정 -->
+
                     <p>
                       2024.06.27. ~ 정식 출시 전 까지
                       <!-- 240626 수정 -->
                     </p>
                     <p>뮈렌: 천년의 여정 마켓 사전예약 하고 추가 보상을 받아보세요.</p>
-                    <!-- S: 240626 수정 -->
+
                     <p>보상내용: 성흔 소환권 x 3, 특수 장식 스킨 닌자 고양이 인형 x 1 </p>
-                    <!-- E: 240626 수정 -->
                   </div>
 
                   <div class="badge-wrap">
-                    <!-- S: 240621 수정 : 추가 -->
                     <h3 class="sr-only">마켓 사전예약 바로가기</h3>
-                    <!-- E: 240621 수정 : 추가 -->
+
                     <a href="#TODO:" class="badge" target="_blank" title="Google Play에서 사전등록하기">
                       <img src="assets/images/app-download-aos-pre.webp" alt="" />
                     </a>
@@ -255,11 +241,9 @@
                 </div>
               </section>
 
-              <!-- S: 240621 수정 : 삭제 -->
               <!-- <section class="section section-cbt" style="padding-bottom: 200px" id="section-cbt">
                 <div style="display: flex; align-items: center; justify-content: center; text-align: center; height: 1000px; max-width: 800px; margin: 0 auto; background-color: rgba(255, 255, 255, 0.3); color: #222"> TODO: CBT 내용수급 대기<br /> </div>
                 </section> -->
-              <!-- E: 240621 수정 : 삭제 -->
             </div>
 
             <section class="section section-event" id="section-event">
@@ -271,14 +255,11 @@
 
                 <div class="sr-only">
                   <h3>01 : 사전예약 목표 인원 달성하고 보상받자! 사전예약 인원 달성 이벤트</h3>
-                  <!-- S: 240624-1 수정 -->
-                  <!-- S: 240626 수정 -->
+
                   <p> 2024.06.27. ~ 정식 출시 전 까지 </p>
                   <p> 사전예약 목표 인원 달성 시 달성 인원 수에 따라 정식 출시 후 특별한 아이템을 드립니다! </p>
-                  <!-- E: 240626 수정 -->
                 </div>
 
-                <!-- S: 240621 수정 -->
                 <div class="gauge">
                   <span class="item-bg item-bg--1"></span> <span class="item-bg item-bg--2"></span> <span class="item-bg item-bg--3"></span> <span class="item-bg item-bg--4"></span> <span class="item-bg item-bg--5"></span> <span class="item-bg item-bg--6"></span>
 
@@ -301,7 +282,7 @@
                     <div class="gauge-list__bar">
                       <span class="bar"></span>
                     </div>
-                    <!-- S: 240626 수정 -->
+
                     <div class="item item--1">
                       <span class="sr-only"> 5만 달성 시 보상: 성흔 소환권x3 , 성흔 스킬 강화 재료x3 </span>
                     </div>
@@ -321,10 +302,8 @@
                       <span class="sr-only"> 50만 달성 시 보상: 성흔 소환티켓x20</span>
                     </div>
                     <p class="sr-only">※ 아이템 명칭은 정식 출시 후 변경될 수 있습니다.</p>
-                    <!-- E: 240626 수정 -->
                   </div>
                 </div>
-                <!-- E: 240621 수정 -->
               </section>
 
               <section class="event-content event-content--2">
@@ -335,13 +314,11 @@
                 <div class="sr-only">
                   <h3>02 매일매일 출첵하고 아이템 받자! 출석체크 이벤트</h3>
 
-                  <!-- S: 240621 수정 -->
                   <p>
                     2024.06.27. ~ 정식 출시 전 까지
                     <!-- 240626 수정 -->
                   </p>
                   <p>사전예약 기간 동안 매일 출석체크하고 출석 보상을 받아보세요! </p>
-                  <!-- E: 240621 수정 -->
                 </div>
 
                 <div class="container" data-aos="fade-up">
@@ -363,10 +340,8 @@
                       //로그인전/후 화면노출
                       $('#attendBtn').click();
 
-                      //S: 240624 수정 : 추가
                       //출석완료팝업열기
                       $('#popup__check-board-done').fadeIn().css('display', 'flex');
-                      //S: 240624 수정 : 추가
                     });
                   </script>
 
@@ -423,14 +398,11 @@
                   </div>
                   <!-- E: 출석보드 -->
 
-                  <!-- S: 240624 수정 : type 수정 -->
                   <button type="button" class="btn-check-board-reward popup-link" data-popup="popup__check-board-reward"> 주차별 출석 보상 보기 </button>
-                  <!-- E: 240624 수정 : type 수정 -->
 
                   <div class="event-notice">
                     <h4>[유의사항]</h4>
                     <ul class="list-dot">
-                      <!-- S: 240621 수정 -->
                       <li data-dot="-">출석체크 이벤트는 사전예약 완료 후 참여가 가능합니다.</li>
                       <li data-dot="-">사전예약 시 입력한 휴대폰 번호로 매일 이벤트에 참여하실 수 있습니다.</li>
                       <li data-dot="-">본인이 아닌 타인의 정보 (휴대폰번호 등) 기입 시 이벤트 참여에서 제외됩니다.</li>
@@ -442,11 +414,10 @@
                         <!-- 240624-2 수정 --></li
                       >
                       <li data-dot="-">잘못된 휴대폰 번호를 입력하거나, 번호 변경 등으로 발생한 불이익에 대해서는 당사에서 책임지지 않습니다. </li>
-                      <!-- S: 240626 수정 -->
+
                       <li data-dot="-">이벤트 보상은 번호당 1회씩만 지급되며 중복 지급되지 않습니다. </li>
-                      <!-- E: 240626 수정 -->
+
                       <li data-dot="-">이벤트 진행 일정 및 보상 지급은 내부 사정에 따라 변경 될 수 있습니다.</li>
-                      <!-- E: 240621 수정 -->
                     </ul>
                   </div>
                 </div>
@@ -455,12 +426,12 @@
                 <i class="ch"></i>
                 <div class="sr-only">
                   <h3>03 공식 라운지와 X에서 소통해요! 팔로워 달성 이벤트 </h3>
-                  <!-- S: 240621 수정 -->
+
                   <p>
                     2024.06.27. ~ 정식 출시 전 까지
                     <!-- 240626 수정 -->
                   </p>
-                  <!-- E: 240621 수정 -->
+
                   <p>뮈렌: 천년의 여정의 다양한 소식들을 공식 라운지와 X에서 만나보세요~! 목표 팔로워 수 달성 시 특별한 선물을 드립니다!</p>
                 </div>
 
@@ -469,7 +440,7 @@
                   h4 텍스트 변경
                   달성한 항목 .achieve-list .card 에 active addclass
                    -->
-                  <!-- S: 240621 수정 -->
+
                   <h4 class="sr-only">5천명 달성</h4>
                   <ul class="achieve-list">
                     <li class="card active">
@@ -485,26 +456,20 @@
                       <div class="sr-only"> 2만명 달성 시 : 성흔의장/시인편 (성흔 스킬 강화 재료)x2 </div>
                     </li>
                   </ul>
-                  <!-- E: 240621 수정 -->
 
                   <div class="btn-wrap">
                     <a href="#TODO:" target="_blank" class="btn btn--lounge">
-                      <!-- S: 240621 수정 -->
                       <span class="sr-only">공식 게임 라운지 가입</span>
-                      <!-- E: 240621 수정 -->
                     </a>
                     <a href="#TODO:" target="_blank" class="btn btn--x">
                       <span class="sr-only">공식 X 팔로우</span>
                     </a>
                   </div>
-                  <!-- S: 240626 수정 -->
+
                   <p class="sr-only">※ 아이템 명칭은 정식 출시 후 변경될 수 있습니다.</p>
-                  <!-- E: 240626 수정 -->
                 </div>
               </section>
               <section class="event-content event-content--4">
-                <!-- S: 240621 수정 : 추가 및 수정 
-                 [이상형월드컵시작]버튼 위치 수정 -->
                 <i class="ch"></i>
                 <div class="sr-only">
                   <h3>04 세이비어님이 첫눈에 반할 성흔은 누구? 성흔 첫인상 이상형 월드컵 </h3>
@@ -519,13 +484,11 @@
                   <div class="box__fly"></div>
                   <button type="button" class="tournament-start-btn" data-aos="fade-up" data-aos-duration="1000" onclick="tournamentStart()">이상형 월드컵 시작 </button>
                 </div>
-                <!-- E: 240621 수정 : 추가 및 수정 
-                 [이상형월드컵시작]버튼 위치 수정 -->
 
                 <!-- S: 이상형월드컵 -->
-                <!-- S: 240621 수정 : 추가 -->
+
                 <span class="dimmed"></span>
-                <!-- E: 240621 수정 : 추가 -->
+
                 <aside class="tournament-container">
                   <button type="button" class="tournament-container__close" title="닫기" onclick="tournamentEnd()"></button>
                   <div id="tournament">
@@ -533,33 +496,27 @@
                   </div>
 
                   <div id="tournament-result" style="display: none">
-                    <!-- S: 240621 수정 -->
                     <span class="sr-only"> 세이비어님의 취향은 바로! </span>
-                    <!-- E: 240621 수정 -->
 
                     <div class="tournament-result-wrap">
                       <div class="img-bx">
                         <div class="item-button">
-                          <!-- S: 240621 수정 -->
                           <div class="img"></div>
-                          <!-- E: 240621 수정 -->
                         </div>
                       </div>
 
                       <div class="txt-bx">
-                        <!-- S: 240626-1 수정: target 삭제 -->
                         <div class="btn btn-saveImg"><span class="sr-only">이미지 저장</span></div>
-                        <!-- E: 240626-1 수정: target 삭제 -->
+
                         <div class="share">
-                          <!-- S: 240621 수정 -->
                           <h3 class="sr-only">공유하기</h3>
-                          <!-- E: 240621 수정 -->
+
                           <ul class="share__list">
                             <!-- TODO: 공유하기 -->
                             <li><button type="button" onclick="shareOnX(localStorage.getItem('tournamentWinner'))" class="share-btn share-btn--x" title="X로 공유하기"> </button></li>
-                            <!-- S: 240621 수정 : 삭제 -->
+
                             <!-- <li><button type="button" onclick="shareOnKakaotalk(localStorage.getItem('tournamentWinner'))" class="share-btn share-btn--kakaotalk" title="카카오톡으로 공유하기"> </button></li> -->
-                            <!-- E: 240621 수정 : 삭제 -->
+
                             <li><button type="button" onclick="shareOnFacebook(localStorage.getItem('tournamentWinner'))" class="share-btn share-btn--facebook" title="페이스북으로 공유하기"> </button></li>
                           </ul>
                           <script>
@@ -577,15 +534,10 @@
                           </script>
                         </div>
                         <button type="button" class="btn btn-restart" id="btn-restart">
-                          <span class="sr-only">
-                            <!-- S: 240621 수정 -->
-                            나의 이상형 다시 찾기
-                            <!-- E: 240621 수정 -->
-                          </span>
+                          <span class="sr-only"> 나의 이상형 다시 찾기 </span>
                         </button>
-                        <!-- S: 240621 수정 : 추가 -->
+
                         <p class="sr-only">* 다양한 성흔 정보는 공식 홈페이지 또는 공식 게임 라운지에서 확인해보세요~! </p>
-                        <!-- E: 240621 수정 : 추가 -->
                       </div>
                     </div>
                   </div>
@@ -594,21 +546,43 @@
               </section>
             </section>
           </main>
-
-          <!-- #include file="/games/mirren/reservation/web/inc/footer.html" -->
         </div>
       </div>
     </div>
 
     <button type="button" title="최상단으로" class="btnTop"></button>
-    <!-- #include file="/games/mirren/reservation/web/inc/popup-common.html" -->
-    <!-- #include file="/games/mirren/reservation/web/inc/popup-reservation.html" -->
+    <div id="popup-common"></div>
+    <div id="popup-reservation"></div>
 
-    <script src="/games/mirren/reservation/web/assets/js/common-animate.min.js"></script>
-    <!-- S: 240621 수정 : min 파일로 수정 -->
-    <script src="/games/mirren/reservation/common/js/tournament.min.js"></script>
-    <!-- E: 240621 수정 : min 파일로 수정 -->
-    <script src="/games/mirren/reservation/web/assets/js/common.min.js"></script>
-    <script src="/games/mirren/reservation/web/assets/js/reservation.min.js"></script>
+    <script src="assets/js/common-animate.min.js"></script>
+
+    <script src="../common/js/tournament.min.js"></script>
+
+    <script src="assets/js/common.min.js"></script>
+    <script src="assets/js/reservation.min.js"></script>
+
+    <script>
+      $rootUrl = '..';
+      document.addEventListener('DOMContentLoaded', function () {
+        // 파일을 로드할 id와 파일 경로를 매핑합니다.
+        const filesToLoad = {
+          head: 'inc/head.html',
+          header: 'inc/header.html',
+          footer: 'inc/footer.html',
+          // 'popup-common': 'inc/popup-common.html',
+          // 'popup-reservation': 'inc/popup-reservation.html',
+        };
+
+        // 각 div에 대해 파일을 로드합니다.
+        for (const [id, file] of Object.entries(filesToLoad)) {
+          fetch(file)
+            .then((response) => response.text())
+            .then((data) => {
+              document.getElementById(id).insertAdjacentHTML('beforeend', data);
+            })
+            .catch((error) => console.error(`Error loading ${file}:`, error));
+        }
+      });
+    </script>
   </body>
 </html>

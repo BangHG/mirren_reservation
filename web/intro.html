@@ -1,18 +1,39 @@
 ﻿<!DOCTYPE html>
 <html lang="ko">
   <head>
-    <!-- #include file="/games/mirren/reservation/web/inc/head.html" -->
     <script>
-      $rootUrl = '/games/mirren/reservation';
+      $rootUrl = '..';
+      document.addEventListener('DOMContentLoaded', function () {
+        // 파일을 로드할 id와 파일 경로를 매핑합니다.
+        const filesToLoad = {
+          head: 'inc/head.html',
+          header: 'inc/header.html',
+          footer: 'inc/footer.html',
+          'popup-common': 'inc/popup-common.html',
+          'popup-reservation': 'inc/popup-reservation.html',
+        };
+
+        // 각 div에 대해 파일을 로드합니다.
+        for (const [id, file] of Object.entries(filesToLoad)) {
+          fetch(file)
+            .then((response) => response.text())
+            .then((data) => {
+              document.getElementById(id).insertAdjacentHTML('beforeend', data);
+            })
+            .catch((error) => console.error(`Error loading ${file}:`, error));
+        }
+      });
     </script>
+    <div id="head"></div>
+
     <link rel="stylesheet" href="assets/css/intro.min.css" />
   </head>
 
   <body class="main-page" data-page="intro">
     <audio controls id="cv_audio" class="sr-only">
-      <source src="/games/mirren/reservation/common/audio/ritsu_ja.wav" type="audio/wav" />
+      <source src="../common/audio/ritsu_ja.wav" type="audio/wav" />
     </audio>
-    <!-- #include file="/games/mirren/reservation/web/inc/header.html" -->
+    <div id="header"></div>
 
     <div id="smooth-wrapper">
       <div id="smooth-content">
@@ -37,7 +58,7 @@
                         <dl class="cv">
                           <dt>CV</dt>
                           <dd>
-                            <img src="/games/mirren/reservation/common/audio/ritsu_ja.png" alt="유카나" />
+                            <img src="../common/audio/ritsu_ja.png" alt="유카나" />
                             <button class="cv-btn" data-audio="ritsu_ja"></button>
                           </dd>
                         </dl>
@@ -53,7 +74,7 @@
                         <dl class="cv">
                           <dt>CV</dt>
                           <dd>
-                            <img src="/games/mirren/reservation/common/audio/kuroro_ja.png" alt="나가나와 마리아" />
+                            <img src="../common/audio/kuroro_ja.png" alt="나가나와 마리아" />
                             <button class="cv-btn" data-audio="kuroro_ja"></button>
                           </dd>
                         </dl>
@@ -72,7 +93,7 @@
                         <dl class="cv">
                           <dt>CV</dt>
                           <dd>
-                            <img src="/games/mirren/reservation/common/audio/kurokami_ja.png" alt="세토 아사미" />
+                            <img src="../common/audio/kurokami_ja.png" alt="세토 아사미" />
                             <button class="cv-btn" data-audio="kurokami_ja"></button>
                           </dd>
                         </dl>
@@ -91,7 +112,7 @@
                         <dl class="cv">
                           <dt>CV</dt>
                           <dd>
-                            <img src="/games/mirren/reservation/common/audio/angie_ja.png" alt="노토 마미코" />
+                            <img src="../common/audio/angie_ja.png" alt="노토 마미코" />
                             <button class="cv-btn" data-audio="angie_ja"></button>
                           </dd>
                         </dl>
@@ -111,7 +132,7 @@
                         <dl class="cv">
                           <dt>CV</dt>
                           <dd>
-                            <img src="/games/mirren/reservation/common/audio/mia_ja.png" alt="이구치 유카" />
+                            <img src="../common/audio/mia_ja.png" alt="이구치 유카" />
                             <button class="cv-btn" data-audio="mia_ja"></button>
                           </dd>
                         </dl>
@@ -158,7 +179,7 @@
               </h2>
 
               <div class="sub-title">
-                <img src="/games/mirren/reservation/web/assets/images/stigmata/sub-title.webp" alt="마녀 리리아가 만든 시스템 " data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" />
+                <img src="assets/images/stigmata/sub-title.webp" alt="마녀 리리아가 만든 시스템 " data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" />
                 <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">마녀는 각 3명의 성흔을 소환할 수 있다. </p>
               </div>
 
@@ -169,11 +190,7 @@
                   <li><a data-hash="tabContent5" data-moveTo="51" class="tab-link"> 엘프 </a></li>
                   <li><a data-hash="tabContent2" data-moveTo="21" class="tab-link"> 인간 </a></li>
                   <li>
-                    <a data-hash="tabContent3" data-moveTo="31" class="tab-link">
-                      <!-- S: 240624 수정 -->
-                      하프
-                      <!-- E: 240624 수정 -->
-                    </a>
+                    <a data-hash="tabContent3" data-moveTo="31" class="tab-link"> 하프 </a>
                   </li>
                   <li><a data-hash="tabContent4" data-moveTo="41" class="tab-link"> 악마 </a></li>
                   <li><a data-hash="tabContent6" data-moveTo="61" class="tab-link"> 드래곤 </a></li>
@@ -261,10 +278,8 @@
                     <div class="swiper-slide world-item world-item--3">
                       <p class="name"><span class="sr-only"> 엘그론 </span></p>
                       <p class="desc">
-                        <!-- S: 240624 수정 -->
                         시리온 대륙이 두개로 나눠지면서 생긴 대륙이다. <br />
                         천연광물이 풍부하고 하프들이 주로 살고 있는 곳이다.
-                        <!-- E: 240624 수정 -->
                       </p>
                       <div class="map"> </div>
                     </div>
@@ -291,17 +306,15 @@
               </section>
             </section>
           </main>
-
-          <!-- #include file="/games/mirren/reservation/web/inc/footer.html" -->
         </div>
       </div>
     </div>
 
     <button type="button" title="최상단으로" class="btnTop"></button>
-    <!-- #include file="/games/mirren/reservation/web/inc/popup-common.html" -->
+    <div id="popup-common"></div>
 
-    <script src="/games/mirren/reservation/web/assets/js/common-animate.min.js"></script>
-    <script src="/games/mirren/reservation/web/assets/js/intro.min.js"></script>
-    <script src="/games/mirren/reservation/web/assets/js/common.min.js"></script>
+    <script src="assets/js/common-animate.min.js"></script>
+    <script src="assets/js/intro.min.js"></script>
+    <script src="assets/js/common.min.js"></script>
   </body>
 </html>
