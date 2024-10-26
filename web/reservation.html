@@ -1,8 +1,31 @@
 ﻿<!DOCTYPE html>
 <html lang="ko">
   <head>
-    <div id="head"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+      $rootUrl = '..';
+      document.addEventListener('DOMContentLoaded', function () {
+        // 파일을 로드할 id와 파일 경로를 매핑합니다.
+        const filesToLoad = {
+          head: 'inc/head.html',
+          header: 'inc/header.html',
+          footer: 'inc/footer.html',
+          'popup-common': 'inc/popup-common.html',
+          'popup-reservation': 'inc/popup-reservation.html',
+        };
 
+        // 각 div에 대해 파일을 로드합니다.
+        for (const [id, file] of Object.entries(filesToLoad)) {
+          fetch(file)
+            .then((response) => response.text())
+            .then((data) => {
+              document.getElementById(id).insertAdjacentHTML('beforeend', data);
+            })
+            .catch((error) => console.error(`Error loading ${file}:`, error));
+        }
+      });
+    </script>
+    <div id="head"></div>
     <link rel="stylesheet" href="assets/css/reservation.min.css" />
   </head>
 
