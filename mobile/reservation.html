@@ -1,16 +1,37 @@
 ﻿<!DOCTYPE html>
 <html lang="ko">
   <head>
-    <!-- #include file="../mobile/inc/head.html" -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script>
       $rootUrl = '..';
+      document.addEventListener('DOMContentLoaded', function () {
+        // 파일을 로드할 id와 파일 경로를 매핑합니다.
+        const filesToLoad = {
+          head: 'inc/head.html',
+          header: 'inc/header.html',
+          // footer: 'inc/footer.html',
+          'popup-common': 'inc/popup-common.html',
+          'popup-reservation': 'inc/popup-reservation.html',
+        };
+
+        // 각 div에 대해 파일을 로드합니다.
+        for (const [id, file] of Object.entries(filesToLoad)) {
+          fetch(file)
+            .then((response) => response.text())
+            .then((data) => {
+              document.getElementById(id).insertAdjacentHTML('beforeend', data);
+            })
+            .catch((error) => console.error(`Error loading ${file}:`, error));
+        }
+      });
     </script>
+    <div id="head"></div>
 
     <link rel="stylesheet" href="assets/css/reservation.min.css" />
   </head>
 
   <body class="main-page" data-page="reservation">
-    <!-- #include file="../mobile/inc/header.html" -->
+    <div id="header"></div>
 
     <span class="reservation-bg"></span>
 
@@ -490,16 +511,26 @@
         </section>
       </section>
     </main>
-    <!-- #include file="../mobile/inc/footer.html" -->
+    <!-- <div id="footer"></div> -->
     <i class="itemNotice">확률형 아이템 포함</i>
 
     <button type="button" title="최상단으로" class="btnTop"></button>
-    <!-- #include file="../mobile/inc/popup-common.html" -->
-    <!-- #include file="../mobile/inc/popup-reservation.html" -->
+    <div id="popup-common"></div>
+    <div id="popup-reservation"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+
+    <script src="../common/lib/swiper-bundle.min.js"></script>
+    <script src="../common/lib/aos.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
 
     <script src="../mobile/assets/js/common-animate.min.js"></script>
     <script src="../common/js/tournament.min.js"></script>
     <script src="../mobile/assets/js/common.min.js"></script>
     <script src="../mobile/assets/js/reservation.min.js"></script>
+
+    <script>
+      $('html,body').animate({ scrollTop: $('.event-content--4').offset().top });
+    </script>
   </body>
 </html>

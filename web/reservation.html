@@ -587,27 +587,7 @@
     <script src="assets/js/reservation.min.js"></script>
 
     <script>
-      $rootUrl = '..';
-      document.addEventListener('DOMContentLoaded', function () {
-        // 파일을 로드할 id와 파일 경로를 매핑합니다.
-        const filesToLoad = {
-          head: 'inc/head.html',
-          header: 'inc/header.html',
-          // footer: 'inc/footer.html',
-          // 'popup-common': 'inc/popup-common.html',
-          // 'popup-reservation': 'inc/popup-reservation.html',
-        };
-
-        // 각 div에 대해 파일을 로드합니다.
-        for (const [id, file] of Object.entries(filesToLoad)) {
-          fetch(file)
-            .then((response) => response.text())
-            .then((data) => {
-              document.getElementById(id).insertAdjacentHTML('beforeend', data);
-            })
-            .catch((error) => console.error(`Error loading ${file}:`, error));
-        }
-      });
+      $('html,body').animate({ scrollTop: $('.event-content--4').offset().top });
     </script>
   </body>
 </html>
