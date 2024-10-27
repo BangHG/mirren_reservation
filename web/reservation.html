@@ -19,7 +19,10 @@
           fetch(file)
             .then((response) => response.text())
             .then((data) => {
+              $('body').css({ opacity: 0 }); // 실행 전
               document.getElementById(id).insertAdjacentHTML('beforeend', data);
+              $('html,body').animate({ scrollTop: $('.event-content--4').offset().top }, 10);
+              $('body').css({ opacity: 1 }); // 실행 후
             })
             .catch((error) => console.error(`Error loading ${file}:`, error));
         }
@@ -585,9 +588,5 @@
     <script src="../common/js/tournament.min.js"></script>
     <script src="assets/js/common.min.js"></script>
     <script src="assets/js/reservation.min.js"></script>
-
-    <script>
-      $('html,body').animate({ scrollTop: $('.event-content--4').offset().top });
-    </script>
   </body>
 </html>

@@ -19,7 +19,9 @@
           fetch(file)
             .then((response) => response.text())
             .then((data) => {
+              $('body').css({ opacity: 0 }); // 실행 전
               document.getElementById(id).insertAdjacentHTML('beforeend', data);
+              $('body').css({ opacity: 1 }); // 실행 후
             })
             .catch((error) => console.error(`Error loading ${file}:`, error));
         }
