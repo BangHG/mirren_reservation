@@ -21,8 +21,12 @@
             .then((data) => {
               $('body').css({ opacity: 0 }); // 실행 전
               document.getElementById(id).insertAdjacentHTML('beforeend', data);
-              $('html,body').animate({ scrollTop: $('.event-content--4').offset().top }, 10);
-              $('body').css({ opacity: 1 }); // 실행 후
+
+              // 다음 렌더링 프레임에서 opacity를 1로 설정
+              requestAnimationFrame(() => {
+                $('body').css({ opacity: 1 }); // 실행 후
+              });
+              // $('html,body').animate({ scrollTop: $('.event-content--4').offset().top }, 10);
             })
             .catch((error) => console.error(`Error loading ${file}:`, error));
         }
@@ -371,7 +375,7 @@
                     });
                   </script>
 
-                  <button type="button" id="attendBtn" onclick=" $('.check-board').toggleClass('check-board--guest'); if($('.check-board').hasClass('check-board--guest')){ $('.check-board .btn').removeClass('checked'); }else{ $('.check-board .btn').addClass('checked'); } " style="color: red; background-color: yellow; position: absolute; right: 183px; top: 70px; z-index: 2">테스트BTN</button>
+                  <!-- <button type="button" id="attendBtn" onclick=" $('.check-board').toggleClass('check-board--guest'); if($('.check-board').hasClass('check-board--guest')){ $('.check-board .btn').removeClass('checked'); }else{ $('.check-board .btn').addClass('checked'); } " style="color: red; background-color: yellow; position: absolute; right: 183px; top: 70px; z-index: 2">테스트BTN</button> -->
 
                   <!-- E: 로그인전/후 테스트버튼/테스트코드 : 개발단에서 삭제해주세요 -->
 
@@ -584,6 +588,8 @@
     <script src="../common/lib/aos.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
     <script src="assets/js/common-animate.min.js"></script>
     <script src="../common/js/tournament.min.js"></script>
     <script src="assets/js/common.min.js"></script>
